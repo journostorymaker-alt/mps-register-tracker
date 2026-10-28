@@ -227,6 +227,21 @@ def _wd_lookup(todo, cache):
         time.sleep(0.5)
 
 
+def sic_codes():
+    """Companies House's list of business activity (SIC) codes, read once from its public page."""
+    if load("sic.json"):
+        return
+    import html
+    req = urllib.request.Request("https://resources.companieshouse.gov.uk/sic/", headers=UA)
+    with urllib.request.urlopen(req, timeout=60) as r:
+        page = r.read().decode("utf-8", "replace")
+    rows = re.findall(r"<tr[^>]*>\s*<td[^>]*>\s*(\d{5})\s*</td>\s*<td[^>]*>(.*?)</td>", page, re.S | re.I)
+    codes = {c: html.unescape(re.sub(r"<[^>]+>", "", d)).strip() for c, d in rows}
+    if len(codes) > 500:
+        save("sic.json", codes)
+    print(f"SIC codes: {len(codes)} read", flush=True)
+
+
 def r_sector_ok(payer, entries, _memo={}):
     if not _memo:
         for r in entries:
@@ -242,6 +257,10 @@ def main():
     if not os.path.exists(ENTRIES):
         raise SystemExit("Run scripts/build.py first: enrich reads site/data/entries.json")
     entries = json.load(open(ENTRIES))
+    try:
+        sic_codes()
+    except Exception as e:
+        print(f"SIC list not read: {e}", flush=True)
     key = os.environ.get("CH_API_KEY", "").strip()
     if key:
         try:

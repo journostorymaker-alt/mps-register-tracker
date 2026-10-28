@@ -885,7 +885,7 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
       box.append(top, el('div', 'ext', 'From Companies House'));
       box.append(dl([['Company number', extLink(c.number, 'https://find-and-update.company-information.service.gov.uk/company/' + c.number)], ['Type', (c.type || '').replace(/-/g, ' ')],
         ['Set up', fmtDay(c.created)], ['Closed', fmtDay(c.ceased)],
-        ['What it does (SIC codes)', (c.sic || []).length ? (() => { const sp = el('span'); sp.append(document.createTextNode(c.sic.join(', ') + ' ')); sp.append(extLink('what these mean', SIC)); return sp; })() : ''],
+        ['What it does', (c.sic || []).length ? (() => { const sp = el('span'); c.sic.forEach((x, i) => { const [code, desc] = Array.isArray(x) ? x : [x, '']; if (i) sp.append(el('br')); sp.append(document.createTextNode(desc ? `${desc} (${code})` : code)); }); if (c.sic.some((x) => !Array.isArray(x) || !x[1])) { sp.append(document.createTextNode(' ')); sp.append(extLink('what the codes mean', SIC)); } return sp; })() : ''],
         ['Registered office', c.address]]));
       if ((c.owners || []).length) { box.append(el('h3', null, 'Owners or people with significant control')); const ul = el('ul'); c.owners.forEach((o) => ul.append(el('li', null, `${o.name}${o.control && o.control.length ? ` (${o.control.slice(0, 2).join('; ')})` : ''}`))); box.append(ul); }
       if ((c.officers || []).length) { box.append(el('h3', null, 'Current directors and officers')); const ul = el('ul'); c.officers.slice(0, 12).forEach((o) => ul.append(el('li', null, `${o.name}, ${(o.role || '').replace(/-/g, ' ')}${o.since ? ` since ${fmtDay(o.since)}` : ''}`))); box.append(ul); }

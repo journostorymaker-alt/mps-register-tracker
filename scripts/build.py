@@ -143,6 +143,17 @@ ALIAS = {"lord sainsbury of turville": "lord david sainsbury", "lord david sains
          "nfu": "national farmers union", "national farmers union nfu": "national farmers union"}
 
 
+def norm_co(x):
+    n = re.sub(r"[^A-Za-z0-9]", "", clean(x)).upper()
+    if not n or len(n) > 8:
+        return ""
+    if n.isdigit():
+        return n.zfill(8)
+    if re.match(r"^[A-Z]{2}\d+$", n):
+        return n[:2] + n[2:].zfill(6)
+    return n
+
+
 def clean(x):
     return "" if x is None or (isinstance(x, float) and x != x) or str(x) in ("nan", "None", "NaT") else str(x)
 
@@ -413,7 +424,7 @@ def main():
     # payer profiles: what the register says, plus enrichment and our notes
     enr_dir = os.path.join(ROOT, "data", "enrich")
     ld = lambda n: json.load(open(os.path.join(enr_dir, n))) if os.path.exists(os.path.join(enr_dir, n)) else {}
-    ch, wd = ld("companies.json"), ld("wikidata.json")
+    ch, wd, sic = ld("companies.json"), ld("wikidata.json"), ld("sic.json")
     ch_by_payer = {}
     for num_, rec in ch.items():
         if rec.get("found"):
@@ -427,13 +438,14 @@ def main():
         rec = dict(described=sorted({clean(x) for x in g.ptype if clean(x)})[:4],
                    names=sorted({re.sub(r"\s+", " ", str(x)) for x in g.payer})[:6],
                    address="" if indiv or not addrs else pd.Series(addrs).value_counts().index[0],
-                   co=sorted({clean(x) for x in g.co if clean(x)}) if "co" in g else [],
-                   purposes=[[k, round(float(v), 2)] for k, v in g.groupby("purpose").since.sum().sort_values(ascending=False).items()][:5],
+                   co=sorted({norm_co(x) for x in g.co if norm_co(x)}) if "co" in g else [],
+                   purposes=[[k, round(float(v), 2)] for k, v in g.groupby("purpose").since.sum().sort_values(ascending=False).items() if v > 0][:5],
                    individual=bool(indiv))
         if pg in wd and wd[pg].get("id"):
             rec["wikidata"] = {k: wd[pg].get(k, "") for k in ("id", "label", "description", "website", "wikipedia")}
         if pg in ch_by_payer:
-            rec["companies"] = [{k: v for k, v in c.items() if k not in ("payers", "_fetched")} for c in ch_by_payer[pg][:3]]
+            rec["companies"] = [{**{k: v for k, v in c.items() if k not in ("payers", "_fetched", "sic")},
+                                 "sic": [[s_, sic.get(s_, "")] for s_ in (c.get("sic") or [])]} for c in ch_by_payer[pg][:3]]
         ns = [n for n in notes if n["payer"].strip() == pg]
         if ns:
             rec["notes"] = ns
