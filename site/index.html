@@ -797,7 +797,12 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
     (info.notes || []).filter((n) => !mp || !n.mp || n.mp === mp).forEach((n) => {
       const c = el('div', 'context');
       c.append(el('div', 'lab', 'Context' + (n.mp ? ` · ${n.mp}` : '')), el('div', null, n.note));
-      if (n.source_url) { const sp = el('div', 'src'); sp.append(document.createTextNode('Source: '), extLink(n.source_title || n.source_url, n.source_url)); c.append(sp); }
+      if (n.source_url) {
+        const urls = n.source_url.split(' | '), titles = (n.source_title || '').split(' | ');
+        const sp = el('div', 'src'); sp.append(document.createTextNode(urls.length > 1 ? 'Sources: ' : 'Source: '));
+        urls.forEach((u, i) => { if (i) sp.append(document.createTextNode(' · ')); sp.append(extLink(titles[i] || u, u)); });
+        c.append(sp);
+      }
       b.append(c);
     });
   }
@@ -887,7 +892,23 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
         ['Set up', fmtDay(c.created)], ['Closed', fmtDay(c.ceased)],
         ['What it does', (c.sic || []).length ? (() => { const sp = el('span'); c.sic.forEach((x, i) => { const [code, desc] = Array.isArray(x) ? x : [x, '']; if (i) sp.append(el('br')); sp.append(document.createTextNode(desc ? `${desc} (${code})` : code)); }); if (c.sic.some((x) => !Array.isArray(x) || !x[1])) { sp.append(document.createTextNode(' ')); sp.append(extLink('what the codes mean', SIC)); } return sp; })() : ''],
         ['Registered office', c.address]]));
-      if ((c.owners || []).length) { box.append(el('h3', null, 'Owners or people with significant control')); const ul = el('ul'); c.owners.forEach((o) => ul.append(el('li', null, `${o.name}${o.control && o.control.length ? ` (${o.control.slice(0, 2).join('; ')})` : ''}`))); box.append(ul); }
+      if ((c.owners || []).length) {
+        box.append(el('h3', null, 'Owners or people with significant control'));
+        const ownerList = (owners, depth) => {
+          const ul = el('ul');
+          owners.forEach((o) => {
+            const li = el('li');
+            li.append(document.createTextNode(o.name));
+            if (o.number) { li.append(document.createTextNode(' ')); li.append(extLink(o.number, 'https://find-and-update.company-information.service.gov.uk/company/' + o.number)); }
+            if (o.control && o.control.length) li.append(document.createTextNode(` (${o.control.slice(0, 2).join('; ')})`));
+            if (o.since) li.append(document.createTextNode(`, since ${fmtDay(o.since)}`));
+            if ((o.owners || []).length && depth < 4) { li.append(el('div', 'ext', `which is owned by:`)); li.append(ownerList(o.owners, depth + 1)); }
+            ul.append(li);
+          });
+          return ul;
+        };
+        box.append(ownerList(c.owners, 0));
+      }
       if ((c.officers || []).length) { box.append(el('h3', null, 'Current directors and officers')); const ul = el('ul'); c.officers.slice(0, 12).forEach((o) => ul.append(el('li', null, `${o.name}, ${(o.role || '').replace(/-/g, ' ')}${o.since ? ` since ${fmtDay(o.since)}` : ''}`))); box.append(ul); }
       b.append(box);
     });

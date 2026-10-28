@@ -100,6 +100,33 @@ def clean_number(n):
     return n if re.match(r"^[A-Z0-9]{8}$", n) else ""
 
 
+def owner_list(psc, key, depth, _seen=None):
+    """Current people with significant control. Where an owner is itself a UK company,
+    look up who owns that company too, up to three layers, so the ultimate owner shows."""
+    _seen = _seen or set()
+    out = []
+    for p in (psc or {}).get("items", []):
+        if p.get("ceased_on"):
+            continue
+        kind = p.get("kind", "")
+        o = {"name": p.get("name"), "kind": kind.replace("-person-with-significant-control", "").replace("-", " "),
+             "control": [c.replace("-", " ") for c in p.get("natures_of_control", [])], "since": p.get("notified_on")}
+        ident = p.get("identification") or {}
+        num = clean_number(ident.get("registration_number"))
+        place = (ident.get("place_registered") or ident.get("country_registered") or "").lower()
+        if "corporate" in kind and num and (not place or any(x in place for x in ("companies house", "england", "wales", "united kingdom", "scotland", "uk"))):
+            o["number"] = num
+            if depth < 3 and num not in _seen:
+                _seen.add(num)
+                try:
+                    sub = ch_get(f"/company/{num}/persons-with-significant-control?items_per_page=25", key)
+                    o["owners"] = owner_list(sub, key, depth + 1, _seen)
+                except urllib.error.HTTPError:
+                    pass
+        out.append(o)
+    return out[:12]
+
+
 def companies(entries, key):
     cache = load("companies.json")
     by_payer = load("ch_names.json")  # payer name -> company number found by exact-name search
@@ -148,7 +175,9 @@ def _companies(entries, key, cache, by_payer):
     for payer, raw in want.items():
         if payer in by_payer and (fresh(by_payer[payer]) or by_payer[payer].get("pinned")):
             continue
-        check_budget(CH_MINUTES, "Companies House")
+        if time.time() - START > NAME_MINUTES * 60:
+            print("Companies House: name searches paused for this run", flush=True)
+            break
         res = ch_get("/search/companies?items_per_page=5&q=" + urllib.parse.quote(raw), key) or {}
         hit = next((i for i in res.get("items", []) if norm(i.get("title")) == norm(raw)), None)
         by_payer[payer] = {"number": hit["company_number"] if hit else "", "_fetched": str(TODAY)}
@@ -156,8 +185,10 @@ def _companies(entries, key, cache, by_payer):
     for payer, rec in by_payer.items():
         if rec.get("number"):
             numbers.setdefault(rec["number"], set()).add(payer)
-    for n, payers in numbers.items():
-        if n in cache and fresh(cache[n]):
+    pinned_nums = set(pinned.values())
+    for n, payers in sorted(numbers.items(), key=lambda kv: kv[0] not in pinned_nums):
+        needs_chain = not cache.get(n, {}).get("_chain") and (n in pinned_nums or any("corporate" in (o.get("kind") or "") for o in cache.get(n, {}).get("owners", [])))
+        if n in cache and fresh(cache[n]) and not needs_chain:
             cache[n]["payers"] = sorted(payers)
             continue
         check_budget(CH_MINUTES, "Companies House")
@@ -182,10 +213,8 @@ def _companies(entries, key, cache, by_payer):
             "address": ", ".join(x for x in [addr.get("address_line_1"), addr.get("address_line_2"), addr.get("locality"), addr.get("postal_code"), addr.get("country")] if x),
             "officers": [{"name": o.get("name"), "role": o.get("officer_role"), "since": o.get("appointed_on")}
                          for o in offs.get("items", []) if not o.get("resigned_on")][:20],
-            "owners": [{"name": p.get("name"), "kind": p.get("kind", "").replace("-person-with-significant-control", "").replace("-", " "),
-                        "control": [c.replace("-", " ") for c in p.get("natures_of_control", [])], "since": p.get("notified_on")}
-                       for p in psc.get("items", []) if not p.get("ceased_on")][:12],
-            "_fetched": str(TODAY),
+            "owners": owner_list(psc, key, 0),
+            "_fetched": str(TODAY), "_chain": True,
         }
         done += 1
         if done % 50 == 0:
@@ -264,6 +293,7 @@ def r_sector_ok(payer, entries, _memo={}):
 
 
 CH_MINUTES = 25   # stop Companies House lookups after this long; carry on next run
+NAME_MINUTES = 10 # of which, at most this long on name searches
 WD_MINUTES = 35   # overall clock (Companies House runs first)
 
 
