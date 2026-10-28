@@ -14,7 +14,17 @@ from datetime import datetime, timedelta, timezone
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ENR = os.path.join(ROOT, "data", "enrich")
 ENTRIES = os.path.join(ROOT, "site", "data", "entries.json")
-UA = {"User-Agent": "mps-register-tracker/1.0 (GitHub Actions; public-interest research)"}
+UA = {"User-Agent": "mps-register-tracker/1.0 (https://github.com/journostorymaker-alt/mps-register-tracker; public-interest research)"}
+START = time.time()
+
+
+class Budget(Exception):
+    pass
+
+
+def check_budget(limit_min, label):
+    if time.time() - START > limit_min * 60:
+        raise Budget(f"{label}: time budget used, the rest will be done on the next run")
 TODAY = datetime.now(timezone.utc).date()
 STALE = timedelta(days=60)
 
@@ -45,24 +55,27 @@ def norm(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
-def get_json(url, headers=None, tries=3):
+def get_json(url, headers=None, tries=2):
+    """Fetch JSON. Returns None for 404. Raises on refusal (401/403) or repeated failure so callers stop early."""
     for i in range(tries):
         try:
             req = urllib.request.Request(url, headers={**UA, **(headers or {})})
-            with urllib.request.urlopen(req, timeout=60) as r:
+            with urllib.request.urlopen(req, timeout=30) as r:
                 return json.loads(r.read())
         except urllib.error.HTTPError as e:
             if e.code == 404:
                 return None
-            if e.code == 429:
-                time.sleep(60)
+            if e.code in (401, 403):
+                raise
+            if e.code == 429 and i < tries - 1:
+                time.sleep(20)
                 continue
             if i == tries - 1:
                 raise
         except Exception:
             if i == tries - 1:
                 raise
-        time.sleep(3 * (i + 1))
+        time.sleep(2)
     return None
 
 
@@ -90,6 +103,15 @@ def clean_number(n):
 def companies(entries, key):
     cache = load("companies.json")
     by_payer = load("ch_names.json")  # payer name -> company number found by exact-name search
+    try:
+        _companies(entries, key, cache, by_payer)
+    finally:
+        save("companies.json", cache)
+        save("ch_names.json", by_payer)
+        print(f"Companies House: {sum(1 for c in cache.values() if c.get('found'))} companies held, {len(by_payer)} names searched", flush=True)
+
+
+def _companies(entries, key, cache, by_payer):
     numbers = {}
     for r in entries:
         n = clean_number(r.get("co"))
@@ -106,6 +128,7 @@ def companies(entries, key):
     for payer, raw in want.items():
         if payer in by_payer and fresh(by_payer[payer]):
             continue
+        check_budget(CH_MINUTES, "Companies House")
         res = ch_get("/search/companies?items_per_page=5&q=" + urllib.parse.quote(raw), key) or {}
         hit = next((i for i in res.get("items", []) if norm(i.get("title")) == norm(raw)), None)
         by_payer[payer] = {"number": hit["company_number"] if hit else "", "_fetched": str(TODAY)}
@@ -117,12 +140,19 @@ def companies(entries, key):
         if n in cache and fresh(cache[n]):
             cache[n]["payers"] = sorted(payers)
             continue
+        check_budget(CH_MINUTES, "Companies House")
         prof = ch_get(f"/company/{n}", key)
         if not prof:
             cache[n] = {"number": n, "found": False, "payers": sorted(payers), "_fetched": str(TODAY)}
             continue
-        offs = ch_get(f"/company/{n}/officers?items_per_page=35", key) or {}
-        psc = ch_get(f"/company/{n}/persons-with-significant-control?items_per_page=25", key) or {}
+        try:
+            offs = ch_get(f"/company/{n}/officers?items_per_page=35", key) or {}
+        except urllib.error.HTTPError:
+            offs = {}
+        try:
+            psc = ch_get(f"/company/{n}/persons-with-significant-control?items_per_page=25", key) or {}
+        except urllib.error.HTTPError:
+            psc = {}
         addr = prof.get("registered_office_address") or {}
         cache[n] = {
             "number": n, "found": True, "payers": sorted(payers),
@@ -140,10 +170,8 @@ def companies(entries, key):
         done += 1
         if done % 50 == 0:
             save("companies.json", cache); save("ch_names.json", by_payer)
-            print(f"  {done} looked up")
-    save("companies.json", cache)
-    save("ch_names.json", by_payer)
-    print(f"Companies House: {sum(1 for c in cache.values() if c.get('found'))} companies held")
+            print(f"  {done} looked up", flush=True)
+    return
 
 
 # ---------------- Wikidata ----------------
@@ -160,7 +188,16 @@ def wikidata(entries):
     names = [p for p, t in totals.items() if t >= 5000 and not any("individual" in k for k in kinds[p]) and r_sector_ok(p, entries)]
     print(f"Wikidata: {len(names)} organisations to check")
     todo = [n for n in names if not (n in cache and fresh(cache[n]))]
+    try:
+        _wd_lookup(todo, cache)
+    finally:
+        save("wikidata.json", cache)
+        print(f"Wikidata: {sum(1 for v in cache.values() if v.get('id'))} matches held of {len(cache)} checked", flush=True)
+
+
+def _wd_lookup(todo, cache):
     for n in todo:
+        check_budget(WD_MINUTES, "Wikidata")
         res = get_json(WD + urllib.parse.urlencode({"action": "wbsearchentities", "format": "json", "language": "en", "type": "item", "limit": 5, "search": n})) or {}
         hit = next((s for s in res.get("search", []) if norm(s.get("label")) == norm(n) or norm(s.get("match", {}).get("text", "")) == norm(n)), None)
         cache[n] = {"id": hit["id"] if hit else "", "_fetched": str(TODAY)}
@@ -182,8 +219,6 @@ def wikidata(entries):
                              description=((ent.get("descriptions") or {}).get("en") or {}).get("value", ""),
                              website=site or "", wikipedia=("https://en.wikipedia.org/wiki/" + urllib.parse.quote(wiki.replace(" ", "_"))) if wiki else "")
         time.sleep(0.5)
-    save("wikidata.json", cache)
-    print(f"Wikidata: {sum(1 for v in cache.values() if v.get('id'))} matches held")
 
 
 def r_sector_ok(payer, entries, _memo={}):
@@ -193,22 +228,26 @@ def r_sector_ok(payer, entries, _memo={}):
     return _memo.get(payer) != "Private individuals"
 
 
+CH_MINUTES = 25   # stop Companies House lookups after this long; carry on next run
+WD_MINUTES = 35   # overall clock (Companies House runs first)
+
+
 def main():
     if not os.path.exists(ENTRIES):
         raise SystemExit("Run scripts/build.py first: enrich reads site/data/entries.json")
     entries = json.load(open(ENTRIES))
-    try:
-        wikidata(entries)
-    except Exception as e:
-        print(f"WARNING: Wikidata step failed: {e}", file=sys.stderr)
     key = os.environ.get("CH_API_KEY", "").strip()
     if key:
         try:
             companies(entries, key)
         except Exception as e:
-            print(f"WARNING: Companies House step failed: {e}", file=sys.stderr)
+            print(f"Companies House stopped: {e}", flush=True)
     else:
-        print("Companies House: no CH_API_KEY set, skipping")
+        print("Companies House: no CH_API_KEY set, skipping", flush=True)
+    try:
+        wikidata(entries)
+    except Exception as e:
+        print(f"Wikidata stopped: {e}", flush=True)
 
 
 if __name__ == "__main__":

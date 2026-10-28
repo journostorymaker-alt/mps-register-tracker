@@ -44,7 +44,9 @@ jobs:
       - name: Find out more about funders (Wikidata, and Companies House if a key is set)
         env:
           CH_API_KEY: ${{ secrets.CH_API_KEY }}
-        run: python scripts/enrich.py
+        timeout-minutes: 45
+        continue-on-error: true
+        run: python -u scripts/enrich.py
 
       - name: Rebuild with funder details
         run: python scripts/build.py
