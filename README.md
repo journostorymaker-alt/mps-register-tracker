@@ -1,7 +1,9 @@
-# MPs' Register Tracker
+# Who's Paying Your MP?
 
 Who pays MPs, and who gives them gifts. Built from the House of Commons Register of Members' Financial Interests.
 
+- **Find your MP** by name, constituency or postcode.
+- **Parties**: who takes most, per MP and in total, where each party's money comes from, and payers who fund more than one party.
 - **Running totals** since the July 2024 election, by type, sector, payer and MP.
 - **What changed** between the two latest registers.
 - **Search** every payment, donation, gift and paid trip.

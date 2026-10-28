@@ -68,8 +68,23 @@ def mp_name(s):
     return re.sub(r"^(.*?), (.*)$", r"\2 \1", s)
 
 
+def load_members():
+    path = os.path.join(ROOT, "data", "members.json")
+    return json.load(open(path)) if os.path.exists(path) else {}
+
+
+def party_of(m):
+    p = (m or {}).get("party") or "Unknown"
+    return "Labour" if p.startswith("Labour") else p
+
+
+def colour_of(m):
+    c = (m or {}).get("colour") or ""
+    return "#" + c if c else "#7A8796"
+
+
 def pkey(s):
-    s = re.sub(r"\(via .*?\)", "", str(s)).lower()
+    s = re.sub(r"\(via .*$", "", str(s)).lower()
     s = re.sub(r"\(.*?\)", "", s)
     s = re.sub(r"[^a-z0-9 &]", " ", s)
     s = re.sub(r"\b(ltd|limited|plc|llp|llc|inc|the|uk)\b", " ", s)
@@ -101,7 +116,7 @@ def money_rows(cats):
             if r.get(V + "IsUltimatePayerDifferent") == "True" and r.get(V + "UltimatePayerName"):
                 nature = r.get(V + "UltimatePayerNatureOfBusiness") or nature
                 payer = f"{r[V + 'UltimatePayerName']} (via {payer})" if payer else r[V + "UltimatePayerName"]
-            out.append(dict(id=r["Id"], cat=c, mp=r["Member"], payer=payer, ptype=nature,
+            out.append(dict(id=r["Id"], cat=c, mp=r["Member"], mnis=r["Mnis Id"], payer=payer, ptype=nature,
                             value=num(r[V + "Value"]), freq=(r.get(V + "RegularityOfPayment") or "").lower(),
                             start=day(r.get(V + "StartDate")), end=day(r.get(V + "EndDate")),
                             received=day(r.get(V + "ReceivedDate")), registered=day(r[V + "Registered"]),
@@ -111,7 +126,7 @@ def money_rows(cats):
     for c in ("2", "3", "5"):
         for _, r in cats.get(c, pd.DataFrame()).iterrows():
             pt = r[V + "DonorStatus"] + (" / " + r[V + "DonorOtherDetails"] if r.get(V + "DonorOtherDetails") else "")
-            out.append(dict(id=r["Id"], cat=c, mp=r["Member"], payer=r[V + "DonorName"], ptype=pt,
+            out.append(dict(id=r["Id"], cat=c, mp=r["Member"], mnis=r["Mnis Id"], payer=r[V + "DonorName"], ptype=pt,
                             value=num(r[V + "Value"]), freq="", start=None, end=None,
                             received=day(r[V + "ReceivedDate"]), registered=day(r[V + "Registered"]),
                             detail=r[V + "PaymentDescription"], charity=False, link=r["Link"]))
@@ -121,7 +136,7 @@ def money_rows(cats):
             n = r.get(V + f"Name (.{i}.0)", "")
             if not n:
                 continue
-            out.append(dict(id=r["Id"] + (f"-{i}" if i else ""), cat="4", mp=r["Member"], payer=n,
+            out.append(dict(id=r["Id"] + (f"-{i}" if i else ""), cat="4", mp=r["Member"], mnis=r["Mnis Id"], payer=n,
                             ptype="Individual" if r.get(V + f"IsPrivateIndividual (.{i}.1)") == "True" else "",
                             value=num(r.get(V + f"Value (.{i}.5)", "")), freq="", start=None, end=None,
                             received=day(r[V + "StartDate"]), registered=day(r[V + "Registered"]),
@@ -236,10 +251,15 @@ def main():
         r["sector"] = sector(k, r["payer"], r["ptype"], r["cat"])
         rows.append(r)
     df = pd.DataFrame(rows)
-    names = df.groupby("pkey")["payer"].agg(lambda x: re.sub(r"\s*\(via .*?\)", "", x.value_counts().index[0]))
+    names = df.groupby("pkey")["payer"].agg(lambda x: re.sub(r"\s*\(via .*$", "", x.value_counts().index[0]))
     names.update(pd.Series({"lord david sainsbury": "Lord (David) Sainsbury of Turville", "francesca perrin": "Francesca (Fran) Perrin"}))
     df["payer_group"] = df.pkey.map(names)
-    df["mp_name"] = df.mp.map(mp_name)
+    mem = load_members()
+    df["mp_name"] = [mem.get(i, {}).get("name") or mp_name(m) for i, m in zip(df.mnis, df.mp)]
+    df["party"] = df.mnis.map(lambda i: party_of(mem.get(i)))
+    df["seat"] = df.mnis.map(lambda i: (mem.get(i) or {}).get("seat", ""))
+    colours = {party_of(v): colour_of(v) for v in mem.values()}
+    colours["Labour"] = "#d50000"
     df["kind"] = df.cat.map(KIND)
     since = df[df.since > 0]
     first_decl = df[(df.cat != "1.2") & df.received.isna() & df.registered.notna()]
@@ -255,9 +275,9 @@ def main():
     mon = {}
     for _, r in since.iterrows():
         for m, v in r.months.items():
-            key = (m, r.kind, r.sector)
+            key = (m, r.kind, r.sector, r.party)
             mon[key] = mon.get(key, 0) + v
-    dump("monthly.json", [{"month": m, "type": k, "sector": s, "amount": round(v, 2)} for (m, k, s), v in sorted(mon.items())])
+    dump("monthly.json", [{"month": m, "type": k, "sector": s, "party": p, "amount": round(v, 2)} for (m, k, s, p), v in sorted(mon.items())])
 
     def top(x, n=6):
         vc = x.value_counts()
@@ -265,21 +285,66 @@ def main():
 
     pay = since.groupby("payer_group").agg(sector=("sector", lambda x: x.value_counts().index[0]), total=("since", "sum"),
                                            entries=("id", "size"), mps=("mp", "nunique"), mp_list=("mp_name", top),
-                                           types=("kind", lambda x: ", ".join(sorted(set(x))))).reset_index()
+                                           types=("kind", lambda x: ", ".join(sorted(set(x)))),
+                                           parties=("party", lambda x: ", ".join(x.value_counts().index)),
+                                           nparties=("party", "nunique")).reset_index()
     pay = pay.rename(columns={"payer_group": "payer"}).sort_values("total", ascending=False)
     pay["total"] = pay.total.round(2)
     dump("payers.json", pay.to_dict("records"))
 
-    mps = since.groupby("mp_name").agg(total=("since", "sum"), entries=("id", "size"), payers=("payer_group", "nunique"),
-                                       top_payers=("payer_group", top)).reset_index().rename(columns={"mp_name": "mp"})
-    mps = mps.sort_values("total", ascending=False)
-    mps["total"] = mps.total.round(2)
-    dump("mps.json", mps.to_dict("records"))
+    fd_by = first_decl.groupby("mnis").value.sum()
+    mp_out = {}
+    for mid, g in since.groupby("mnis"):
+        tp = g.groupby("payer_group").since.sum().sort_values(ascending=False)
+        bt = g.groupby("kind").since.sum()
+        mp_out[mid] = dict(id=mid, mp=g.mp_name.iloc[0], party=g.party.iloc[0], seat=g.seat.iloc[0],
+                           total=round(float(g.since.sum()), 2), entries=int(len(g)), payers=int(g.payer_group.nunique()),
+                           top_payers=", ".join(tp.index[:6]) + (" and others" if len(tp) > 6 else ""),
+                           top=[[p, round(float(v), 2)] for p, v in tp.head(6).items()],
+                           types={k: round(float(v), 2) for k, v in bt.items()})
+    for mid, m in mem.items():  # sitting MPs with nothing declared still need to be findable
+        if m.get("house") == 1 and not m.get("end") and mid not in mp_out:
+            mp_out[mid] = dict(id=mid, mp=m.get("name"), party=party_of(m), seat=m.get("seat", ""), total=0, entries=0,
+                               payers=0, top_payers="", top=[], types={})
+    for mid, r in mp_out.items():
+        m = mem.get(mid) or {}
+        r["sitting"] = m.get("house") == 1 and not m.get("end")
+        r["first_decl"] = round(float(fd_by.get(mid, 0)), 2)
+    mps = sorted(mp_out.values(), key=lambda r: -r["total"])
+    dump("mps.json", mps)
+
+    # parties
+    sitting = pd.Series({k: party_of(v) for k, v in mem.items() if v.get("house") == 1 and not v.get("end")})
+    seats = sitting.value_counts()
+    parties = []
+    for p, g in since.groupby("party"):
+        tp = g.groupby("payer_group").agg(t=("since", "sum"), n=("mnis", "nunique")).sort_values("t", ascending=False)
+        rec_sitting = g[g.mnis.isin(sitting.index)].mnis.nunique()
+        parties.append(dict(party=p, colour=colours.get(p, "#7A8796"), total=round(float(g.since.sum()), 2),
+                            mps_paid=int(g.mnis.nunique()), seats=int(seats.get(p, 0)), sitting_paid=int(rec_sitting),
+                            per_seat=round(float(g[g.mnis.isin(sitting.index)].since.sum()) / max(1, int(seats.get(p, 0))), 2),
+                            types={k: round(float(v), 2) for k, v in g.groupby("kind").since.sum().items()},
+                            sectors={k: round(float(v), 2) for k, v in g.groupby("sector").since.sum().sort_values(ascending=False).items()},
+                            top=[[a, round(float(b.t), 2), int(b.n)] for a, b in tp.head(8).iterrows()],
+                            top_mps=[[a, round(float(b), 2)] for a, b in g.groupby("mp_name").since.sum().sort_values(ascending=False).head(5).items()]))
+    parties.sort(key=lambda r: -r["total"])
+    dump("parties.json", parties)
+
+    # payers who put money into more than one party
+    cp = since.groupby(["payer_group", "party"]).agg(t=("since", "sum"), n=("mnis", "nunique")).reset_index()
+    multi = cp.groupby("payer_group").filter(lambda x: x.party.nunique() > 1)
+    cross = []
+    for pg, g in multi.groupby("payer_group"):
+        g = g.sort_values("t", ascending=False)
+        cross.append(dict(payer=pg, total=round(float(g.t.sum()), 2), nparties=int(len(g)), mps=int(g.n.sum()),
+                          split=[[r.party, round(float(r.t), 2), int(r.n)] for r in g.itertuples()]))
+    cross.sort(key=lambda r: -r["total"])
+    dump("crossparty.json", cross[:150])
 
     pool_ent = pd.concat([since, first_decl]).drop_duplicates("id")
     ent = pool_ent.assign(live=pool_ent.id.isin(live), detail=pool_ent.detail.map(short), first=pool_ent.id.isin(first_decl.id))
     ent = ent.sort_values("since", ascending=False)
-    dump("entries.json", [dict(id=r.id, mp=r.mp_name, type=r.kind, payer=r.payer_group, sector=r.sector,
+    dump("entries.json", [dict(id=r.id, mnis=r.mnis, mp=r.mp_name, party=r.party, type=r.kind, payer=r.payer_group, sector=r.sector,
                                value=r.value, since=r.since, freq=r.freq, date=str(r.received or r.start or ""),
                                registered=str(r.registered or ""), live=bool(r.live), charity=bool(r.charity), first=bool(r.first),
                                detail=r.detail, link=r.link) for r in ent.itertuples()])
@@ -294,7 +359,7 @@ def main():
         for kind_, r in rows_c:
             if kind_ == "new_money":
                 x = by_id.loc[r["id"]]
-                ch["new"].append(dict(id=r["id"], mp=x.mp_name, type=x.kind, payer=x.payer_group, sector=x.sector,
+                ch["new"].append(dict(id=r["id"], mp=x.mp_name, party=x.party, type=x.kind, payer=x.payer_group, sector=x.sector,
                                       value=r["value"], date=str(r["received"] or r["start"] or ""), detail=short(r["detail"]), link=r["link"]))
             else:
                 ch["other"].append(r)
@@ -308,7 +373,7 @@ def main():
         "has_history": has_history, "since": str(ELECTION),
         "total_since": round(float(since.since.sum()), 2), "entries_since": int(len(since)),
         "mps_since": int(since.mp.nunique()), "payers_since": int(since.payer_group.nunique()),
-        "live_entries": len(live),
+        "live_entries": len(live), "colours": colours,
         "first_decl_total": round(float(first_decl.value.sum()), 2), "first_decl_entries": int(len(first_decl)),
     })
     print(f"Built from {len(eds)} registers (history: {has_history}). {len(since)} entries since {ELECTION}, "

@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MPs' Register Tracker</title>
+<title>Who's Paying Your MP?</title>
+<meta name="description" content="Search any MP by name, constituency or postcode to see who has paid them, given them gifts or funded them since the July 2024 election.">
 <meta name="robots" content="noindex, nofollow">
 <style>
 :root {
-  --navy: #131820; --green: #97C221; --green-dk: #6E9418;
+  --navy: #131820; --navy-2: #1d2430; --green: #97C221; --green-dk: #6E9418;
   --bg: #f4f6f8; --panel: #ffffff; --fg: #131820; --muted: #5b6573; --line: #dde2e8; --row: #f8fafb;
   --radius: 12px;
 }
@@ -17,28 +18,61 @@
 :root[data-theme="dark"] { --bg: #0d1117; --panel: #161c25; --fg: #e8ecf1; --muted: #9aa5b4; --line: #2a3340; --row: #1a212b; --green-dk: #97C221; }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--fg); font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 1.45; }
-header { background: var(--navy); color: #fff; padding: 28px 0 22px; }
 .wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+header { background: var(--navy); color: #fff; padding: 34px 0 30px; }
+.eyebrow { color: var(--green); text-transform: uppercase; letter-spacing: .1em; font-size: 12px; font-weight: 700; margin: 0 0 8px; }
+h1 { font-family: "Arial Black", Arial, sans-serif; font-weight: 900; font-size: clamp(30px, 6vw, 56px); margin: 0 0 10px; line-height: 1.02; }
+h1 em { font-style: normal; color: var(--green); }
+.lede { color: #c9d1db; max-width: 44rem; margin: 0 0 20px; font-size: 17px; }
+.finder { position: relative; max-width: 44rem; }
+.finder-row { display: flex; gap: 8px; }
+.finder input { flex: 1; min-width: 0; font: inherit; font-size: 18px; padding: 14px 16px; border-radius: 10px; border: 2px solid transparent; background: #fff; color: #131820; }
+.finder input:focus { outline: none; border-color: var(--green); }
+.finder button { font: inherit; font-weight: 700; font-size: 16px; padding: 0 20px; border: 0; border-radius: 10px; background: var(--green); color: var(--navy); cursor: pointer; }
+.finder button:hover { background: #b2dc3a; }
+.hint { color: #9aa5b4; font-size: 13px; margin: 8px 0 0; }
+.hint button { background: none; border: 0; padding: 0; color: #c9d1db; text-decoration: underline; cursor: pointer; font: inherit; }
+.suggest { position: absolute; left: 0; right: 0; top: 56px; background: #fff; color: #131820; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,.3); z-index: 20; max-height: 340px; overflow: auto; display: none; }
+.suggest div { padding: 10px 14px; cursor: pointer; border-bottom: 1px solid #eef1f4; display: flex; justify-content: space-between; gap: 10px; }
+.suggest div:last-child { border-bottom: 0; }
+.suggest div[aria-selected="true"], .suggest div:hover { background: #f0f6e1; }
+.suggest small { color: #5b6573; }
+.msg { color: #f0d98a; font-size: 14px; margin-top: 10px; min-height: 1em; }
 
-.eyebrow { color: var(--green); text-transform: uppercase; letter-spacing: .1em; font-size: 12px; font-weight: 700; margin: 0 0 6px; }
-h1 { font-family: "Arial Black", Arial, sans-serif; font-weight: 900; font-size: clamp(24px, 4vw, 36px); margin: 0 0 8px; line-height: 1.1; }
-.lede { color: #c9d1db; max-width: 60rem; margin: 0; }
-.banner { background: #fff6dc; color: #5c4600; border: 1px solid #f0d98a; border-radius: var(--radius); padding: 10px 14px; margin: 18px 0 0; font-size: 14px; }
-.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: 12px; margin: 20px 0; }
+.mpcard { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); margin: 22px 0 0; overflow: hidden; display: none; }
+.mpcard .top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; padding: 20px; border-top: 6px solid var(--partycol, var(--green)); }
+.mpcard h2 { font-family: "Arial Black", Arial, sans-serif; font-size: 26px; margin: 0 0 4px; }
+.chip { display: inline-block; padding: 2px 10px; border-radius: 99px; font-size: 13px; font-weight: 700; color: #fff; background: var(--partycol, #7A8796); margin-right: 8px; }
+.mpcard .seat { color: var(--muted); }
+.mpcard .big { font-family: "Arial Black", Arial, sans-serif; font-size: 34px; text-align: right; line-height: 1; }
+.mpcard .rank { color: var(--muted); font-size: 13px; text-align: right; margin-top: 6px; }
+.mpcard .body { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 18px; padding: 0 20px 20px; }
+.mpcard h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 8px; }
+.payrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.payrow .bar { grid-column: 1 / -1; height: 5px; border-radius: 3px; background: var(--green); }
+.mpcard .actions { padding: 0 20px 20px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.mpcard .none { padding: 0 20px 20px; color: var(--muted); }
+.close { background: none; border: 0; color: var(--muted); cursor: pointer; font: inherit; text-decoration: underline; }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 12px; margin: 22px 0; }
 .tile, .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; min-width: 0; }
 .tile .lab { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
 .tile .lab::before { content: ""; display: inline-block; width: 14px; height: 3px; background: var(--green); vertical-align: middle; margin-right: 6px; }
 .tile .big { font-family: "Arial Black", Arial, sans-serif; font-size: 28px; margin-top: 6px; font-variant-numeric: tabular-nums; }
 .tile .sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
-nav.tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
-nav.tabs button { background: none; border: 0; border-bottom: 3px solid transparent; padding: 10px 14px; font: inherit; color: var(--muted); cursor: pointer; }
+nav.tabs { display: flex; flex-wrap: wrap; gap: 2px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+nav.tabs button { background: none; border: 0; border-bottom: 3px solid transparent; padding: 10px 13px; font: inherit; color: var(--muted); cursor: pointer; }
 nav.tabs button[aria-selected="true"] { color: var(--fg); border-bottom-color: var(--green); font-weight: 700; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 14px; margin-bottom: 14px; }
 .card h2 { font-size: 18px; margin: 0 0 4px; }
 .card .note { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
+.callout { font-family: "Arial Black", Arial, sans-serif; font-size: 20px; line-height: 1.25; margin: 0 0 6px; }
 .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; align-items: center; }
 select, input[type=search] { font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--fg); }
-input[type=search] { flex: 1 1 260px; }
+.controls input[type=search] { flex: 1 1 260px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { font: inherit; font-size: 13px; padding: 7px 12px; border: 0; background: var(--panel); color: var(--muted); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--navy); color: #fff; }
 button.btn { font: inherit; padding: 8px 12px; border-radius: 8px; border: 0; background: var(--navy); color: #fff; cursor: pointer; }
 button.btn:hover { background: var(--green); color: var(--navy); }
 .tbox { max-height: 560px; overflow: auto; border: 1px solid var(--line); border-radius: 8px; }
@@ -48,39 +82,64 @@ th button { background: none; border: 0; font: inherit; font-weight: 700; color:
 td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
 tr:nth-child(even) td { background: var(--row); }
 td.num, th.num { text-align: right; white-space: nowrap; }
-td.wide { min-width: 260px; color: var(--muted); }
+td.wide { min-width: 240px; color: var(--muted); }
+td .dot, .legend .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: baseline; }
+tr.clickable { cursor: pointer; }
 a { color: var(--green-dk); }
 .count { color: var(--muted); font-size: 12px; margin: 6px 0 0; }
 .chart { position: relative; }
-#c-run { min-height: 340px; }
-.tip { position: fixed; pointer-events: none; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,.18); padding: 6px 10px; font-size: 12px; max-width: 280px; display: none; z-index: 10; }
+#c-run, #c-party-run { min-height: 340px; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--muted); margin: 0 0 8px; }
+.tip { position: fixed; pointer-events: none; background: var(--panel); color: var(--fg); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,.18); padding: 6px 10px; font-size: 12px; max-width: 300px; display: none; z-index: 30; }
 .tip .t { color: var(--muted); }
+.pcards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px; }
+.pcard { border: 1px solid var(--line); border-radius: 10px; padding: 14px; border-top: 5px solid var(--pc); background: var(--panel); }
+.pcard h3 { margin: 0 0 2px; font-size: 16px; }
+.pcard .pn { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+.pcard ol { margin: 0 0 8px; padding-left: 18px; font-size: 13px; }
+.pcard li { margin-bottom: 3px; }
+.pcard h4 { margin: 8px 0 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
 .prose { max-width: 50rem; }
 .prose li { margin-bottom: 6px; }
 footer { color: var(--muted); font-size: 12px; padding: 24px 0 40px; }
-.pill { display: inline-block; font-size: 11px; padding: 1px 6px; border-radius: 99px; background: var(--row); border: 1px solid var(--line); color: var(--muted); }
 svg text { fill: var(--fg); }
+@media (max-width: 560px) {
+  .mpcard .top { grid-template-columns: 1fr; }
+  .mpcard .big, .mpcard .rank { text-align: left; }
+  .finder input { font-size: 16px; }
+}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <p class="eyebrow">House of Commons Register of Members' Financial Interests</p>
-    <h1>Who pays MPs, and who gives them gifts</h1>
-    <p class="lede" id="lede">Loading…</p>
+    <p class="eyebrow">Register of Members' Financial Interests</p>
+    <h1>Who's paying <em>your</em> MP?</h1>
+    <p class="lede">Every payment, donation, gift and paid trip declared by MPs since the July 2024 election. Search by name, constituency or postcode.</p>
+    <div class="finder" role="search">
+      <div class="finder-row">
+        <input id="q-mpfind" type="search" autocomplete="off" placeholder="e.g. SN16 9BY, Rishi Sunak or Tonbridge" aria-label="Search for an MP by name, constituency or postcode" aria-controls="suggest">
+        <button id="b-mpfind">Search</button>
+      </div>
+      <div class="suggest" id="suggest" role="listbox"></div>
+      <p class="hint">Try <button data-try="Nigel Farage">Nigel Farage</button>, <button data-try="Keir Starmer">Keir Starmer</button> or <button data-try="Ed Davey">Ed Davey</button>. Postcode lookups use postcodes.io.</p>
+      <div class="msg" id="msg"></div>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
-  <div class="banner" id="banner" hidden></div>
+  <section class="mpcard" id="mpcard" aria-live="polite"></section>
+
   <div class="tiles">
-    <div class="tile"><div class="lab">Since the election</div><div class="big" id="t-total">…</div><div class="sub" id="t-total-sub">estimated money and gifts to MPs since 4 July 2024</div></div>
-    <div class="tile"><div class="lab">Entries</div><div class="big" id="t-entries">…</div><div class="sub" id="t-entries-sub"></div></div>
+    <div class="tile"><div class="lab">Since the election</div><div class="big" id="t-total">…</div><div class="sub" id="t-total-sub"></div></div>
+    <div class="tile"><div class="lab">MPs paid</div><div class="big" id="t-mps">…</div><div class="sub" id="t-mps-sub"></div></div>
     <div class="tile"><div class="lab">Latest fortnight</div><div class="big" id="t-new">…</div><div class="sub" id="t-new-sub"></div></div>
     <div class="tile"><div class="lab">Latest register</div><div class="big" id="t-reg">…</div><div class="sub" id="t-reg-sub"></div></div>
   </div>
 
   <nav class="tabs" role="tablist">
+    <button data-tab="parties">Parties</button>
     <button data-tab="totals">Running totals</button>
     <button data-tab="fortnight">This fortnight</button>
     <button data-tab="payers">Payers</button>
@@ -89,15 +148,53 @@ svg text { fill: var(--fg); }
     <button data-tab="method">How this works</button>
   </nav>
 
-  <section data-page="totals">
+  <section data-page="parties" id="parties">
+    <div class="grid">
+      <div class="card" id="party-league">
+        <h2>Which party's MPs take the most?</h2>
+        <p class="callout" id="party-callout"></p>
+        <div class="controls"><span class="seg" role="group" aria-label="Measure">
+          <button data-pm="per_seat" aria-pressed="true">Per MP</button><button data-pm="total" aria-pressed="false">Total</button><button data-pm="share" aria-pressed="false">% of MPs paid</button></span></div>
+        <p class="note" id="party-note"></p>
+        <div class="chart" id="c-party"></div>
+      </div>
+      <div class="card" id="party-fingerprint">
+        <h2>Second jobs or donations?</h2>
+        <p class="note">How each party's money breaks down. Each bar adds to 100%.</p>
+        <div class="controls"><span class="seg" role="group" aria-label="Break down by">
+          <button data-fp="types" aria-pressed="true">By type</button><button data-fp="sectors" aria-pressed="false">By sector</button></span></div>
+        <div class="legend" id="fp-legend"></div>
+        <div class="chart" id="c-fp"></div>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:14px" id="party-run-card">
+      <h2>Running total by party since the election</h2>
+      <p class="note">Estimated money and gifts to each party's MPs, month by month.</p>
+      <div class="chart" id="c-party-run"></div>
+    </div>
+    <div class="card" style="margin-bottom:14px" id="party-cards-card">
+      <h2>Who funds each party's MPs</h2>
+      <p class="note">Top payers and the MPs who took the most. Click an MP to open their card.</p>
+      <div class="pcards" id="pcards"></div>
+    </div>
+    <div class="card" id="cross-card">
+      <h2>Backing more than one horse</h2>
+      <p class="note">Payers whose money reached MPs in more than one party. The bar shows the split.</p>
+      <div class="controls"><input type="search" id="q-cross" placeholder="Search payer"><button class="btn" data-csv="tb-cross">Download CSV</button></div>
+      <div class="tbox"><table id="tb-cross"></table></div><p class="count" id="n-cross"></p>
+    </div>
+  </section>
+
+  <section data-page="totals" hidden>
     <div class="card" style="margin-bottom:14px">
       <h2>Running total since the July 2024 election</h2>
-      <p class="note">Money and gifts added up month by month. Pick a type or a sector to see that line on its own.</p>
+      <p class="note">Money and gifts added up month by month. Pick a type, sector or party to see that line on its own.</p>
       <div class="controls">
         <select id="f-type" aria-label="Type"><option value="">All types</option></select>
         <select id="f-sector" aria-label="Sector"><option value="">All sectors</option></select>
+        <select id="f-party" aria-label="Party"><option value="">All parties</option></select>
         <select id="f-split" aria-label="Lines">
-          <option value="">One line</option><option value="type">A line per type</option><option value="sector">A line per sector (top 6)</option>
+          <option value="">One line</option><option value="type">A line per type</option><option value="sector">A line per sector (top 6)</option><option value="party">A line per party (top 6)</option>
         </select>
       </div>
       <div class="chart" id="c-run"></div>
@@ -117,7 +214,7 @@ svg text { fill: var(--fg); }
     <div class="card">
       <h2>Every new money or gift entry</h2>
       <p class="note">Entries on the latest register that were not on the one before.</p>
-      <div class="controls"><input type="search" id="q-new" placeholder="Search MP, payer, sector or detail"><button class="btn" data-csv="tb-new">Download CSV</button></div>
+      <div class="controls"><input type="search" id="q-new" placeholder="Search MP, party, payer, sector or detail"><button class="btn" data-csv="tb-new">Download CSV</button></div>
       <div class="tbox"><table id="tb-new"></table></div><p class="count" id="n-new"></p>
     </div>
   </section>
@@ -126,7 +223,7 @@ svg text { fill: var(--fg); }
     <div class="card">
       <h2>Every payer since the election</h2>
       <p class="note">"MPs" counts how many different MPs a payer appears against. Regular payments are estimated month by month.</p>
-      <div class="controls"><input type="search" id="q-pay" placeholder="Search payer, sector or MP">
+      <div class="controls"><input type="search" id="q-pay" placeholder="Search payer, sector, party or MP">
         <select id="f-pay-sector" aria-label="Sector"><option value="">All sectors</option></select>
         <button class="btn" data-csv="tb-pay">Download CSV</button></div>
       <div class="tbox"><table id="tb-pay"></table></div><p class="count" id="n-pay"></p>
@@ -136,8 +233,11 @@ svg text { fill: var(--fg); }
   <section data-page="mps" hidden>
     <div class="card">
       <h2>Every MP since the election</h2>
-      <p class="note">Total of their entries since 4 July 2024, and who paid most.</p>
-      <div class="controls"><input type="search" id="q-mp" placeholder="Search MP or payer"><button class="btn" data-csv="tb-mp">Download CSV</button></div>
+      <p class="note">Total of their entries since 4 July 2024, and who paid most. Click a row to open the MP's card.</p>
+      <div class="controls"><input type="search" id="q-mp" placeholder="Search MP, constituency or payer">
+        <select id="f-mp-party" aria-label="Party"><option value="">All parties</option></select>
+        <select id="f-mp-sitting" aria-label="Sitting"><option value="1">Sitting MPs</option><option value="">Include former MPs</option></select>
+        <button class="btn" data-csv="tb-mp">Download CSV</button></div>
       <div class="tbox"><table id="tb-mp"></table></div><p class="count" id="n-mp"></p>
     </div>
   </section>
@@ -146,8 +246,9 @@ svg text { fill: var(--fg); }
     <div class="card">
       <h2>Every entry since the election</h2>
       <p class="note">"On register now" means it is still on the latest register. Older one-off items drop off after 12 months.</p>
-      <div class="controls"><input type="search" id="q-all" placeholder="Search anything: an MP, a company, a country, a word in the detail">
+      <div class="controls"><input type="search" id="q-all" placeholder="Search anything: an MP, a party, a company, a country, a word in the detail">
         <select id="f-all-type" aria-label="Type"><option value="">All types</option></select>
+        <select id="f-all-party" aria-label="Party"><option value="">All parties</option></select>
         <button class="btn" data-csv="tb-all">Download CSV</button></div>
       <div class="tbox"><table id="tb-all"></table></div><p class="count" id="n-all"></p>
     </div>
@@ -157,15 +258,17 @@ svg text { fill: var(--fg); }
     <div class="card prose">
       <h2>How this works</h2>
       <ul>
-        <li>Data comes from the official House of Commons register API (interests-api.parliament.uk). A scheduled job checks for a new register twice a week and rebuilds this page.</li>
-        <li><b>Why some entries are years old:</b> the register lists what is live, not what is new. One-off gifts, donations, trips and payments drop off 12 months after they are registered. Ongoing roles stay on for as long as they last, so a job started in 2015 can still be listed.</li>
+        <li>Data comes from the official House of Commons register API (interests-api.parliament.uk). Party and constituency come from the Parliament Members API. A scheduled job checks for a new register twice a week and rebuilds this page.</li>
+        <li><b>Party is each MP's current party.</b> MPs who have switched parties are counted under their new one. So money a defector took as a Conservative counts as Reform UK. Labour and Labour (Co-op) are counted together.</li>
+        <li><b>"Per MP"</b> divides the money taken by a party's sitting MPs by its number of sitting MPs in our data. Former MPs are left out of that measure.</li>
+        <li><b>Why some entries are years old:</b> the register lists what is live, not what is new. One-off gifts, donations, trips and payments drop off 12 months after they are registered. Ongoing roles stay on for as long as they last.</li>
         <li><b>Running totals:</b> because old items drop off, the job also downloads every past entry, expired ones included. Each entry is counted once.</li>
         <li><b>One-off items</b> are counted on the date received. If there's no date, the date registered is used.</li>
-        <li><b>New MPs' first declarations are kept out of the running total.</b> After the election, new MPs had to declare money from the year before. Many of those entries, mostly donations through local parties, have no date received. So they may pre-date polling day. They are shown as a separate figure instead. They are still in the Search tab.</li>
-        <li><b>Regular payments</b> (monthly, quarterly or yearly) are spread across the months the agreement ran since the election, up to its end date or the latest register. If an agreement has gone from the register and has no end date, it is taken to stop at the last register it appeared in. That stops payments to MPs who have left from running on. This is an estimate. Some MPs register a value that covers part of a year, or update an agreement with a new entry. Check big regular payments against the source.</li>
+        <li><b>Undated items declared just after the election are kept out of the running total.</b> New MPs had to declare money from the year before, and returning MPs declared their campaign funding. Many of those entries, mostly donations through local parties, have no date received. So they may pre-date polling day. They are shown as a separate figure and are still in the Search tab, marked "Just after election".</li>
+        <li><b>Regular payments</b> (monthly, quarterly or yearly) are spread across the months the agreement ran since the election, up to its end date or the latest register. If an agreement has gone from the register and has no end date, it is taken to stop at the last register it appeared in. This is an estimate. Check big regular payments against the source.</li>
         <li>Where an agency pays the MP for someone else, the true payer is shown.</li>
         <li>Payer names are tidied so spelling variants count as one. Two merges are judgement calls: the Sainsbury name variants, and Fran Perrin with Francesca Perrin.</li>
-        <li>Sectors are a rough keyword sort, set in scripts/sectors.py. Treat them as a guide.</li>
+        <li>Sectors are a rough keyword sort. Treat them as a guide.</li>
         <li>"To charity" means the MP says the money went to charity. It is still counted in totals.</li>
       </ul>
       <p id="m-built" class="count"></p>
@@ -181,43 +284,36 @@ svg text { fill: var(--fg); }
   const gbp = (v) => v == null || isNaN(v) ? '' : '£' + d3.format(',.0f')(v);
   const gbpC = (v) => Math.abs(v) >= 10000 ? '£' + Intl.NumberFormat('en-GB', {notation: 'compact', maximumFractionDigits: 1}).format(v) : gbp(v);
   const n0 = d3.format(',');
+  const pct = d3.format('.0%');
+  const ord = (n) => n + (['th', 'st', 'nd', 'rd'][(n % 100 - 20) % 10] || ['th', 'st', 'nd', 'rd'][n % 100] || 'th');
   const fmtDay = (s) => { if (!s) return ''; const d = new Date(s); return isNaN(d) ? s : d3.utcFormat('%-d %b %Y')(d); };
   const get = (f) => fetch('data/' + f).then((r) => r.json());
-  const [S, M, P, MP, CH] = await Promise.all(['summary.json', 'monthly.json', 'payers.json', 'mps.json', 'changes.json'].map(get));
+  const [S, M, P, MP, CH, PA, CX] = await Promise.all(['summary.json', 'monthly.json', 'payers.json', 'mps.json', 'changes.json', 'parties.json', 'crossparty.json'].map(get));
   let E = null; // entries load on demand
   const COLORS = ['#97C221', '#2F6FDE', '#E8743B', '#8E5BD6', '#19A3A3', '#D6457B', '#B0A11F', '#7A8796'];
+  const PCOL = Object.assign({}, S.colours || {});
+  PA.forEach((p) => (PCOL[p.party] = p.colour));
+  const pcol = (p) => PCOL[p] || '#7A8796';
+  const MPBY = new Map(MP.map((m) => [m.id, m]));
+  const sittingRanked = MP.filter((m) => m.sitting).sort((a, b) => b.total - a.total);
+  const rankOf = new Map(sittingRanked.map((m, i) => [m.id, i + 1]));
 
-  // header and tiles
-  document.getElementById('lede').textContent = `Every payment, donation, gift and paid trip declared by MPs since the July 2024 election, with what changed in the latest fortnight. Updated ${fmtDay(S.latest_register.date)}.`;
-  if (!S.has_history) {
-    const b = document.getElementById('banner'); b.hidden = false;
-    b.textContent = 'Full history is not loaded yet. Until it is, running totals only include items still on the registers held, so months before late 2025 are undercounted.';
-  }
+  // ---------- header figures ----------
   document.getElementById('t-total').textContent = gbpC(S.total_since);
-  if (S.first_decl_entries) document.getElementById('t-total-sub').textContent = `estimated since 4 July 2024. Not counted: ${gbpC(S.first_decl_total)} in ${n0(S.first_decl_entries)} undated items from new MPs' first declarations.`;
-  document.getElementById('t-entries').textContent = n0(S.entries_since);
-  document.getElementById('t-entries-sub').textContent = `${n0(S.mps_since)} MPs, ${n0(S.payers_since)} payers`;
+  document.getElementById('t-total-sub').textContent = S.first_decl_entries
+    ? `estimated since 4 July 2024. Not counted: ${gbpC(S.first_decl_total)} in undated items declared just after the election.`
+    : 'estimated money and gifts since 4 July 2024';
+  const sittingPaid = sittingRanked.filter((m) => m.total > 0).length;
+  document.getElementById('t-mps').textContent = `${sittingPaid} of ${sittingRanked.length}`;
+  document.getElementById('t-mps-sub').textContent = `sitting MPs have declared money or gifts since the election. ${n0(S.payers_since)} payers in all.`;
   document.getElementById('t-new').textContent = gbpC(d3.sum(CH.new, (r) => r.value || 0));
   document.getElementById('t-new-sub').textContent = CH.from ? `${CH.new.length} new entries, ${fmtDay(CH.from)} to ${fmtDay(CH.to)}` : 'Needs two registers to compare';
   document.getElementById('t-reg').textContent = fmtDay(S.latest_register.date);
-  document.getElementById('t-reg-sub').textContent = `Register no. ${S.latest_register.id}. ${S.registers_held.length} registers held.`;
+  document.getElementById('t-reg-sub').textContent = `Register no. ${S.latest_register.id}. Page built ${S.built}.`;
   document.getElementById('m-built').textContent = `Page built ${S.built}.`;
-  document.getElementById('foot').textContent = 'Source: House of Commons Register of Members\' Financial Interests. Estimates and sector labels are ours. Check every figure against the linked official entry before publishing.';
+  document.getElementById('foot').textContent = "Source: House of Commons Register of Members' Financial Interests and Parliament Members API. Estimates and sector labels are ours. Check every figure against the linked official entry before publishing.";
 
-  // tabs
-  const tabs = [...document.querySelectorAll('nav.tabs button')];
-  let current;
-  async function show(name) {
-    current = name;
-    tabs.forEach((b) => b.setAttribute('aria-selected', b.dataset.tab === name));
-    document.querySelectorAll('section[data-page]').forEach((s) => (s.hidden = s.dataset.page !== name));
-    history.replaceState(null, '', '#' + name);
-    if (name === 'search' && !E) { document.getElementById('n-all').textContent = 'Loading…'; E = await get('entries.json'); fillTypes(); }
-    draw();
-  }
-  tabs.forEach((b) => b.addEventListener('click', () => show(b.dataset.tab)));
-
-  // tooltip
+  // ---------- tooltip ----------
   const tip = document.getElementById('tip');
   function showTip(ev, title, lines) {
     tip.replaceChildren();
@@ -225,47 +321,160 @@ svg text { fill: var(--fg); }
     lines.forEach((l) => { const d = document.createElement('div'); d.textContent = l; tip.appendChild(d); });
     tip.style.display = 'block';
     const w = tip.offsetWidth, h = tip.offsetHeight;
-    tip.style.left = Math.min(ev.clientX + 12, innerWidth - w - 8) + 'px';
+    tip.style.left = Math.max(4, Math.min(ev.clientX + 12, innerWidth - w - 8)) + 'px';
     tip.style.top = Math.min(ev.clientY + 12, innerHeight - h - 8) + 'px';
   }
   const hideTip = () => (tip.style.display = 'none');
 
-  // filters for running totals
-  const types = [...new Set(M.map((r) => r.type))].sort();
-  const sectorsByTotal = d3.rollups(M, (v) => d3.sum(v, (r) => r.amount), (r) => r.sector).sort((a, b) => b[1] - a[1]).map((d) => d[0]);
-  const addOpts = (id, list) => { const s = document.getElementById(id); list.forEach((x) => s.add(new Option(x, x))); };
-  addOpts('f-type', types); addOpts('f-sector', sectorsByTotal); addOpts('f-pay-sector', sectorsByTotal);
-  function fillTypes() { const s = document.getElementById('f-all-type'); if (s.options.length < 2) addOpts('f-all-type', [...new Set(E.map((r) => r.type))].sort()); }
-  ['f-type', 'f-sector', 'f-split', 'f-pay-sector', 'f-all-type'].forEach((id) => document.getElementById(id).addEventListener('change', draw));
+  // ---------- MP finder ----------
+  const norm = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/^(sir|dame|dr|mr|mrs|ms|miss|lord|lady)\s+/, '').replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+  const index = MP.map((m) => ({m, n: norm(m.mp), s: norm(m.seat)}));
+  const qEl = document.getElementById('q-mpfind'), sug = document.getElementById('suggest'), msg = document.getElementById('msg');
+  const PC = /^[a-z]{1,2}[0-9][a-z0-9]?\s*[0-9][a-z]{2}$/i;
+  let sel = -1, list = [];
+  function matches(q) {
+    const n = norm(q); if (n.length < 2) return [];
+    const scored = [];
+    index.forEach((x) => {
+      let sc = 0;
+      if (x.n === n || x.s === n) sc = 100;
+      else if (x.n.startsWith(n) || x.n.split(' ').some((w) => w.startsWith(n))) sc = 60;
+      else if (x.s.startsWith(n)) sc = 50;
+      else if (x.n.includes(n)) sc = 30;
+      else if (x.s.includes(n)) sc = 25;
+      if (sc) scored.push([sc + (x.m.sitting ? 5 : 0) + Math.min(4, x.m.total / 1e6), x.m]);
+    });
+    return scored.sort((a, b) => b[0] - a[0]).slice(0, 8).map((d) => d[1]);
+  }
+  function renderSuggest() {
+    sug.replaceChildren();
+    list.forEach((m, i) => {
+      const d = document.createElement('div'); d.setAttribute('role', 'option'); d.setAttribute('aria-selected', i === sel);
+      const a = document.createElement('span'); a.textContent = m.mp;
+      const b = document.createElement('small'); b.textContent = `${m.party}${m.seat ? ', ' + m.seat : ''}${m.sitting ? '' : ' (former MP)'}`;
+      d.append(a, b); d.addEventListener('mousedown', (e) => { e.preventDefault(); openMP(m.id); });
+      sug.appendChild(d);
+    });
+    sug.style.display = list.length ? 'block' : 'none';
+  }
+  qEl.addEventListener('input', () => { msg.textContent = ''; sel = -1; list = PC.test(qEl.value.trim()) ? [] : matches(qEl.value); renderSuggest(); });
+  qEl.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') { sel = Math.min(list.length - 1, sel + 1); renderSuggest(); e.preventDefault(); }
+    else if (e.key === 'ArrowUp') { sel = Math.max(-1, sel - 1); renderSuggest(); e.preventDefault(); }
+    else if (e.key === 'Enter') { e.preventDefault(); if (sel >= 0 && list[sel]) openMP(list[sel].id); else find(); }
+    else if (e.key === 'Escape') { list = []; renderSuggest(); }
+  });
+  qEl.addEventListener('blur', () => setTimeout(() => { list = []; renderSuggest(); }, 150));
+  document.getElementById('b-mpfind').addEventListener('click', find);
+  document.querySelectorAll('[data-try]').forEach((b) => b.addEventListener('click', () => { qEl.value = b.dataset.try; find(); }));
+  async function find() {
+    const q = qEl.value.trim(); if (!q) return;
+    list = []; renderSuggest();
+    if (PC.test(q)) {
+      msg.textContent = 'Looking up postcode…';
+      try {
+        const r = await fetch('https://api.postcodes.io/postcodes/' + encodeURIComponent(q.replace(/\s+/g, '')));
+        const j = await r.json();
+        if (!r.ok || !j.result) { msg.textContent = "We couldn't find that postcode. Check it, or search by MP or constituency."; return; }
+        const seat = j.result.parliamentary_constituency_2024 || j.result.parliamentary_constituency;
+        const m = MP.find((x) => x.sitting && norm(x.seat) === norm(seat));
+        if (m) { msg.textContent = ''; openMP(m.id); }
+        else msg.textContent = `That postcode is in ${seat}. We have no entries for its MP.`;
+      } catch (e) { msg.textContent = "The postcode lookup isn't working right now. Try the MP's name or constituency."; }
+      return;
+    }
+    const hit = matches(q);
+    if (hit.length) { msg.textContent = ''; openMP(hit[0].id); }
+    else msg.textContent = 'No MP or constituency matches that. Try a surname, a constituency or a full postcode.';
+  }
 
-  // running total line chart
-  function runChart() {
-    const box = document.getElementById('c-run'); box.replaceChildren();
+  const card = document.getElementById('mpcard');
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  function openMP(id, scroll = true) {
+    const m = MPBY.get(id); if (!m) return;
+    qEl.value = m.mp; list = []; renderSuggest();
+    card.replaceChildren(); card.style.display = 'block';
+    card.style.setProperty('--partycol', pcol(m.party));
+    const top = el('div', 'top');
+    const left = el('div');
+    left.append(el('h2', null, m.mp));
+    const line = el('div', 'seat'); const chip = el('span', 'chip', m.party); line.append(chip, document.createTextNode((m.seat ? m.seat : '') + (m.sitting ? '' : ' (former MP)')));
+    left.append(line);
+    const right = el('div');
+    right.append(el('div', 'big', gbp(m.total)));
+    const rk = rankOf.get(m.id);
+    right.append(el('div', 'rank', m.total > 0 ? `since the July 2024 election${rk ? `. ${ord(rk)} of ${sittingRanked.length} sitting MPs.` : '.'}` : 'declared since the July 2024 election'));
+    top.append(left, right); card.append(top);
+    if (m.total > 0) {
+      const body = el('div', 'body');
+      const c1 = el('div'); c1.append(el('h3', null, 'Who paid most'));
+      const mx = d3.max(m.top, (d) => d[1]) || 1;
+      m.top.forEach(([p, v]) => { const r = el('div', 'payrow'); r.append(el('span', null, p), el('span', null, gbp(v))); const b = el('div', 'bar'); b.style.width = Math.max(2, 100 * v / mx) + '%'; r.append(b); c1.append(r); });
+      if (m.payers > m.top.length) c1.append(el('p', 'count', `and ${m.payers - m.top.length} more payer${m.payers - m.top.length === 1 ? '' : 's'}.`));
+      const c2 = el('div'); c2.append(el('h3', null, 'What for'));
+      const types = Object.entries(m.types).sort((a, b) => b[1] - a[1]);
+      const mt = d3.max(types, (d) => d[1]) || 1;
+      types.forEach(([k, v]) => { const r = el('div', 'payrow'); r.append(el('span', null, k), el('span', null, gbp(v))); const b = el('div', 'bar'); b.style.width = Math.max(2, 100 * v / mt) + '%'; b.style.background = 'var(--partycol)'; r.append(b); c2.append(r); });
+      body.append(c1, c2); card.append(body);
+    } else {
+      card.append(el('p', 'none', 'No payments, donations, gifts or paid trips declared since the July 2024 election.'));
+    }
+    if (m.first_decl > 0) card.append(el('p', 'none', `Not counted above: ${gbp(m.first_decl)} declared in the weeks just after the election, with no date received. Some may pre-date polling day.`));
+    const act = el('div', 'actions');
+    const see = el('button', 'btn', 'See every entry'); see.addEventListener('click', () => { document.getElementById('q-all').value = m.mp; show('search'); document.querySelector('nav.tabs').scrollIntoView({behavior: 'smooth'}); });
+    const cls = el('button', 'close', 'Close'); cls.addEventListener('click', () => { card.style.display = 'none'; history.replaceState(null, '', '#' + current); });
+    act.append(see, cls); card.append(act);
+    history.replaceState(null, '', '#mp-' + m.id);
+    if (scroll) card.scrollIntoView({behavior: 'smooth', block: 'start'});
+  }
+  window.rgOpenMP = openMP;
+
+  // ---------- tabs ----------
+  const tabs = [...document.querySelectorAll('nav.tabs button')];
+  let current;
+  async function show(name) {
+    current = name;
+    tabs.forEach((b) => b.setAttribute('aria-selected', b.dataset.tab === name));
+    document.querySelectorAll('section[data-page]').forEach((s) => (s.hidden = s.dataset.page !== name));
+    if (!location.hash.startsWith('#mp-')) history.replaceState(null, '', '#' + name);
+    if (name === 'search' && !E) { document.getElementById('n-all').textContent = 'Loading…'; E = await get('entries.json'); fillTypes(); }
+    draw();
+  }
+  tabs.forEach((b) => b.addEventListener('click', () => show(b.dataset.tab)));
+
+  // ---------- filters ----------
+  const types = [...new Set(M.map((r) => r.type))].sort();
+  const sum = (rows, key) => d3.rollups(rows, (v) => d3.sum(v, (r) => r.amount), (r) => r[key]).sort((a, b) => b[1] - a[1]).map((d) => d[0]);
+  const sectorsByTotal = sum(M, 'sector'), partiesByTotal = sum(M, 'party');
+  const addOpts = (id, items) => { const s = document.getElementById(id); items.forEach((x) => s.add(new Option(x, x))); };
+  addOpts('f-type', types); addOpts('f-sector', sectorsByTotal); addOpts('f-party', partiesByTotal); addOpts('f-pay-sector', sectorsByTotal);
+  addOpts('f-mp-party', PA.map((p) => p.party)); addOpts('f-all-party', PA.map((p) => p.party));
+  function fillTypes() { const s = document.getElementById('f-all-type'); if (s.options.length < 2) addOpts('f-all-type', [...new Set(E.map((r) => r.type))].sort()); }
+  ['f-type', 'f-sector', 'f-party', 'f-split', 'f-pay-sector', 'f-all-type', 'f-all-party', 'f-mp-party', 'f-mp-sitting'].forEach((id) => document.getElementById(id).addEventListener('change', draw));
+  let partyMeasure = 'per_seat', fpMode = 'types';
+  document.querySelectorAll('[data-pm]').forEach((b) => b.addEventListener('click', () => { partyMeasure = b.dataset.pm; document.querySelectorAll('[data-pm]').forEach((x) => x.setAttribute('aria-pressed', x === b)); draw(); }));
+  document.querySelectorAll('[data-fp]').forEach((b) => b.addEventListener('click', () => { fpMode = b.dataset.fp; document.querySelectorAll('[data-fp]').forEach((x) => x.setAttribute('aria-pressed', x === b)); draw(); }));
+
+  // ---------- line chart ----------
+  function lineChart(id, rows, groups, key, colorFor) {
+    const box = document.getElementById(id); box.replaceChildren();
     const W = box.clientWidth; if (!W) return;
-    const ft = document.getElementById('f-type').value, fs = document.getElementById('f-sector').value, split = document.getElementById('f-split').value;
-    const rows = M.filter((r) => (!ft || r.type === ft) && (!fs || r.sector === fs));
     const months = [...new Set(M.map((r) => r.month))].sort();
-    let groups;
-    if (split === 'type') groups = types;
-    else if (split === 'sector') groups = sectorsByTotal.slice(0, 6);
-    else groups = ['All'];
-    const series = groups.map((g) => {
-      const sub = split ? rows.filter((r) => r[split] === g) : rows;
+    const series = groups.map((g, i) => {
+      const sub = key ? rows.filter((r) => r[key] === g) : rows;
       const per = d3.rollup(sub, (v) => d3.sum(v, (r) => r.amount), (r) => r.month);
       let run = 0;
-      return {name: g, pts: months.map((m) => ({m, d: new Date(m + '-01'), v: (run += per.get(m) || 0), add: per.get(m) || 0}))};
+      return {name: g, col: colorFor(g, i), pts: months.map((m) => ({d: new Date(m + '-01'), v: (run += per.get(m) || 0), add: per.get(m) || 0}))};
     }).filter((s) => s.pts.length && s.pts[s.pts.length - 1].v > 0);
     const H = 340, ml = 8, mt = 10, mb = 26;
     const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
     const y = d3.scaleLinear([0, d3.max(series, (s) => s.pts[s.pts.length - 1].v) || 1], [H - mb, mt]).nice();
-    const yt = svg.append('g').attr('font-size', 11);
     const ticks = y.ticks(5);
-    let lw = 0; ticks.forEach((t) => { const el = yt.append('text').text(gbpC(t)); lw = Math.max(lw, el.node().getComputedTextLength()); el.remove(); });
-    let rw = 0;
-    const lab = svg.append('text').attr('font-size', 12);
-    series.forEach((s) => { lab.text(s.name.slice(0, 28) + ' ' + gbpC(s.pts[s.pts.length - 1].v)); rw = Math.max(rw, lab.node().getComputedTextLength()); });
-    lab.remove();
-    rw = series.length > 1 ? Math.min(rw + 10, W * 0.38) : 32;
+    const meas = svg.append('text').attr('font-size', 12);
+    let lw = 0; ticks.forEach((t) => { meas.text(gbpC(t)); lw = Math.max(lw, meas.node().getComputedTextLength()); });
+    let rw = 0; series.forEach((s) => { meas.text(s.name.slice(0, 26) + ' ' + gbpC(s.pts[s.pts.length - 1].v)); rw = Math.max(rw, meas.node().getComputedTextLength()); });
+    meas.remove();
+    rw = series.length > 1 ? Math.min(rw + 10, W * 0.4) : 32;
     const x = d3.scaleUtc(d3.extent(months, (m) => new Date(m + '-01')), [ml + lw + 8, W - rw]);
     svg.append('g').selectAll('line').data(ticks).join('line').attr('x1', x.range()[0]).attr('x2', x.range()[1]).attr('y1', y).attr('y2', y).attr('stroke', 'var(--line)');
     svg.append('g').selectAll('text').data(ticks).join('text').attr('x', ml + lw).attr('y', y).attr('dy', '.35em').attr('text-anchor', 'end').attr('font-size', 11).attr('fill', 'var(--muted)').text(gbpC);
@@ -273,22 +482,22 @@ svg text { fill: var(--fg); }
     xa.attr('font-size', null).attr('font-family', null).selectAll('text').attr('font-size', 11).attr('fill', 'var(--muted)');
     xa.selectAll('line,path').attr('stroke', 'var(--line)');
     const line = d3.line().x((p) => x(p.d)).y((p) => y(p.v));
-    series.forEach((s, i) => {
-      svg.append('path').datum(s.pts).attr('fill', 'none').attr('stroke', COLORS[i % COLORS.length]).attr('stroke-width', 2.5).attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round').attr('d', line);
-    });
+    series.forEach((s) => svg.append('path').datum(s.pts).attr('fill', 'none').attr('stroke', s.col).attr('stroke-width', 2.5).attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round').attr('d', line));
     if (series.length > 1) {
-      const ends = series.map((s, i) => ({s, i, y: y(s.pts[s.pts.length - 1].v)})).sort((a, b) => a.y - b.y);
+      const ends = series.map((s) => ({s, y: y(s.pts[s.pts.length - 1].v)})).sort((a, b) => a.y - b.y);
       for (let k = 1; k < ends.length; k++) if (ends[k].y - ends[k - 1].y < 14) ends[k].y = ends[k - 1].y + 14;
-      ends.forEach((e) => svg.append('text').attr('x', W - rw + 6).attr('y', e.y).attr('dy', '.35em').attr('font-size', 12).attr('fill', COLORS[e.i % COLORS.length])
-        .text(e.s.name.slice(0, 28) + ' ' + gbpC(e.s.pts[e.s.pts.length - 1].v)));
+      const floor = H - mb - 6; if (ends.length && ends[ends.length - 1].y > floor) { ends[ends.length - 1].y = floor; for (let k = ends.length - 2; k >= 0; k--) ends[k].y = Math.min(ends[k].y, ends[k + 1].y - 14); }
+      ends.forEach((e) => svg.append('text').attr('x', W - rw + 6).attr('y', e.y).attr('dy', '.35em').attr('font-size', 12).attr('fill', e.s.col).style('font-weight', 700)
+        .text(e.s.name.slice(0, 26) + ' ' + gbpC(e.s.pts[e.s.pts.length - 1].v)));
     }
     const rule = svg.append('line').attr('y1', mt).attr('y2', H - mb).attr('stroke', 'var(--muted)').attr('stroke-dasharray', '3 3').style('display', 'none');
-    const dots = series.map((s, i) => svg.append('circle').attr('r', 4).attr('fill', COLORS[i % COLORS.length]).style('display', 'none'));
+    const dots = series.map((s) => svg.append('circle').attr('r', 4).attr('fill', s.col).style('display', 'none'));
+    const xs = months.map((m) => +new Date(m + '-01'));
     svg.append('rect').attr('x', x.range()[0]).attr('width', x.range()[1] - x.range()[0]).attr('y', mt).attr('height', H - mb - mt).attr('fill', 'transparent')
       .on('mousemove', (ev) => {
         const [px] = d3.pointer(ev);
-        const i = Math.max(0, Math.min(months.length - 1, d3.bisectCenter(months.map((m) => +new Date(m + '-01')), +x.invert(px))));
-        const d = new Date(months[i] + '-01');
+        const i = Math.max(0, Math.min(months.length - 1, d3.bisectCenter(xs, +x.invert(px))));
+        const d = new Date(xs[i]);
         rule.style('display', null).attr('x1', x(d)).attr('x2', x(d));
         series.forEach((s, k) => dots[k].style('display', null).attr('cx', x(d)).attr('cy', y(s.pts[i].v)));
         showTip(ev, d3.utcFormat('%B %Y')(d), series.map((s) => `${s.name}: ${gbp(s.pts[i].v)} (+${gbpC(s.pts[i].add)} that month)`));
@@ -296,16 +505,16 @@ svg text { fill: var(--fg); }
       .on('mouseleave', () => { hideTip(); rule.style('display', 'none'); dots.forEach((d) => d.style('display', 'none')); });
   }
 
-  // horizontal bars
-  function hbar(id, rows, label, val, extra) {
+  // ---------- horizontal bars ----------
+  function hbar(id, rows, label, val, opts = {}) {
     const box = document.getElementById(id); box.replaceChildren();
     const W = box.clientWidth; if (!W || !rows.length) return;
-    const rh = 26, H = rows.length * rh + 6;
+    const rh = 26, H = rows.length * rh + 6, fmt = opts.fmt || gbpC;
     const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
     const cut = (s) => (s.length > 34 ? s.slice(0, 33) + '…' : s);
     const m = svg.append('text').attr('font-size', 12);
     let lw = 0; rows.forEach((r) => { m.text(cut(r[label])); lw = Math.max(lw, m.node().getComputedTextLength()); });
-    m.text(gbpC(d3.max(rows, (r) => r[val]))); const vw = m.node().getComputedTextLength(); m.remove();
+    m.text(fmt(d3.max(rows, (r) => r[val]))); const vw = m.node().getComputedTextLength(); m.remove();
     lw = Math.min(lw, W * 0.45);
     const x = d3.scaleLinear([0, d3.max(rows, (r) => r[val]) || 1], [0, Math.max(10, W - lw - vw - 24)]);
     rows.forEach((r, i) => {
@@ -313,13 +522,37 @@ svg text { fill: var(--fg); }
       const tx = svg.append('text').attr('x', lw).attr('y', yy + rh / 2).attr('dy', '.35em').attr('text-anchor', 'end').attr('font-size', 12).text(cut(r[label]));
       let s = cut(r[label]);
       while (s.length > 4 && tx.node().getComputedTextLength() > lw) { s = s.slice(0, -2); tx.text(s + '…'); }
-      svg.append('rect').attr('x', lw + 8).attr('y', yy + 4).attr('height', rh - 8).attr('width', Math.max(1, x(r[val]))).attr('rx', 4).attr('fill', '#97C221')
-        .on('mousemove', (ev) => showTip(ev, r[label], [gbp(r[val]), ...(extra ? [extra(r)] : [])])).on('mouseleave', hideTip);
-      svg.append('text').attr('x', lw + 14 + x(r[val])).attr('y', yy + rh / 2).attr('dy', '.35em').attr('font-size', 12).attr('fill', 'var(--muted)').text(gbpC(r[val]));
+      svg.append('rect').attr('x', lw + 8).attr('y', yy + 4).attr('height', rh - 8).attr('width', Math.max(1, x(r[val]))).attr('rx', 4).attr('fill', opts.color ? opts.color(r) : '#97C221')
+        .on('mousemove', (ev) => showTip(ev, r[label], [fmt(r[val]), ...(opts.extra ? [opts.extra(r)] : [])])).on('mouseleave', hideTip);
+      svg.append('text').attr('x', lw + 14 + x(r[val])).attr('y', yy + rh / 2).attr('dy', '.35em').attr('font-size', 12).attr('fill', 'var(--muted)').text(fmt(r[val]));
     });
   }
 
-  // sortable, searchable tables
+  // ---------- 100% stacked bars ----------
+  function stack100(id, rows, keys, colorFor) {
+    const box = document.getElementById(id); box.replaceChildren();
+    const W = box.clientWidth; if (!W || !rows.length) return;
+    const rh = 30, H = rows.length * rh + 4;
+    const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
+    const m = svg.append('text').attr('font-size', 12);
+    let lw = 0; rows.forEach((r) => { m.text(r.name); lw = Math.min(W * 0.4, Math.max(lw, m.node().getComputedTextLength())); }); m.remove();
+    const x = d3.scaleLinear([0, 1], [lw + 8, W - 4]);
+    rows.forEach((r, i) => {
+      const yy = i * rh + 2, tot = d3.sum(keys, (k) => r.parts[k] || 0) || 1;
+      svg.append('text').attr('x', lw).attr('y', yy + rh / 2).attr('dy', '.35em').attr('text-anchor', 'end').attr('font-size', 12).text(r.name);
+      let acc = 0;
+      keys.forEach((k, j) => {
+        const v = (r.parts[k] || 0) / tot; if (!v) return;
+        svg.append('rect').attr('x', x(acc)).attr('y', yy + 5).attr('height', rh - 10).attr('width', Math.max(0.5, x(acc + v) - x(acc))).attr('fill', colorFor(k, j))
+          .attr('stroke', 'var(--panel)').attr('stroke-width', 1)
+          .on('mousemove', (ev) => showTip(ev, `${r.name}: ${k}`, [`${pct(v)} of the party's total`, gbp(r.parts[k])])).on('mouseleave', hideTip);
+        if (x(acc + v) - x(acc) > 34) svg.append('text').attr('x', (x(acc) + x(acc + v)) / 2).attr('y', yy + rh / 2).attr('dy', '.35em').attr('text-anchor', 'middle').attr('font-size', 10).style('fill', '#fff').style('pointer-events', 'none').text(pct(v));
+        acc += v;
+      });
+    });
+  }
+
+  // ---------- tables ----------
   const T = {};
   function table(id, rows, cols, o) {
     const el = document.getElementById(id);
@@ -335,40 +568,118 @@ svg text { fill: var(--fg); }
       });
       el.createTBody();
       if (o.q) document.getElementById(o.q).addEventListener('input', () => { clearTimeout(t.timer); t.timer = setTimeout(draw, 150); });
+      if (o.onRow) el.tBodies[0].addEventListener('click', (e) => { const tr = e.target.closest('tr[data-key]'); if (tr && !e.target.closest('a')) o.onRow(tr.dataset.key); });
     }
-    const q = o.q ? document.getElementById(o.q).value.trim().toLowerCase() : '';
-    let rs = q ? rows.filter((r) => cols.some((c) => !c.link && String(r[c.f] ?? '').toLowerCase().includes(q))) : rows;
+    const q = o.q ? norm(document.getElementById(o.q).value) : '';
+    let rs = q ? rows.filter((r) => cols.some((c) => !c.link && norm(c.text ? c.text(r) : r[c.f]).includes(q))) : rows;
     if (t.key) { const c = cols.find((x) => x.f === t.key); rs = [...rs].sort((a, b) => c && c.num ? t.dir * ((+a[t.key] || 0) - (+b[t.key] || 0)) : t.dir * String(a[t.key] ?? '').localeCompare(String(b[t.key] ?? ''))); }
     t.shown = rs; t.cols = cols;
     const LIMIT = 1500, frag = document.createDocumentFragment();
     rs.slice(0, LIMIT).forEach((r) => {
       const tr = document.createElement('tr');
+      if (o.key) { tr.dataset.key = o.key(r); if (o.onRow) tr.className = 'clickable'; }
       cols.forEach((c) => {
         const td = document.createElement('td');
         if (c.num) td.className = 'num'; if (c.wide) td.className = 'wide';
         if (c.link) {
           const h = String(r[c.f] || '');
           if (h.startsWith('https://interests-api.parliament.uk/')) { const a = document.createElement('a'); a.href = h; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Entry'; td.appendChild(a); }
-        } else td.textContent = c.fmt ? c.fmt(r[c.f], r) : (r[c.f] ?? '');
+        } else if (c.party) {
+          const d = document.createElement('span'); d.className = 'dot'; d.style.background = pcol(r[c.f]); td.append(d, document.createTextNode(r[c.f] || ''));
+        } else if (c.node) td.appendChild(c.node(r));
+        else td.textContent = c.fmt ? c.fmt(r[c.f], r) : (r[c.f] ?? '');
         tr.appendChild(td);
       });
       frag.appendChild(tr);
     });
     el.tBodies[0].replaceChildren(frag);
-    if (o.count) document.getElementById(o.count).textContent = `${n0(rs.length)} of ${n0(rows.length)} rows` + (rs.length > LIMIT ? ` (first ${n0(LIMIT)} shown, search to narrow, or download the CSV for all)` : '') + (rs.length ? `. Total ${gbp(d3.sum(rs, (r) => +r[o.sum] || 0))}.` : '');
+    if (o.count) document.getElementById(o.count).textContent = `${n0(rs.length)} of ${n0(rows.length)} rows` + (rs.length > LIMIT ? ` (first ${n0(LIMIT)} shown. Search to narrow, or download the CSV for all.)` : '') + (o.sum && rs.length ? ` Total ${gbp(d3.sum(rs, (r) => +r[o.sum] || 0))}.` : '');
   }
   document.querySelectorAll('[data-csv]').forEach((b) => b.addEventListener('click', () => {
     const t = T[b.dataset.csv]; if (!t) return;
-    const cols = t.cols.filter((c) => !c.link).concat(t.cols.filter((c) => c.link));
+    const cols = t.cols.filter((c) => !c.node);
     const esc = (v) => '"' + String(v ?? '').replace(/"/g, '""') + '"';
-    const csv = [cols.map((c) => esc(c.label)).join(',')].concat(t.shown.map((r) => cols.map((c) => esc(r[c.f])).join(','))).join('\n');
-    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], {type: 'text/csv'})); a.download = b.dataset.csv.replace('tb-', 'mps-register-') + '.csv'; a.click();
+    const csv = [cols.map((c) => esc(c.label)).join(',')].concat(t.shown.map((r) => cols.map((c) => esc(c.csv ? c.csv(r) : r[c.f])).join(','))).join('\n');
+    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], {type: 'text/csv'})); a.download = b.dataset.csv.replace('tb-', 'whos-paying-your-mp-') + '.csv'; a.click();
   }));
   const yes = (v) => (v ? 'Yes' : '');
 
+  // ---------- party section ----------
+  const bigParties = PA.filter((p) => p.seats >= 3 || p.total > 100000);
+  function drawParties() {
+    const rows = bigParties.map((p) => ({...p, label: p.seats < 5 ? `${p.party} (${p.seats} MP${p.seats === 1 ? '' : 's'})` : p.party, share: p.seats ? p.sitting_paid / p.seats : 0}));
+    const key = partyMeasure;
+    rows.sort((a, b) => b[key] - a[key]);
+    const fmt = key === 'share' ? pct : gbpC;
+    hbar('c-party', rows, 'label', key, {fmt, color: (r) => r.colour,
+      extra: (r) => `${gbpC(r.total)} in all. ${r.sitting_paid} of ${r.seats} sitting MPs paid. ${gbpC(r.per_seat)} per MP.`});
+    const notes = {per_seat: 'Money taken by each party\'s sitting MPs, divided by its number of sitting MPs. The fairest comparison between big and small parties.',
+      total: 'Everything taken by MPs of each party since the election, former MPs included.',
+      share: 'Share of each party\'s sitting MPs who have declared any money or gifts since the election.'};
+    document.getElementById('party-note').textContent = notes[key];
+    const lead = [...bigParties].filter((p) => p.seats >= 3).sort((a, b) => b.per_seat - a.per_seat);
+    const lab = PA.find((p) => p.party === 'Labour');
+    if (lead.length && lab) document.getElementById('party-callout').textContent =
+      `${lead[0].party} MPs have taken ${gbpC(lead[0].per_seat)} each on average. Labour MPs: ${gbpC(lab.per_seat)}.`;
+
+    const typeKeys = ['Paid work (regular)', 'Paid work (one-off)', 'Donation or support', 'Gift or hospitality (UK)', 'Paid overseas trip', 'Gift from abroad'];
+    const typeCols = ['#131820', '#5b6573', '#97C221', '#E8743B', '#2F6FDE', '#8E5BD6'];
+    let keys, colorFor;
+    if (fpMode === 'types') { keys = typeKeys; colorFor = (k, j) => typeCols[j]; }
+    else {
+      const top = sectorsByTotal.filter((s) => s !== 'Other / unsorted').slice(0, 7);
+      keys = top.concat(['Everything else']);
+      colorFor = (k, j) => k === 'Everything else' ? '#c4cbd4' : COLORS[j % COLORS.length];
+    }
+    const fpRows = bigParties.filter((p) => p.total > 50000).map((p) => {
+      let parts;
+      if (fpMode === 'types') parts = p.types;
+      else { parts = {}; Object.entries(p.sectors).forEach(([k, v]) => { const kk = keys.includes(k) ? k : 'Everything else'; parts[kk] = (parts[kk] || 0) + v; }); }
+      return {name: p.party, parts};
+    });
+    const lg = document.getElementById('fp-legend'); lg.replaceChildren();
+    keys.forEach((k, j) => { const s = document.createElement('span'); const d = document.createElement('span'); d.className = 'dot'; d.style.background = colorFor(k, j); s.append(d, document.createTextNode(k)); lg.append(s); });
+    stack100('c-fp', fpRows, keys, colorFor);
+
+    const runParties = partiesByTotal.slice(0, 6);
+    lineChart('c-party-run', M, runParties, 'party', (g) => pcol(g));
+
+    const pc = document.getElementById('pcards'); pc.replaceChildren();
+    bigParties.slice(0, 9).forEach((p) => {
+      const c = el('div', 'pcard'); c.style.setProperty('--pc', p.colour);
+      c.append(el('h3', null, p.party), el('div', 'pn', `${gbpC(p.total)} since the election. ${p.sitting_paid} of ${p.seats} sitting MPs paid.`));
+      c.append(el('h4', null, 'Top payers'));
+      const ol = el('ol'); p.top.slice(0, 5).forEach(([n, v, k]) => ol.append(el('li', null, `${n}: ${gbpC(v)}${k > 1 ? ` (${k} MPs)` : ''}`))); c.append(ol);
+      c.append(el('h4', null, 'MPs who took most'));
+      const ol2 = el('ol');
+      p.top_mps.forEach(([n, v]) => {
+        const li = el('li'); const m = MP.find((x) => x.mp === n);
+        if (m) { const a = el('a', null, n); a.href = '#mp-' + m.id; a.addEventListener('click', (e) => { e.preventDefault(); openMP(m.id); }); li.append(a, document.createTextNode(`: ${gbpC(v)}`)); }
+        else li.textContent = `${n}: ${gbpC(v)}`;
+        ol2.append(li);
+      });
+      c.append(ol2); pc.append(c);
+    });
+
+    table('tb-cross', CX, [
+      {f: 'payer', label: 'Payer'}, {f: 'total', label: 'Total', num: true, fmt: gbp}, {f: 'nparties', label: 'Parties', num: true}, {f: 'mps', label: 'MPs', num: true},
+      {f: 'split', label: 'Split', text: (r) => r.split.map((s) => s[0]).join(' '), csv: (r) => r.split.map((s) => `${s[0]}: ${Math.round(s[1])}`).join('; '), node: (r) => {
+        const wrap = document.createElement('div'); wrap.style.cssText = 'display:flex;height:12px;border-radius:6px;overflow:hidden;min-width:160px;margin:3px 0';
+        r.split.forEach(([p, v]) => { const s = document.createElement('div'); s.style.cssText = `width:${100 * v / r.total}%;background:${pcol(p)}`; s.title = `${p}: ${gbp(v)}`; wrap.appendChild(s); });
+        const lbl = document.createElement('div'); lbl.style.cssText = 'font-size:11px;color:var(--muted)'; lbl.textContent = r.split.map(([p, v]) => `${p} ${gbpC(v)}`).join(' · ');
+        const box = document.createElement('div'); box.append(wrap, lbl); return box;
+      }},
+    ], {sort: 'total', q: 'q-cross', count: 'n-cross'});
+  }
+
+  // ---------- draw ----------
   function draw() {
+    if (current === 'parties') drawParties();
     if (current === 'totals') {
-      runChart();
+      const ft = document.getElementById('f-type').value, fs = document.getElementById('f-sector').value, fpa = document.getElementById('f-party').value, split = document.getElementById('f-split').value;
+      const rows = M.filter((r) => (!ft || r.type === ft) && (!fs || r.sector === fs) && (!fpa || r.party === fpa));
+      const groups = split === 'type' ? types : split === 'sector' ? sectorsByTotal.slice(0, 6) : split === 'party' ? partiesByTotal.slice(0, 6) : ['All'];
+      lineChart('c-run', rows, groups, split, (g, i) => split === 'party' ? pcol(g) : COLORS[i % COLORS.length]);
       hbar('c-type', d3.rollups(M, (v) => d3.sum(v, (r) => r.amount), (r) => r.type).map(([k, v]) => ({k, v})).sort((a, b) => b.v - a.v), 'k', 'v');
       hbar('c-sector', d3.rollups(M, (v) => d3.sum(v, (r) => r.amount), (r) => r.sector).map(([k, v]) => ({k, v})).sort((a, b) => b.v - a.v), 'k', 'v');
     }
@@ -376,34 +687,39 @@ svg text { fill: var(--fg); }
       document.getElementById('fn-note').textContent = CH.from ? `New entries between the ${fmtDay(CH.from)} and ${fmtDay(CH.to)} registers.` : '';
       const byp = d3.rollups(CH.new, (v) => ({v: d3.sum(v, (r) => r.value || 0), n: v.length, mps: [...new Set(v.map((r) => r.mp))]}), (r) => r.payer)
         .map(([k, o]) => ({k, ...o})).sort((a, b) => b.v - a.v).slice(0, 12);
-      hbar('c-newpay', byp, 'k', 'v', (r) => `${r.n} entr${r.n === 1 ? 'y' : 'ies'}: ${r.mps.slice(0, 5).join(', ')}${r.mps.length > 5 ? ' and others' : ''}`);
+      hbar('c-newpay', byp, 'k', 'v', {extra: (r) => `${r.n} entr${r.n === 1 ? 'y' : 'ies'}: ${r.mps.slice(0, 5).join(', ')}${r.mps.length > 5 ? ' and others' : ''}`});
       table('tb-other', CH.other, [{f: 'mp', label: 'MP'}, {f: 'area', label: 'Area'}, {f: 'before', label: 'Before', wide: true}, {f: 'after', label: 'Now', wide: true}, {f: 'link', label: 'Source', link: true}], {});
-      table('tb-new', CH.new, [{f: 'mp', label: 'MP'}, {f: 'type', label: 'Type'}, {f: 'payer', label: 'Payer'}, {f: 'sector', label: 'Sector'},
+      table('tb-new', CH.new, [{f: 'mp', label: 'MP'}, {f: 'party', label: 'Party', party: true}, {f: 'type', label: 'Type'}, {f: 'payer', label: 'Payer'}, {f: 'sector', label: 'Sector'},
         {f: 'value', label: 'Value', num: true, fmt: gbp}, {f: 'date', label: 'Date', fmt: fmtDay}, {f: 'detail', label: 'Detail', wide: true}, {f: 'link', label: 'Source', link: true}],
         {sort: 'value', q: 'q-new', count: 'n-new', sum: 'value'});
     }
     if (current === 'payers') {
       const fs = document.getElementById('f-pay-sector').value;
       table('tb-pay', fs ? P.filter((r) => r.sector === fs) : P, [{f: 'payer', label: 'Payer'}, {f: 'sector', label: 'Sector'}, {f: 'total', label: 'Total since election', num: true, fmt: gbp},
-        {f: 'entries', label: 'Entries', num: true}, {f: 'mps', label: 'MPs', num: true}, {f: 'mp_list', label: 'Which MPs', wide: true}, {f: 'types', label: 'Types'}],
+        {f: 'entries', label: 'Entries', num: true}, {f: 'mps', label: 'MPs', num: true}, {f: 'parties', label: 'Parties'}, {f: 'mp_list', label: 'Which MPs', wide: true}, {f: 'types', label: 'Types'}],
         {sort: 'total', q: 'q-pay', count: 'n-pay', sum: 'total'});
     }
     if (current === 'mps') {
-      table('tb-mp', MP, [{f: 'mp', label: 'MP'}, {f: 'total', label: 'Total since election', num: true, fmt: gbp}, {f: 'entries', label: 'Entries', num: true},
-        {f: 'payers', label: 'Payers', num: true}, {f: 'top_payers', label: 'Main payers', wide: true}], {sort: 'total', q: 'q-mp', count: 'n-mp', sum: 'total'});
+      const fp = document.getElementById('f-mp-party').value, fsit = document.getElementById('f-mp-sitting').value;
+      const rows = MP.filter((m) => (!fp || m.party === fp) && (!fsit || m.sitting)).map((m) => ({...m, rank: rankOf.get(m.id) || ''}));
+      table('tb-mp', rows, [{f: 'mp', label: 'MP'}, {f: 'party', label: 'Party', party: true}, {f: 'seat', label: 'Constituency'}, {f: 'total', label: 'Total since election', num: true, fmt: gbp},
+        {f: 'entries', label: 'Entries', num: true}, {f: 'payers', label: 'Payers', num: true}, {f: 'top_payers', label: 'Main payers', wide: true}],
+        {sort: 'total', q: 'q-mp', count: 'n-mp', sum: 'total', key: (r) => r.id, onRow: (id) => openMP(id)});
     }
     if (current === 'search' && E) {
-      const ft = document.getElementById('f-all-type').value;
-      table('tb-all', ft ? E.filter((r) => r.type === ft) : E, [{f: 'mp', label: 'MP'}, {f: 'type', label: 'Type'}, {f: 'payer', label: 'Payer'}, {f: 'sector', label: 'Sector'},
+      const ft = document.getElementById('f-all-type').value, fp = document.getElementById('f-all-party').value;
+      table('tb-all', E.filter((r) => (!ft || r.type === ft) && (!fp || r.party === fp)), [{f: 'mp', label: 'MP'}, {f: 'party', label: 'Party', party: true}, {f: 'type', label: 'Type'}, {f: 'payer', label: 'Payer'}, {f: 'sector', label: 'Sector'},
         {f: 'value', label: 'Value as declared', num: true, fmt: (v, r) => gbp(v) + (r.freq ? ' ' + r.freq : '')}, {f: 'since', label: 'Since election (est.)', num: true, fmt: gbp},
         {f: 'date', label: 'Date', fmt: fmtDay}, {f: 'registered', label: 'Registered', fmt: fmtDay}, {f: 'live', label: 'On register now', fmt: yes},
-        {f: 'charity', label: 'To charity', fmt: yes}, {f: 'first', label: 'First declaration (not in total)', fmt: yes}, {f: 'detail', label: 'Detail', wide: true}, {f: 'link', label: 'Source', link: true}],
+        {f: 'charity', label: 'To charity', fmt: yes}, {f: 'first', label: 'Just after election (not in total)', fmt: yes}, {f: 'detail', label: 'Detail', wide: true}, {f: 'link', label: 'Source', link: true}],
         {sort: 'since', q: 'q-all', count: 'n-all', sum: 'since'});
     }
   }
-  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(draw, 150); });
-  const start = location.hash.slice(1);
-  show(['totals', 'fortnight', 'payers', 'mps', 'search', 'method'].includes(start) ? start : 'totals');
+  let rt, lastW = innerWidth; addEventListener('resize', () => { if (innerWidth === lastW) return; lastW = innerWidth; clearTimeout(rt); rt = setTimeout(draw, 150); });
+
+  const h = location.hash.slice(1);
+  show(['parties', 'totals', 'fortnight', 'payers', 'mps', 'search', 'method'].includes(h) ? h : 'parties');
+  if (h.startsWith('mp-')) openMP(h.slice(3), true);
 })();
 </script>
 </body>
