@@ -129,10 +129,24 @@ def _companies(entries, key, cache, by_payer):
         org = r.get("sector") != "Private individuals" and not not_org.search((r.get("ptype") or "") + " " + r["payer"])
         if corp or org:
             want[r["payer"]] = re.sub(r"\s*\(.*$", "", r.get("raw_payer") or r["payer"]).strip() or r["payer"]
-    print(f"Companies House: {len(numbers)} declared numbers, {len(want)} names to search")
+    # hand-checked links win over anything automatic: data/company_links.csv
+    import csv
+    pinned = {}
+    lp = os.path.join(ROOT, "data", "company_links.csv")
+    if os.path.exists(lp):
+        with open(lp, encoding="utf-8-sig", newline="") as f:
+            for row in csv.DictReader(f):
+                n = clean_number(row.get("company_number"))
+                if row.get("payer") and n:
+                    pinned[row["payer"].strip()] = n
+    for payer, n in pinned.items():
+        want.pop(payer, None)
+        by_payer[payer] = {"number": n, "pinned": True, "_fetched": str(TODAY)}
+        numbers.setdefault(n, set()).add(payer)
+    print(f"Companies House: {len(numbers)} declared or pinned numbers, {len(want)} names to search", flush=True)
     done = 0
     for payer, raw in want.items():
-        if payer in by_payer and fresh(by_payer[payer]):
+        if payer in by_payer and (fresh(by_payer[payer]) or by_payer[payer].get("pinned")):
             continue
         check_budget(CH_MINUTES, "Companies House")
         res = ch_get("/search/companies?items_per_page=5&q=" + urllib.parse.quote(raw), key) or {}

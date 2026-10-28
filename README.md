@@ -26,6 +26,8 @@ The register shows what is live. One-off items drop off 12 months after registra
 
 - Sector labels: `scripts/sectors.py`. The first matching rule wins. `OVR` fixes single payers.
 - Payer name merges: `ALIAS` in `scripts/build.py`.
+- Pin a payer to the right company: add a line to `data/company_links.csv` (payer name exactly as the site shows it, company number). Hand-checked links override the automatic name match.
+- Context notes: add a line to `data/notes.csv` (payer, optional MP, note, source title, source link).
 
 ## Run locally
 
