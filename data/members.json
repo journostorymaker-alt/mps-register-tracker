@@ -1,0 +1,8786 @@
+{
+"103": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Paul Beresford",
+"party": "Conservative",
+"seat": "Mole Valley"
+},
+"104": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2024-05-30",
+"house": 1,
+"name": "Crispin Blunt",
+"party": "Independent",
+"seat": "Reigate"
+},
+"111": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Nick Gibb",
+"party": "Conservative",
+"seat": "Bognor Regis and Littlehampton"
+},
+"114": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Tim Loughton",
+"party": "Conservative",
+"seat": "East Worthing and Shoreham"
+},
+"117": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Peter Bottomley",
+"party": "Conservative",
+"seat": "Worthing West"
+},
+"1171": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Liam Byrne",
+"party": "Labour",
+"seat": "Birmingham Hodge Hill and Solihull North"
+},
+"1198": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir David Evennett",
+"party": "Conservative",
+"seat": "Bexleyheath and Crayford"
+},
+"1200": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Greg Knight",
+"party": "Conservative",
+"seat": "East Yorkshire"
+},
+"1211": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Andrew Mitchell",
+"party": "Conservative",
+"seat": "Sutton Coldfield"
+},
+"1383": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sir Mark Tami",
+"party": "Labour",
+"seat": "Alyn and Deeside"
+},
+"1390": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr John Baron",
+"party": "Conservative",
+"seat": "Basildon and Billericay"
+},
+"1392": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Khalid Mahmood",
+"party": "Labour",
+"seat": "Birmingham, Perry Barr"
+},
+"1396": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Ian Liddell-Grainger",
+"party": "Conservative",
+"seat": "Bridgwater and West Somerset"
+},
+"1397": {
+"abbr": "PC",
+"colour": "348837",
+"end": "2024-05-30",
+"house": 1,
+"name": "Hywel Williams",
+"party": "Plaid Cymru",
+"seat": "Arfon"
+},
+"1398": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Wayne David",
+"party": "Labour",
+"seat": "Caerphilly"
+},
+"14": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 2,
+"name": "Lord Redwood",
+"party": "Conservative",
+"seat": "Life peer"
+},
+"140": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 2,
+"name": "Baroness Hodge of Barking",
+"party": "Labour",
+"seat": "Life peer"
+},
+"1400": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 2,
+"name": "Lord Brennan of Canton",
+"party": "Labour",
+"seat": "Life peer"
+},
+"1406": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Jon Cruddas",
+"party": "Labour",
+"seat": "Dagenham and Rainham"
+},
+"1409": {
+"abbr": "DUP",
+"colour": "d46a4c",
+"end": "",
+"house": 1,
+"name": "Mr Gregory Campbell",
+"party": "Democratic Unionist Party",
+"seat": "East Londonderry"
+},
+"1413": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 2,
+"name": "Lord Grayling",
+"party": "Conservative",
+"seat": "Life peer"
+},
+"1416": {
+"abbr": "SF",
+"colour": "02665f",
+"end": "2024-05-30",
+"house": 1,
+"name": "Michelle Gildernew",
+"party": "Sinn F\u00e9in",
+"seat": "Fermanagh and South Tyrone"
+},
+"1425": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Jonathan Djanogly",
+"party": "Conservative",
+"seat": "Huntingdon"
+},
+"1427": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Andy Burnham",
+"party": "Labour (Co-op)",
+"seat": "Makerfield"
+},
+"1428": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Bill Wiggin",
+"party": "Conservative",
+"seat": "North Herefordshire"
+},
+"1438": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 2,
+"name": "Lord Beamish",
+"party": "Labour",
+"seat": "Life peer"
+},
+"1440": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "",
+"house": 1,
+"name": "Pete Wishart",
+"party": "Scottish National Party",
+"seat": "Perth and Kinross-shire"
+},
+"1442": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Mr Alistair Carmichael",
+"party": "Liberal Democrat",
+"seat": "Orkney and Shetland"
+},
+"1444": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Mr Mark Francois",
+"party": "Conservative",
+"seat": "Rayleigh and Wickford"
+},
+"1446": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Chris Bryant",
+"party": "Labour",
+"seat": "Rhondda and Ogmore"
+},
+"1447": {
+"abbr": "RUK",
+"colour": "12b6cf",
+"end": "",
+"house": 1,
+"name": "Andrew Rosindell",
+"party": "Reform UK",
+"seat": "Romford"
+},
+"1451": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Richard Bacon",
+"party": "Conservative",
+"seat": "South Norfolk"
+},
+"1453": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Andrew Selous",
+"party": "Conservative",
+"seat": "South West Bedfordshire"
+},
+"146": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Barry Gardiner",
+"party": "Labour",
+"seat": "Brent West"
+},
+"1466": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Dr Andrew Murrison",
+"party": "Conservative",
+"seat": "South West Wiltshire"
+},
+"1480": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Dame Maria Miller",
+"party": "Conservative",
+"seat": "Basingstoke"
+},
+"1482": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Graham Stuart",
+"party": "Conservative",
+"seat": "Beverley and Holderness"
+},
+"1487": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Tobias Ellwood",
+"party": "Conservative",
+"seat": "Bournemouth East"
+},
+"1489": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dawn Butler",
+"party": "Labour",
+"seat": "Brent East"
+},
+"1491": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Kerry McCarthy",
+"party": "Labour",
+"seat": "Bristol East"
+},
+"1493": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Charles Walker",
+"party": "Conservative",
+"seat": "Broxbourne"
+},
+"1496": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Shailesh Vara",
+"party": "Conservative",
+"seat": "North West Cambridgeshire"
+},
+"150": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 2,
+"name": "Baroness Harman",
+"party": "Labour",
+"seat": "Life peer"
+},
+"1500": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Theresa Villiers",
+"party": "Conservative",
+"seat": "Chipping Barnet"
+},
+"1502": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr David Jones",
+"party": "Conservative",
+"seat": "Clwyd West"
+},
+"1506": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2026-01-23",
+"house": 1,
+"name": "Andrew Gwynne",
+"party": "Independent",
+"seat": "Gorton and Denton"
+},
+"1508": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Geoffrey Cox",
+"party": "Conservative",
+"seat": "Torridge and Tavistock"
+},
+"1510": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ed Miliband",
+"party": "Labour",
+"seat": "Doncaster North"
+},
+"1512": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "David Mundell",
+"party": "Conservative",
+"seat": "Dumfriesshire, Clydesdale and Tweeddale"
+},
+"1516": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Andy Slaughter",
+"party": "Labour",
+"seat": "Hammersmith and Chiswick"
+},
+"152": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Iain Duncan Smith",
+"party": "Conservative",
+"seat": "Chingford and Woodford Green"
+},
+"1520": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 2,
+"name": "Lord Harper",
+"party": "Conservative",
+"seat": "Life peer"
+},
+"1521": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mrs Sharon Hodgson",
+"party": "Labour",
+"seat": "Washington and Gateshead South"
+},
+"1522": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Adam Holloway",
+"party": "Conservative",
+"seat": "Gravesham"
+},
+"1524": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dame Meg Hillier",
+"party": "Labour (Co-op)",
+"seat": "Hackney South and Shoreditch"
+},
+"1526": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Greg Hands",
+"party": "Conservative",
+"seat": "Chelsea and Fulham"
+},
+"1528": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Mike Penning",
+"party": "Conservative",
+"seat": "Hemel Hempstead"
+},
+"1533": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dame Diana Johnson",
+"party": "Labour",
+"seat": "Kingston upon Hull North and Cottingham"
+},
+"1536": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Emily Thornberry",
+"party": "Labour",
+"seat": "Islington South and Finsbury"
+},
+"1539": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Ben Wallace",
+"party": "Conservative",
+"seat": "Wyre and Preston North"
+},
+"1541": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dame Nia Griffith",
+"party": "Labour",
+"seat": "Llanelli"
+},
+"1542": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Philip Dunne",
+"party": "Conservative",
+"seat": "Ludlow"
+},
+"1545": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "David T C Davies",
+"party": "Conservative",
+"seat": "Monmouth"
+},
+"1546": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2024-05-30",
+"house": 1,
+"name": "Angus Brendan MacNeil",
+"party": "Independent",
+"seat": "Na h-Eileanan an Iar"
+},
+"1548": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jessica Morden",
+"party": "Labour",
+"seat": "Newport East"
+},
+"155": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2024-05-30",
+"house": 1,
+"name": "Geraint Davies",
+"party": "Independent",
+"seat": "Swansea West"
+},
+"1554": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Stephen Crabb",
+"party": "Conservative",
+"seat": "Preseli Pembrokeshire"
+},
+"1559": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir James Duddridge",
+"party": "Conservative",
+"seat": "Rochford and Southend East"
+},
+"1560": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Jeremy Wright",
+"party": "Conservative",
+"seat": "Kenilworth and Southam"
+},
+"1562": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Robert Goodwill",
+"party": "Conservative",
+"seat": "Scarborough and Whitby"
+},
+"1565": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Philip Davies",
+"party": "Conservative",
+"seat": "Shipley"
+},
+"1566": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Daniel Kawczynski",
+"party": "Conservative",
+"seat": "Shrewsbury and Atcham"
+},
+"1571": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 2,
+"name": "Lord Gove",
+"party": "Conservative",
+"seat": "Life peer"
+},
+"1572": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Jeremy Hunt",
+"party": "Conservative",
+"seat": "Godalming and Ash"
+},
+"1576": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Mark Pritchard",
+"party": "Conservative",
+"seat": "The Wrekin"
+},
+"1578": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Greg Clark",
+"party": "Conservative",
+"seat": "Tunbridge Wells"
+},
+"1579": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mary Creagh",
+"party": "Labour",
+"seat": "Coventry East"
+},
+"1582": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Grant Shapps",
+"party": "Conservative",
+"seat": "Welwyn Hatfield"
+},
+"1583": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 2,
+"name": "Baroness Brown of Silvertown",
+"party": "Labour",
+"seat": "Life peer"
+},
+"1584": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "John Penrose",
+"party": "Conservative",
+"seat": "Weston-Super-Mare"
+},
+"1585": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Stephen Hammond",
+"party": "Conservative",
+"seat": "Wimbledon"
+},
+"1586": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Adam Afriyie",
+"party": "Conservative",
+"seat": "Windsor"
+},
+"1587": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Pat McFadden",
+"party": "Labour",
+"seat": "Wolverhampton South East"
+},
+"1588": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 2,
+"name": "Baroness Keeley",
+"party": "Labour",
+"seat": "Life peer"
+},
+"1591": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Tim Farron",
+"party": "Liberal Democrat",
+"seat": "Westmorland and Lonsdale"
+},
+"1593": {
+"abbr": "DUP",
+"colour": "d46a4c",
+"end": "",
+"house": 1,
+"name": "Sammy Wilson",
+"party": "Democratic Unionist Party",
+"seat": "East Antrim"
+},
+"1601": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Robert Neill",
+"party": "Conservative",
+"seat": "Bromley and Chislehurst"
+},
+"1604": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Virendra Sharma",
+"party": "Labour",
+"seat": "Ealing, Southall"
+},
+"1605": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Edward Timpson",
+"party": "Conservative",
+"seat": "Eddisbury"
+},
+"1606": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "John Howell",
+"party": "Conservative",
+"seat": "Henley"
+},
+"1609": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Chloe Smith",
+"party": "Conservative",
+"seat": "Norwich North"
+},
+"163": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sir Stephen Timms",
+"party": "Labour",
+"seat": "East Ham"
+},
+"165": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Clive Efford",
+"party": "Labour",
+"seat": "Eltham and Chislehurst"
+},
+"172": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ms Diane Abbott",
+"party": "Labour",
+"seat": "Hackney North and Stoke Newington"
+},
+"177": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Gareth Thomas",
+"party": "Labour (Co-op)",
+"seat": "Harrow West"
+},
+"178": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "John McDonnell",
+"party": "Labour",
+"seat": "Hayes and Harlington"
+},
+"181": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 2,
+"name": "Lord Cryer",
+"party": "Labour",
+"seat": "Life peer"
+},
+"185": {
+"abbr": "YP",
+"colour": "ff3131",
+"end": "",
+"house": 1,
+"name": "Jeremy Corbyn",
+"party": "Your Party",
+"seat": "Islington North"
+},
+"188": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Ed Davey",
+"party": "Liberal Democrat",
+"seat": "Kingston and Surbiton"
+},
+"193": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dame Siobhain McDonagh",
+"party": "Labour",
+"seat": "Mitcham and Morden"
+},
+"206": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mr David Lammy",
+"party": "Labour",
+"seat": "Tottenham"
+},
+"221": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "",
+"house": 1,
+"name": "Dan Norris",
+"party": "Independent",
+"seat": "North East Somerset and Hanham"
+},
+"223": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Liam Fox",
+"party": "Conservative",
+"seat": "North Somerset"
+},
+"227": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Andrew George",
+"party": "Liberal Democrat",
+"seat": "St Ives"
+},
+"230": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Ben Bradshaw",
+"party": "Labour",
+"seat": "Exeter"
+},
+"234": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Gary Streeter",
+"party": "Conservative",
+"seat": "South West Devon"
+},
+"242": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Christopher Chope",
+"party": "Conservative",
+"seat": "Christchurch"
+},
+"245": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Robert Syms",
+"party": "Conservative",
+"seat": "Poole"
+},
+"249": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Geoffrey Clifton-Brown",
+"party": "Conservative",
+"seat": "North Cotswolds"
+},
+"253": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Laurence Robertson",
+"party": "Conservative",
+"seat": "Tewkesbury"
+},
+"261": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "James Gray",
+"party": "Conservative",
+"seat": "North Wiltshire"
+},
+"288": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir William Cash",
+"party": "Conservative",
+"seat": "Stone"
+},
+"298": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 2,
+"name": "Lord McCabe",
+"party": "Labour",
+"seat": "Life peer"
+},
+"318": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 2,
+"name": "Lord Spellar",
+"party": "Labour",
+"seat": "Life peer"
+},
+"345": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Edward Leigh",
+"party": "Conservative",
+"seat": "Gainsborough"
+},
+"350": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir John Hayes",
+"party": "Conservative",
+"seat": "South Holland and The Deepings"
+},
+"373": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "David Davis",
+"party": "Conservative",
+"seat": "Goole and Pocklington"
+},
+"39": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir John Whittingdale",
+"party": "Conservative",
+"seat": "Maldon"
+},
+"390": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 2,
+"name": "Baroness Winterton of Doncaster",
+"party": "Labour",
+"seat": "Life peer"
+},
+"3909": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Pamela Nash",
+"party": "Labour",
+"seat": "Motherwell, Wishaw and Carluke"
+},
+"3912": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Richard Fuller",
+"party": "Conservative",
+"seat": "North Bedfordshire"
+},
+"3914": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Shabana Mahmood",
+"party": "Labour",
+"seat": "Birmingham Ladywood"
+},
+"3919": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Bob Stewart",
+"party": "Conservative",
+"seat": "Beckenham"
+},
+"3922": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Conor Burns",
+"party": "Conservative",
+"seat": "Bournemouth West"
+},
+"3924": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Yasmin Qureshi",
+"party": "Labour",
+"seat": "Bolton South and Walkden"
+},
+"3926": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Paul Maynard",
+"party": "Conservative",
+"seat": "Blackpool North and Cleveleys"
+},
+"3928": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Nick Smith",
+"party": "Labour",
+"seat": "Blaenau Gwent and Rhymney"
+},
+"3930": {
+"abbr": "Green",
+"colour": "78b82a",
+"end": "2024-05-30",
+"house": 1,
+"name": "Caroline Lucas",
+"party": "Green Party",
+"seat": "Brighton, Pavilion"
+},
+"3932": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Dr Dan Poulter",
+"party": "Labour",
+"seat": "Central Suffolk and North Ipswich"
+},
+"3934": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "George Eustice",
+"party": "Conservative",
+"seat": "Camborne and Redruth"
+},
+"3935": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Mel Stride",
+"party": "Conservative",
+"seat": "Central Devon"
+},
+"3939": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Andrew Percy",
+"party": "Conservative",
+"seat": "Brigg and Goole"
+},
+"394": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mr Clive Betts",
+"party": "Labour",
+"seat": "Sheffield South East"
+},
+"3940": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Craig Whittaker",
+"party": "Conservative",
+"seat": "Calder Valley"
+},
+"3942": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "John Stevenson",
+"party": "Conservative",
+"seat": "Carlisle"
+},
+"3944": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 2,
+"name": "Lord Hart of Tenby",
+"party": "Conservative",
+"seat": "Life peer"
+},
+"3945": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Sajid Javid",
+"party": "Conservative",
+"seat": "Bromsgrove"
+},
+"3948": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Rebecca Harris",
+"party": "Conservative",
+"seat": "Castle Point"
+},
+"3950": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Dame Tracey Crouch",
+"party": "Conservative",
+"seat": "Chatham and Aylesford"
+},
+"3952": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mr Toby Perkins",
+"party": "Labour",
+"seat": "Chesterfield"
+},
+"3953": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Jason McCartney",
+"party": "Conservative",
+"seat": "Colne Valley"
+},
+"3957": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Martin Vickers",
+"party": "Conservative",
+"seat": "Brigg and Immingham"
+},
+"3958": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Fiona Bruce",
+"party": "Conservative",
+"seat": "Congleton"
+},
+"3960": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Henry Smith",
+"party": "Conservative",
+"seat": "Crawley"
+},
+"3966": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ian Murray",
+"party": "Labour",
+"seat": "Edinburgh South"
+},
+"3969": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Damian Hinds",
+"party": "Conservative",
+"seat": "East Hampshire"
+},
+"3970": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Gareth Johnson",
+"party": "Conservative",
+"seat": "Dartford"
+},
+"3973": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Grahame Morris",
+"party": "Labour",
+"seat": "Easington"
+},
+"3977": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Chris Heaton-Harris",
+"party": "Conservative",
+"seat": "Daventry"
+},
+"3985": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Robert Halfon",
+"party": "Conservative",
+"seat": "Harlow"
+},
+"3986": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Damian Collins",
+"party": "Conservative",
+"seat": "Folkestone and Hythe"
+},
+"3987": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Rehman Chishti",
+"party": "Conservative",
+"seat": "Gillingham and Rainham"
+},
+"3989": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Jack Lopresti",
+"party": "Conservative",
+"seat": "Filton and Bradley Stoke"
+},
+"3990": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Richard Graham",
+"party": "Conservative",
+"seat": "Gloucester"
+},
+"3991": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Jesse Norman",
+"party": "Conservative",
+"seat": "Hereford and South Herefordshire"
+},
+"3992": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "James Morris",
+"party": "Conservative",
+"seat": "Halesowen and Rowley Regis"
+},
+"3996": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Andrew Jones",
+"party": "Conservative",
+"seat": "Harrogate and Knaresborough"
+},
+"3997": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Alec Shelbrooke",
+"party": "Conservative",
+"seat": "Wetherby and Easingwold"
+},
+"3998": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mark Menzies",
+"party": "Independent",
+"seat": "Fylde"
+},
+"40": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Bernard Jenkin",
+"party": "Conservative",
+"seat": "Harwich and North Essex"
+},
+"400": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "John Healey",
+"party": "Labour",
+"seat": "Rawmarsh and Conisbrough"
+},
+"4000": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Ian Mearns",
+"party": "Labour",
+"seat": "Gateshead"
+},
+"4004": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mike Freer",
+"party": "Conservative",
+"seat": "Finchley and Golders Green"
+},
+"4005": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Bob Blackman",
+"party": "Conservative",
+"seat": "Harrow East"
+},
+"4006": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Dr Matthew Offord",
+"party": "Conservative",
+"seat": "Hendon"
+},
+"4007": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Dominic Raab",
+"party": "Conservative",
+"seat": "Esher and Walton"
+},
+"4008": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Dame Caroline Dinenage",
+"party": "Conservative",
+"seat": "Gosport"
+},
+"4009": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Brandon Lewis",
+"party": "Conservative",
+"seat": "Great Yarmouth"
+},
+"4014": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 2,
+"name": "Lord Sharma",
+"party": "Conservative",
+"seat": "Life peer"
+},
+"4015": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Iain Stewart",
+"party": "Conservative",
+"seat": "Milton Keynes South"
+},
+"4017": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Penny Mordaunt",
+"party": "Conservative",
+"seat": "Portsmouth North"
+},
+"4018": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Helen Grant",
+"party": "Conservative",
+"seat": "Maidstone and Malling"
+},
+"4020": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "George Freeman",
+"party": "Conservative",
+"seat": "Mid Norfolk"
+},
+"4021": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-01-08",
+"house": 1,
+"name": "Chris Skidmore",
+"party": "Conservative",
+"seat": "Kingswood"
+},
+"4024": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Marcus Jones",
+"party": "Conservative",
+"seat": "Nuneaton"
+},
+"4025": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mrs Pauline Latham",
+"party": "Conservative",
+"seat": "Mid Derbyshire"
+},
+"4026": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Liz Kendall",
+"party": "Labour",
+"seat": "Leicester West"
+},
+"4028": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Karl McCartney",
+"party": "Conservative",
+"seat": "Lincoln"
+},
+"4029": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Lilian Greenwood",
+"party": "Labour",
+"seat": "Nottingham South"
+},
+"4030": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Karl Turner",
+"party": "Labour",
+"seat": "Kingston upon Hull East"
+},
+"4031": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Rachel Reeves",
+"party": "Labour",
+"seat": "Leeds West and Pudsey"
+},
+"4032": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Stuart Andrew",
+"party": "Conservative",
+"seat": "Daventry"
+},
+"4034": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Yvonne Fovargue",
+"party": "Labour",
+"seat": "Makerfield"
+},
+"4038": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Heidi Alexander",
+"party": "Labour",
+"seat": "Swindon South"
+},
+"4040": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Chris Evans",
+"party": "Labour (Co-op)",
+"seat": "Caerphilly"
+},
+"4044": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Andrew Stephenson",
+"party": "Conservative",
+"seat": "Pendle"
+},
+"4046": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Bridget Phillipson",
+"party": "Labour",
+"seat": "Houghton and Sunderland South"
+},
+"4048": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Caroline Nokes",
+"party": "Conservative",
+"seat": "Romsey and Southampton North"
+},
+"4050": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Gordon Henderson",
+"party": "Conservative",
+"seat": "Sittingbourne and Sheppey"
+},
+"4051": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "John Glen",
+"party": "Conservative",
+"seat": "Salisbury"
+},
+"4052": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mark Pawsey",
+"party": "Conservative",
+"seat": "Rugby"
+},
+"4053": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mrs Heather Wheeler",
+"party": "Conservative",
+"seat": "South Derbyshire"
+},
+"4055": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Mark Spencer",
+"party": "Conservative",
+"seat": "Sherwood"
+},
+"4056": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sir Nicholas Dakin",
+"party": "Labour",
+"seat": "Scunthorpe"
+},
+"4058": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Paul Blomfield",
+"party": "Labour",
+"seat": "Sheffield Central"
+},
+"4060": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Jake Berry",
+"party": "Conservative",
+"seat": "Rossendale and Darwen"
+},
+"4061": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Bill Esterson",
+"party": "Labour",
+"seat": "Sefton Central"
+},
+"4064": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Steve Baker",
+"party": "Conservative",
+"seat": "Wycombe"
+},
+"4065": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Dame Jackie Doyle-Price",
+"party": "Conservative",
+"seat": "Thurrock"
+},
+"4066": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Priti Patel",
+"party": "Conservative",
+"seat": "Witham"
+},
+"4067": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Steve Brine",
+"party": "Conservative",
+"seat": "Winchester"
+},
+"4069": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Peter Aldous",
+"party": "Conservative",
+"seat": "Waveney"
+},
+"4070": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Matt Hancock",
+"party": "Conservative",
+"seat": "West Suffolk"
+},
+"4074": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Mark Garnier",
+"party": "Conservative",
+"seat": "Wyre Forest"
+},
+"4076": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Valerie Vaz",
+"party": "Labour",
+"seat": "Walsall and Bloxwich"
+},
+"4077": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Emma Reynolds",
+"party": "Labour",
+"seat": "Wycombe"
+},
+"4079": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Julian Sturdy",
+"party": "Conservative",
+"seat": "York Outer"
+},
+"4082": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Lisa Nandy",
+"party": "Labour",
+"seat": "Wigan"
+},
+"4083": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Alison McGovern",
+"party": "Labour",
+"seat": "Birkenhead"
+},
+"4084": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Esther McVey",
+"party": "Conservative",
+"seat": "Tatton"
+},
+"4086": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Alun Cairns",
+"party": "Conservative",
+"seat": "Vale of Glamorgan"
+},
+"4088": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ms Stella Creasy",
+"party": "Labour (Co-op)",
+"seat": "Walthamstow"
+},
+"4089": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Tessa Munt",
+"party": "Liberal Democrat",
+"seat": "Wells and Mendip Hills"
+},
+"4091": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Robin Walker",
+"party": "Conservative",
+"seat": "Worcester"
+},
+"4092": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Stephen Metcalfe",
+"party": "Conservative",
+"seat": "South Basildon and East Thurrock"
+},
+"4093": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Stephen McPartland",
+"party": "Conservative",
+"seat": "Stevenage"
+},
+"4095": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Steve Barclay",
+"party": "Conservative",
+"seat": "North East Cambridgeshire"
+},
+"4097": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Elizabeth Truss",
+"party": "Conservative",
+"seat": "South West Norfolk"
+},
+"4098": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 2,
+"name": "Baroness Coffey",
+"party": "Conservative",
+"seat": "Life peer"
+},
+"4099": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Jacob Rees-Mogg",
+"party": "Conservative",
+"seat": "North East Somerset"
+},
+"410": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jon Trickett",
+"party": "Labour",
+"seat": "Normanton and Hemsworth"
+},
+"4100": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mrs Sheryll Murray",
+"party": "Conservative",
+"seat": "South East Cornwall"
+},
+"4105": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Justin Tomlinson",
+"party": "Conservative",
+"seat": "North Swindon"
+},
+"4106": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Robert Buckland",
+"party": "Conservative",
+"seat": "South Swindon"
+},
+"4107": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Dame Harriett Baldwin",
+"party": "Conservative",
+"seat": "West Worcestershire"
+},
+"4108": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Gavin Williamson",
+"party": "Conservative",
+"seat": "Stone, Great Wyrley and Penkridge"
+},
+"411": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Barry Sheerman",
+"party": "Labour (Co-op)",
+"seat": "Huddersfield"
+},
+"4110": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Dame Karen Bradley",
+"party": "Conservative",
+"seat": "Staffordshire Moorlands"
+},
+"4113": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Nadhim Zahawi",
+"party": "Conservative",
+"seat": "Stratford-on-Avon"
+},
+"4116": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Michael Ellis",
+"party": "Conservative",
+"seat": "Northampton North"
+},
+"4117": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Andrea Leadsom",
+"party": "Conservative",
+"seat": "South Northamptonshire"
+},
+"4118": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Julian Smith",
+"party": "Conservative",
+"seat": "Skipton and Ripon"
+},
+"4119": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jonathan Reynolds",
+"party": "Labour (Co-op)",
+"seat": "Stalybridge and Hyde"
+},
+"4122": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Alex Cunningham",
+"party": "Labour",
+"seat": "Stockton North"
+},
+"4124": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dame Chi Onwurah",
+"party": "Labour",
+"seat": "Newcastle upon Tyne Central and West"
+},
+"4125": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Catherine McKinnell",
+"party": "Labour",
+"seat": "Newcastle upon Tyne North"
+},
+"4126": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mary Glindon",
+"party": "Labour",
+"seat": "Newcastle upon Tyne East and Wallsend"
+},
+"4127": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 2,
+"name": "Baroness Elliott of Whitburn Bay",
+"party": "Labour",
+"seat": "Life peer"
+},
+"4129": {
+"abbr": "DUP",
+"colour": "d46a4c",
+"end": "2024-05-30",
+"house": 1,
+"name": "Ian Paisley",
+"party": "Democratic Unionist Party",
+"seat": "North Antrim"
+},
+"413": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Hilary Benn",
+"party": "Labour",
+"seat": "Leeds South"
+},
+"4131": {
+"abbr": "DUP",
+"colour": "d46a4c",
+"end": "",
+"house": 1,
+"name": "Jim Shannon",
+"party": "Democratic Unionist Party",
+"seat": "Strangford"
+},
+"4132": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Richard Drax",
+"party": "Conservative",
+"seat": "South Dorset"
+},
+"4133": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2024-05-30",
+"house": 1,
+"name": "Andrew Bridgen",
+"party": "Independent",
+"seat": "North West Leicestershire"
+},
+"4134": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Kwasi Kwarteng",
+"party": "Conservative",
+"seat": "Spelthorne"
+},
+"4135": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "David Morris",
+"party": "Conservative",
+"seat": "Morecambe and Lunesdale"
+},
+"4136": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Nigel Mills",
+"party": "Conservative",
+"seat": "Amber Valley"
+},
+"4138": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Rushanara Ali",
+"party": "Labour",
+"seat": "Bethnal Green and Stepney"
+},
+"4139": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ian Lavery",
+"party": "Labour",
+"seat": "Blyth and Ashington"
+},
+"4142": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Guy Opperman",
+"party": "Conservative",
+"seat": "Hexham"
+},
+"415": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Fabian Hamilton",
+"party": "Labour",
+"seat": "Leeds North East"
+},
+"420": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Yvette Cooper",
+"party": "Labour",
+"seat": "Pontefract, Castleford and Knottingley"
+},
+"4212": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Debbie Abrahams",
+"party": "Labour",
+"seat": "Oldham East and Saddleworth"
+},
+"4243": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dan Jarvis",
+"party": "Labour",
+"seat": "Barnsley North"
+},
+"4244": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Jonathan Ashworth",
+"party": "Labour (Co-op)",
+"seat": "Leicester South"
+},
+"4245": {
+"abbr": "SF",
+"colour": "02665f",
+"end": "",
+"house": 1,
+"name": "Paul Maskey",
+"party": "Sinn F\u00e9in",
+"seat": "Belfast West"
+},
+"4249": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Anne Marie Morris",
+"party": "Conservative",
+"seat": "Newton Abbot"
+},
+"4253": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Seema Malhotra",
+"party": "Labour (Co-op)",
+"seat": "Feltham and Heston"
+},
+"4263": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Lucy Powell",
+"party": "Labour (Co-op)",
+"seat": "Manchester Central"
+},
+"4264": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Stephen Doughty",
+"party": "Labour (Co-op)",
+"seat": "Cardiff South and Penarth"
+},
+"4267": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sarah Champion",
+"party": "Labour",
+"seat": "Rotherham"
+},
+"4268": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Steve Reed",
+"party": "Labour (Co-op)",
+"seat": "Streatham and Croydon North"
+},
+"4269": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Andy McDonald",
+"party": "Labour",
+"seat": "Middlesbrough and Thornaby East"
+},
+"4274": {
+"abbr": "SF",
+"colour": "02665f",
+"end": "2024-05-30",
+"house": 1,
+"name": "Francie Molloy",
+"party": "Sinn F\u00e9in",
+"seat": "Mid Ulster"
+},
+"4277": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Emma Lewell",
+"party": "Labour",
+"seat": "South Shields"
+},
+"429": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Derek Twigg",
+"party": "Labour",
+"seat": "Widnes and Halewood"
+},
+"4316": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mike Kane",
+"party": "Labour",
+"seat": "Wythenshawe and Sale East"
+},
+"4320": {
+"abbr": "RUK",
+"colour": "12b6cf",
+"end": "",
+"house": 1,
+"name": "Robert Jenrick",
+"party": "Reform UK",
+"seat": "Newark"
+},
+"435": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 2,
+"name": "Lord Brady of Altrincham",
+"party": "Conservative",
+"seat": "Life peer"
+},
+"4356": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Angela Rayner",
+"party": "Labour",
+"seat": "Ashton-under-Lyne"
+},
+"4357": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "",
+"house": 1,
+"name": "Kirsty Blackman",
+"party": "Scottish National Party",
+"seat": "Aberdeen North"
+},
+"4358": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Wendy Morton",
+"party": "Conservative",
+"seat": "Aldridge-Brownhills"
+},
+"4359": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Stephen Kinnock",
+"party": "Labour",
+"seat": "Aberafan Maesteg"
+},
+"4360": {
+"abbr": "DUP",
+"colour": "d46a4c",
+"end": "",
+"house": 1,
+"name": "Gavin Robinson",
+"party": "Democratic Unionist Party",
+"seat": "Belfast East"
+},
+"4361": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Matt Warman",
+"party": "Conservative",
+"seat": "Boston and Skegness"
+},
+"4362": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Edward Argar",
+"party": "Conservative",
+"seat": "Melton and Syston"
+},
+"4363": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Kate Hollern",
+"party": "Labour",
+"seat": "Blackburn"
+},
+"4366": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir James Cleverly",
+"party": "Conservative",
+"seat": "Braintree"
+},
+"4368": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Neil Coyle",
+"party": "Labour",
+"seat": "Bermondsey and Old Southwark"
+},
+"4369": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Tom Pursglove",
+"party": "Conservative",
+"seat": "Corby"
+},
+"4370": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jess Phillips",
+"party": "Labour",
+"seat": "Birmingham Yardley"
+},
+"4371": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "",
+"house": 1,
+"name": "Brendan O'Hara",
+"party": "Scottish National Party",
+"seat": "Argyll, Bute and South Lochaber"
+},
+"4372": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Amanda Solloway",
+"party": "Conservative",
+"seat": "Derby North"
+},
+"4373": {
+"abbr": "SF",
+"colour": "02665f",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mickey Brady",
+"party": "Sinn F\u00e9in",
+"seat": "Newry and Armagh"
+},
+"4380": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Jo Churchill",
+"party": "Conservative",
+"seat": "Bury St Edmunds"
+},
+"4382": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Daniel Zeichner",
+"party": "Labour",
+"seat": "Cambridge"
+},
+"4384": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Mike Wood",
+"party": "Conservative",
+"seat": "Kingswinford and South Staffordshire"
+},
+"4389": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ruth Cadbury",
+"party": "Labour",
+"seat": "Brentford and Isleworth"
+},
+"4390": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Ian Blackford",
+"party": "Scottish National Party",
+"seat": "Ross, Skye and Lochaber"
+},
+"4391": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Judith Cummins",
+"party": "Labour",
+"seat": "Bradford South"
+},
+"4393": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Stuart C McDonald",
+"party": "Scottish National Party",
+"seat": "Cumbernauld, Kilsyth and Kirkintilloch East"
+},
+"4394": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Imran Hussain",
+"party": "Labour",
+"seat": "Bradford East"
+},
+"4396": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Rebecca Long Bailey",
+"party": "Labour",
+"seat": "Salford"
+},
+"4397": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Peter Dowd",
+"party": "Labour",
+"seat": "Bootle"
+},
+"4398": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Chris Green",
+"party": "Conservative",
+"seat": "Bolton West"
+},
+"4399": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Victoria Atkins",
+"party": "Conservative",
+"seat": "Louth and Horncastle"
+},
+"4400": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Margaret Greenwood",
+"party": "Labour",
+"seat": "Wirral West"
+},
+"4401": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 2,
+"name": "Baroness Prentis of Banbury",
+"party": "Conservative",
+"seat": "Life peer"
+},
+"4402": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Douglas Chapman",
+"party": "Scottish National Party",
+"seat": "Dunfermline and West Fife"
+},
+"4403": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "",
+"house": 1,
+"name": "Chris Law",
+"party": "Scottish National Party",
+"seat": "Dundee Central"
+},
+"4406": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mary Robinson",
+"party": "Conservative",
+"seat": "Cheadle"
+},
+"4407": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Nigel Huddleston",
+"party": "Conservative",
+"seat": "Droitwich and Evesham"
+},
+"4409": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Naz Shah",
+"party": "Labour",
+"seat": "Bradford West"
+},
+"4410": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2024-05-30",
+"house": 1,
+"name": "Julian Knight",
+"party": "Independent",
+"seat": "Solihull"
+},
+"4411": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2024-05-30",
+"house": 1,
+"name": "Lucy Allan",
+"party": "Independent",
+"seat": "Telford"
+},
+"4412": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Dr Lisa Cameron",
+"party": "Conservative",
+"seat": "East Kilbride, Strathaven and Lesmahagow"
+},
+"4413": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Kirsten Oswald",
+"party": "Scottish National Party",
+"seat": "East Renfrewshire"
+},
+"4414": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Paul Scully",
+"party": "Conservative",
+"seat": "Sutton and Cheam"
+},
+"4415": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "John Nicolson",
+"party": "Scottish National Party",
+"seat": "Ochil and South Perthshire"
+},
+"4417": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Deidre Brock",
+"party": "Scottish National Party",
+"seat": "Edinburgh North and Leith"
+},
+"4418": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Justin Madders",
+"party": "Labour",
+"seat": "Ellesmere Port and Bromborough"
+},
+"4419": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Joanna Cherry",
+"party": "Scottish National Party",
+"seat": "Edinburgh South West"
+},
+"4420": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Gavin Newlands",
+"party": "Scottish National Party",
+"seat": "Paisley and Renfrewshire North"
+},
+"4421": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mhairi Black",
+"party": "Scottish National Party",
+"seat": "Paisley and Renfrewshire South"
+},
+"4423": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Will Quince",
+"party": "Conservative",
+"seat": "Colchester"
+},
+"4425": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jo Stevens",
+"party": "Labour",
+"seat": "Cardiff East"
+},
+"4429": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr William Wragg",
+"party": "Independent",
+"seat": "Hazel Grove"
+},
+"4430": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Alison Thewliss",
+"party": "Scottish National Party",
+"seat": "Glasgow Central"
+},
+"4432": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Patrick Grady",
+"party": "Scottish National Party",
+"seat": "Glasgow North"
+},
+"4433": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 2,
+"name": "Baroness Debbonaire",
+"party": "Labour",
+"seat": "Life peer"
+},
+"4434": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2026-05-14",
+"house": 1,
+"name": "Stephen Gethins",
+"party": "Scottish National Party",
+"seat": "Arbroath and Broughty Ferry"
+},
+"4435": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Patricia Gibson",
+"party": "Scottish National Party",
+"seat": "North Ayrshire and Arran"
+},
+"4436": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Cat Smith",
+"party": "Labour",
+"seat": "Lancaster and Wyre"
+},
+"4437": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Anne McLaughlin",
+"party": "Scottish National Party",
+"seat": "Glasgow North East"
+},
+"4438": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Craig Williams",
+"party": "Conservative",
+"seat": "Montgomeryshire"
+},
+"4439": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Alberto Costa",
+"party": "Conservative",
+"seat": "South Leicestershire"
+},
+"4441": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Oliver Dowden",
+"party": "Conservative",
+"seat": "Hertsmere"
+},
+"4442": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Huw Merriman",
+"party": "Conservative",
+"seat": "Bexhill and Battle"
+},
+"4443": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Carol Monaghan",
+"party": "Scottish National Party",
+"seat": "Glasgow North West"
+},
+"4444": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Karin Smyth",
+"party": "Labour",
+"seat": "Bristol South"
+},
+"4446": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Marcus Fysh",
+"party": "Conservative",
+"seat": "Yeovil"
+},
+"4447": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Maggie Throup",
+"party": "Conservative",
+"seat": "Erewash"
+},
+"4449": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Anna Turley",
+"party": "Labour (Co-op)",
+"seat": "Redcar"
+},
+"4450": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Luke Hall",
+"party": "Conservative",
+"seat": "Thornbury and Yate"
+},
+"4451": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Kevin Foster",
+"party": "Conservative",
+"seat": "Torbay"
+},
+"4452": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Steve Double",
+"party": "Conservative",
+"seat": "St Austell and Newquay"
+},
+"4453": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Tommy Sheppard",
+"party": "Scottish National Party",
+"seat": "Edinburgh East"
+},
+"4454": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Dame Amanda Milling",
+"party": "Conservative",
+"seat": "Cannock Chase"
+},
+"4456": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jeff Smith",
+"party": "Labour",
+"seat": "Manchester Withington"
+},
+"4457": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ms Marie Rimmer",
+"party": "Labour",
+"seat": "St Helens South and Whiston"
+},
+"4458": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2024-05-30",
+"house": 1,
+"name": "Conor McGinn",
+"party": "Independent",
+"seat": "St Helens North"
+},
+"4459": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mrs Flick Drummond",
+"party": "Conservative",
+"seat": "Meon Valley"
+},
+"4460": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Ms Nusrat Ghani",
+"party": "Conservative",
+"seat": "Sussex Weald"
+},
+"4461": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Stewart Malcolm McDonald",
+"party": "Scottish National Party",
+"seat": "Glasgow South"
+},
+"4462": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Tom Tugendhat",
+"party": "Conservative",
+"seat": "Tonbridge"
+},
+"4463": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Chris Stephens",
+"party": "Scottish National Party",
+"seat": "Glasgow South West"
+},
+"4464": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Melanie Onn",
+"party": "Labour",
+"seat": "Great Grimsby and Cleethorpes"
+},
+"4465": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Ronnie Cowan",
+"party": "Scottish National Party",
+"seat": "Inverclyde"
+},
+"4467": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Drew Hendry",
+"party": "Scottish National Party",
+"seat": "Inverness, Nairn, Badenoch and Strathspey"
+},
+"4471": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Rachael Maskell",
+"party": "Labour (Co-op)",
+"seat": "York Central"
+},
+"4473": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Louise Haigh",
+"party": "Labour",
+"seat": "Sheffield Heeley"
+},
+"4474": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Kevin Hollinrake",
+"party": "Conservative",
+"seat": "Thirsk and Malton"
+},
+"4475": {
+"abbr": "RUK",
+"colour": "12b6cf",
+"end": "",
+"house": 1,
+"name": "Suella Braverman",
+"party": "Reform UK",
+"seat": "Fareham and Waterlooville"
+},
+"4476": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Dr James Davies",
+"party": "Conservative",
+"seat": "Vale of Clwyd"
+},
+"4478": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Royston Smith",
+"party": "Conservative",
+"seat": "Southampton, Itchen"
+},
+"4479": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Nick Thomas-Symonds",
+"party": "Labour",
+"seat": "Torfaen"
+},
+"4480": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Carolyn Harris",
+"party": "Labour",
+"seat": "Neath and Swansea East"
+},
+"4481": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Alex Chalk",
+"party": "Conservative",
+"seat": "Cheltenham"
+},
+"4482": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Owen Thompson",
+"party": "Scottish National Party",
+"seat": "Midlothian"
+},
+"4483": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Rishi Sunak",
+"party": "Conservative",
+"seat": "Richmond and Northallerton"
+},
+"4484": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Alan Mak",
+"party": "Conservative",
+"seat": "Havant"
+},
+"4485": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Johnny Mercer",
+"party": "Conservative",
+"seat": "Plymouth, Moor View"
+},
+"4486": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Hannah Bardell",
+"party": "Scottish National Party",
+"seat": "Livingston"
+},
+"4487": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Kelly Tolhurst",
+"party": "Conservative",
+"seat": "Rochester and Strood"
+},
+"4488": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Martyn Day",
+"party": "Scottish National Party",
+"seat": "Linlithgow and East Falkirk"
+},
+"449": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Graham Stringer",
+"party": "Labour",
+"seat": "Blackley and Middleton South"
+},
+"4490": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Dame Andrea Jenkyns",
+"party": "Conservative",
+"seat": "Morley and Outwood"
+},
+"4491": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Vicky Foxcroft",
+"party": "Labour",
+"seat": "Lewisham North"
+},
+"4492": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Maria Caulfield",
+"party": "Conservative",
+"seat": "Lewes"
+},
+"4493": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Richard Burgon",
+"party": "Labour",
+"seat": "Leeds East"
+},
+"4494": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Simon Hoare",
+"party": "Conservative",
+"seat": "North Dorset"
+},
+"4495": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Kit Malthouse",
+"party": "Conservative",
+"seat": "North West Hampshire"
+},
+"4496": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Scott Mann",
+"party": "Conservative",
+"seat": "North Cornwall"
+},
+"4497": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Michael Tomlinson",
+"party": "Conservative",
+"seat": "Mid Dorset and North Poole"
+},
+"4498": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Ranil Jayawardena",
+"party": "Conservative",
+"seat": "North East Hampshire"
+},
+"4500": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Clive Lewis",
+"party": "Labour",
+"seat": "Norwich South"
+},
+"4501": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Gerald Jones",
+"party": "Labour",
+"seat": "Merthyr Tydfil and Aberdare"
+},
+"4503": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Chris Philp",
+"party": "Conservative",
+"seat": "Croydon South"
+},
+"4504": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Wes Streeting",
+"party": "Labour",
+"seat": "Ilford North"
+},
+"4505": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Peter Kyle",
+"party": "Labour",
+"seat": "Hove and Portslade"
+},
+"4507": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Jeremy Quin",
+"party": "Conservative",
+"seat": "Horsham"
+},
+"4509": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Craig Tracey",
+"party": "Conservative",
+"seat": "North Warwickshire"
+},
+"4510": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Helen Hayes",
+"party": "Labour",
+"seat": "Dulwich and West Norwood"
+},
+"4511": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dr Rupa Huq",
+"party": "Labour",
+"seat": "Ealing Central and Acton"
+},
+"4512": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Caroline Ansell",
+"party": "Conservative",
+"seat": "Eastbourne"
+},
+"4513": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Mims Davies",
+"party": "Conservative",
+"seat": "East Grinstead and Uckfield"
+},
+"4514": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2026-09-01",
+"house": 1,
+"name": "Sir Keir Starmer",
+"party": "Labour",
+"seat": "Holborn and St Pancras"
+},
+"4515": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Kate Osamor",
+"party": "Labour (Co-op)",
+"seat": "Edmonton and Winchmore Hill"
+},
+"4517": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Lucy Frazer",
+"party": "Conservative",
+"seat": "South East Cambridgeshire"
+},
+"4518": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Tulip Siddiq",
+"party": "Labour",
+"seat": "Hampstead and Highgate"
+},
+"4519": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "James Cartlidge",
+"party": "Conservative",
+"seat": "South Suffolk"
+},
+"4520": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Matthew Pennycook",
+"party": "Labour",
+"seat": "Greenwich and Woolwich"
+},
+"4521": {
+"abbr": "PC",
+"colour": "348837",
+"end": "",
+"house": 1,
+"name": "Liz Saville Roberts",
+"party": "Plaid Cymru",
+"seat": "Dwyfor Meirionnydd"
+},
+"4522": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Rebecca Pow",
+"party": "Conservative",
+"seat": "Taunton Deane"
+},
+"4523": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Catherine West",
+"party": "Labour",
+"seat": "Hornsey and Friern Barnet"
+},
+"4525": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Christina Rees",
+"party": "Labour (Co-op)",
+"seat": "Neath"
+},
+"4527": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Helen Whately",
+"party": "Conservative",
+"seat": "Faversham and Mid Kent"
+},
+"4528": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "James Heappey",
+"party": "Conservative",
+"seat": "Wells"
+},
+"4529": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 2,
+"name": "Lord Mackinlay of Richborough",
+"party": "Conservative",
+"seat": "Life peer"
+},
+"4530": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Michelle Donelan",
+"party": "Conservative",
+"seat": "Chippenham"
+},
+"4531": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Anne-Marie Trevelyan",
+"party": "Conservative",
+"seat": "Berwick-upon-Tweed"
+},
+"4532": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Derek Thomas",
+"party": "Conservative",
+"seat": "St Ives"
+},
+"4569": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jim McMahon",
+"party": "Labour (Co-op)",
+"seat": "Oldham West, Chadderton and Royton"
+},
+"4571": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Gill Furniss",
+"party": "Labour",
+"seat": "Sheffield Brightside and Hillsborough"
+},
+"4572": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Chris Elmore",
+"party": "Labour",
+"seat": "Bridgend"
+},
+"4573": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dr Rosena Allin-Khan",
+"party": "Labour",
+"seat": "Tooting"
+},
+"4589": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Robert Courts",
+"party": "Conservative",
+"seat": "Witney"
+},
+"4591": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Sarah Olney",
+"party": "Liberal Democrat",
+"seat": "Richmond Park"
+},
+"4592": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Dr Caroline Johnson",
+"party": "Conservative",
+"seat": "Sleaford and North Hykeham"
+},
+"4593": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Trudy Harrison",
+"party": "Conservative",
+"seat": "Copeland"
+},
+"4595": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Gareth Snell",
+"party": "Labour (Co-op)",
+"seat": "Stoke-on-Trent Central"
+},
+"4597": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Mrs Kemi Badenoch",
+"party": "Conservative",
+"seat": "North West Essex"
+},
+"4598": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mohammad Yasin",
+"party": "Labour",
+"seat": "Bedford"
+},
+"4600": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Leo Docherty",
+"party": "Conservative",
+"seat": "Aldershot"
+},
+"4601": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Andrew Bowie",
+"party": "Conservative",
+"seat": "West Aberdeenshire and Kincardine"
+},
+"4602": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Wera Hobhouse",
+"party": "Liberal Democrat",
+"seat": "Bath"
+},
+"4603": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Preet Kaur Gill",
+"party": "Labour (Co-op)",
+"seat": "Birmingham Edgbaston"
+},
+"4606": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "David Duguid",
+"party": "Conservative",
+"seat": "Banff and Buchan"
+},
+"4607": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Stephanie Peacock",
+"party": "Labour",
+"seat": "Barnsley South"
+},
+"4608": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "John Lamont",
+"party": "Conservative",
+"seat": "Berwickshire, Roxburgh and Selkirk"
+},
+"4610": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Bambos Charalambous",
+"party": "Labour",
+"seat": "Southgate and Wood Green"
+},
+"4612": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Jamie Stone",
+"party": "Liberal Democrat",
+"seat": "Caithness, Sutherland and Easter Ross"
+},
+"4613": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Alex Burghart",
+"party": "Conservative",
+"seat": "Brentwood and Ongar"
+},
+"4615": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Lloyd Russell-Moyle",
+"party": "Labour (Co-op)",
+"seat": "Brighton, Kemptown"
+},
+"4616": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "",
+"house": 1,
+"name": "Rosie Duffield",
+"party": "Independent",
+"seat": "Canterbury"
+},
+"4617": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Matt Western",
+"party": "Labour",
+"seat": "Warwick and Leamington"
+},
+"4618": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Liz Twist",
+"party": "Labour",
+"seat": "Blaydon and Consett"
+},
+"4619": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 2,
+"name": "Lord Jack of Courance",
+"party": "Conservative",
+"seat": "Life peer"
+},
+"4620": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ellie Reeves",
+"party": "Labour",
+"seat": "Lewisham West and East Dulwich"
+},
+"4621": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Darren Jones",
+"party": "Labour",
+"seat": "Bristol North West"
+},
+"4623": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Tonia Antoniazzi",
+"party": "Labour",
+"seat": "Gower"
+},
+"4627": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Douglas Ross",
+"party": "Conservative",
+"seat": "Moray"
+},
+"4631": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sarah Jones",
+"party": "Labour",
+"seat": "Croydon West"
+},
+"4632": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Anna McMorrin",
+"party": "Labour",
+"seat": "Cardiff North"
+},
+"4633": {
+"abbr": "DUP",
+"colour": "d46a4c",
+"end": "2024-05-30",
+"house": 1,
+"name": "Paul Girvan",
+"party": "Democratic Unionist Party",
+"seat": "South Antrim"
+},
+"4634": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Christine Jardine",
+"party": "Liberal Democrat",
+"seat": "Edinburgh West"
+},
+"4635": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Eddie Hughes",
+"party": "Conservative",
+"seat": "Walsall North"
+},
+"4636": {
+"abbr": "SF",
+"colour": "02665f",
+"end": "",
+"house": 1,
+"name": "Chris Hazzard",
+"party": "Sinn F\u00e9in",
+"seat": "South Down"
+},
+"4637": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mr James Frith",
+"party": "Labour",
+"seat": "Bury North"
+},
+"4638": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mr Tanmanjeet Singh Dhesi",
+"party": "Labour",
+"seat": "Slough"
+},
+"4639": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Bim Afolami",
+"party": "Conservative",
+"seat": "Hitchin and Harpenden"
+},
+"4640": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "David Linden",
+"party": "Scottish National Party",
+"seat": "Glasgow East"
+},
+"4641": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Alex Norris",
+"party": "Labour (Co-op)",
+"seat": "Nottingham North and Kimberley"
+},
+"4643": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Jack Brereton",
+"party": "Conservative",
+"seat": "Stoke-on-Trent South"
+},
+"4645": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Emma Hardy",
+"party": "Labour",
+"seat": "Kingston upon Hull West and Haltemprice"
+},
+"4647": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Julia Lopez",
+"party": "Conservative",
+"seat": "Hornchurch and Upminster"
+},
+"4651": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dan Carden",
+"party": "Labour",
+"seat": "Liverpool Walton"
+},
+"4652": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Lee Rowley",
+"party": "Conservative",
+"seat": "North East Derbyshire"
+},
+"4653": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Stephen Morgan",
+"party": "Labour",
+"seat": "Portsmouth South"
+},
+"4654": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Matt Rodda",
+"party": "Labour",
+"seat": "Reading Central"
+},
+"4655": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Simon Clarke",
+"party": "Conservative",
+"seat": "Middlesbrough South and East Cleveland"
+},
+"4656": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Layla Moran",
+"party": "Liberal Democrat",
+"seat": "Oxford West and Abingdon"
+},
+"4657": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Anneliese Dodds",
+"party": "Labour (Co-op)",
+"seat": "Oxford East"
+},
+"4658": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Alex Sobel",
+"party": "Labour (Co-op)",
+"seat": "Leeds Central and Headingley"
+},
+"4659": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Andrew Lewer",
+"party": "Conservative",
+"seat": "Northampton South"
+},
+"4663": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Ben Bradley",
+"party": "Conservative",
+"seat": "Mansfield"
+},
+"4667": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2025-03-17",
+"house": 1,
+"name": "Mike Amesbury",
+"party": "Independent",
+"seat": "Runcorn and Helsby"
+},
+"4668": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 2,
+"name": "Baroness Maclean of Redditch",
+"party": "Conservative",
+"seat": "Life peer"
+},
+"4669": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Damien Moore",
+"party": "Conservative",
+"seat": "Southport"
+},
+"467": {
+"abbr": "Spk",
+"colour": "",
+"end": "",
+"house": 1,
+"name": "Sir Lindsay Hoyle",
+"party": "Speaker",
+"seat": "Chorley"
+},
+"4671": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Afzal Khan",
+"party": "Labour",
+"seat": "Manchester Rusholme"
+},
+"4673": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jo Platt",
+"party": "Labour (Co-op)",
+"seat": "Leigh and Atherton"
+},
+"4674": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Vicky Ford",
+"party": "Conservative",
+"seat": "Chelmsford"
+},
+"4676": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Marsha De Cordova",
+"party": "Labour",
+"seat": "Battersea"
+},
+"4677": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Giles Watling",
+"party": "Conservative",
+"seat": "Clacton"
+},
+"4679": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Neil O'Brien",
+"party": "Conservative",
+"seat": "Harborough, Oadby and Wigston"
+},
+"4680": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Gillian Keegan",
+"party": "Conservative",
+"seat": "Chichester"
+},
+"4681": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Bob Seely",
+"party": "Conservative",
+"seat": "Isle of Wight"
+},
+"4682": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Luke Pollard",
+"party": "Labour (Co-op)",
+"seat": "Plymouth Sutton and Devonport"
+},
+"4697": {
+"abbr": "SF",
+"colour": "02665f",
+"end": "",
+"house": 1,
+"name": "\u00d3rfhlaith Begley",
+"party": "Sinn F\u00e9in",
+"seat": "West Tyrone"
+},
+"4716": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ruth Jones",
+"party": "Labour",
+"seat": "Newport West and Islwyn"
+},
+"473": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sir Mark Hendrick",
+"party": "Labour (Co-op)",
+"seat": "Preston"
+},
+"4735": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2026-05-14",
+"house": 1,
+"name": "Stephen Flynn",
+"party": "Scottish National Party",
+"seat": "Aberdeen South"
+},
+"4736": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "",
+"house": 1,
+"name": "Dave Doogan",
+"party": "Scottish National Party",
+"seat": "Angus and Perthshire Glens"
+},
+"4737": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Dehenna Davison",
+"party": "Conservative",
+"seat": "Bishop Auckland"
+},
+"4738": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Alyn Smith",
+"party": "Scottish National Party",
+"seat": "Stirling"
+},
+"4739": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Jerome Mayhew",
+"party": "Conservative",
+"seat": "Broadland and Fakenham"
+},
+"474": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Nigel Evans",
+"party": "Conservative",
+"seat": "Ribble Valley"
+},
+"4740": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Allan Dorans",
+"party": "Scottish National Party",
+"seat": "Ayr, Carrick and Cumnock"
+},
+"4741": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Nickie Aiken",
+"party": "Conservative",
+"seat": "Cities of London and Westminster"
+},
+"4742": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Stuart Anderson",
+"party": "Conservative",
+"seat": "South Shropshire"
+},
+"4743": {
+"abbr": "RUK",
+"colour": "12b6cf",
+"end": "",
+"house": 1,
+"name": "Lee Anderson",
+"party": "Reform UK",
+"seat": "Ashfield"
+},
+"4744": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Simon Fell",
+"party": "Conservative",
+"seat": "Barrow and Furness"
+},
+"4745": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Rob Butler",
+"party": "Conservative",
+"seat": "Aylesbury"
+},
+"4746": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Robin Millar",
+"party": "Conservative",
+"seat": "Aberconwy"
+},
+"4747": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Tahir Ali",
+"party": "Labour",
+"seat": "Birmingham Hall Green and Moseley"
+},
+"4749": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Ian Levy",
+"party": "Conservative",
+"seat": "Blyth Valley"
+},
+"4750": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Jane Stevenson",
+"party": "Conservative",
+"seat": "Wolverhampton North East"
+},
+"4751": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Chris Loder",
+"party": "Conservative",
+"seat": "West Dorset"
+},
+"4752": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mark Jenkinson",
+"party": "Conservative",
+"seat": "Workington"
+},
+"4753": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mary Kelly Foy",
+"party": "Labour",
+"seat": "City of Durham"
+},
+"4754": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Peter Gibson",
+"party": "Conservative",
+"seat": "Darlington"
+},
+"4755": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mick Whitley",
+"party": "Labour",
+"seat": "Birkenhead"
+},
+"4756": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Brendan Clarke-Smith",
+"party": "Conservative",
+"seat": "Bassetlaw"
+},
+"4757": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Shaun Bailey",
+"party": "Conservative",
+"seat": "West Bromwich West"
+},
+"4758": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Cherilyn Mackrory",
+"party": "Conservative",
+"seat": "Truro and Falmouth"
+},
+"4759": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Joy Morrissey",
+"party": "Conservative",
+"seat": "Beaconsfield"
+},
+"4760": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Gary Sambrook",
+"party": "Conservative",
+"seat": "Birmingham, Northfield"
+},
+"4761": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "David Johnston",
+"party": "Conservative",
+"seat": "Wantage"
+},
+"4762": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Anthony Mangnall",
+"party": "Conservative",
+"seat": "Totnes"
+},
+"4763": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Fay Jones",
+"party": "Conservative",
+"seat": "Brecon and Radnorshire"
+},
+"4764": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Bell Ribeiro-Addy",
+"party": "Labour",
+"seat": "Clapham and Brixton Hill"
+},
+"4765": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Wendy Chamberlain",
+"party": "Liberal Democrat",
+"seat": "North East Fife"
+},
+"4766": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Dr Jamie Wallis",
+"party": "Conservative",
+"seat": "Bridgend"
+},
+"4767": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "James Sunderland",
+"party": "Conservative",
+"seat": "Bracknell"
+},
+"4768": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Julie Marson",
+"party": "Conservative",
+"seat": "Hertford and Stortford"
+},
+"4769": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Daisy Cooper",
+"party": "Liberal Democrat",
+"seat": "St Albans"
+},
+"4771": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Tom Hunt",
+"party": "Conservative",
+"seat": "Ipswich"
+},
+"4772": {
+"abbr": "Alba",
+"colour": "005eb8",
+"end": "2024-05-30",
+"house": 1,
+"name": "Kenny MacAskill",
+"party": "Alba Party",
+"seat": "East Lothian"
+},
+"4773": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Kate Kniveton",
+"party": "Conservative",
+"seat": "Burton"
+},
+"4774": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mark Fletcher",
+"party": "Conservative",
+"seat": "Bolsover"
+},
+"4775": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Elliot Colburn",
+"party": "Conservative",
+"seat": "Carshalton and Wallington"
+},
+"4776": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Munira Wilson",
+"party": "Liberal Democrat",
+"seat": "Twickenham"
+},
+"4777": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sarah Owen",
+"party": "Labour",
+"seat": "Luton North"
+},
+"4778": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Greg Smith",
+"party": "Conservative",
+"seat": "Mid Buckinghamshire"
+},
+"4779": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Taiwo Owatemi",
+"party": "Labour",
+"seat": "Coventry North West"
+},
+"4780": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Laura Trott",
+"party": "Conservative",
+"seat": "Sevenoaks"
+},
+"4781": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Dr Luke Evans",
+"party": "Conservative",
+"seat": "Hinckley and Bosworth"
+},
+"4783": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Kate Osborne",
+"party": "Labour",
+"seat": "Jarrow and Gateshead East"
+},
+"4784": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Duncan Baker",
+"party": "Conservative",
+"seat": "North Norfolk"
+},
+"4785": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Dr Ben Spencer",
+"party": "Conservative",
+"seat": "Runnymede and Weybridge"
+},
+"4786": {
+"abbr": "YP",
+"colour": "ff3131",
+"end": "",
+"house": 1,
+"name": "Zarah Sultana",
+"party": "Your Party",
+"seat": "Coventry South"
+},
+"4787": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "James Wild",
+"party": "Conservative",
+"seat": "North West Norfolk"
+},
+"4788": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Fleur Anderson",
+"party": "Labour",
+"seat": "Putney"
+},
+"4789": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Marco Longhi",
+"party": "Conservative",
+"seat": "Dudley North"
+},
+"4790": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Apsana Begum",
+"party": "Labour",
+"seat": "Poplar and Limehouse"
+},
+"4791": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Andy Carter",
+"party": "Conservative",
+"seat": "Warrington South"
+},
+"4792": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Paul Bristow",
+"party": "Conservative",
+"seat": "Peterborough"
+},
+"4793": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2024-03-25",
+"house": 1,
+"name": "Scott Benton",
+"party": "Independent",
+"seat": "Blackpool South"
+},
+"4794": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Darren Henry",
+"party": "Conservative",
+"seat": "Broxtowe"
+},
+"4795": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mrs Natalie Elphicke",
+"party": "Labour",
+"seat": "Dover"
+},
+"4796": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Richard Thomson",
+"party": "Scottish National Party",
+"seat": "Gordon"
+},
+"4797": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "James Murray",
+"party": "Labour (Co-op)",
+"seat": "Ealing North"
+},
+"4798": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Gareth Bacon",
+"party": "Conservative",
+"seat": "Orpington"
+},
+"4799": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Charlotte Nichols",
+"party": "Labour",
+"seat": "Warrington North"
+},
+"4800": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Simon Baynes",
+"party": "Conservative",
+"seat": "Clwyd South"
+},
+"4801": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Anthony Browne",
+"party": "Conservative",
+"seat": "South Cambridgeshire"
+},
+"4802": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Suzanne Webb",
+"party": "Conservative",
+"seat": "Stourbridge"
+},
+"4803": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Paul Holmes",
+"party": "Conservative",
+"seat": "Hamble Valley"
+},
+"4804": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Mr Gagan Mohindra",
+"party": "Conservative",
+"seat": "South West Hertfordshire"
+},
+"4805": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Alicia Kearns",
+"party": "Conservative",
+"seat": "Rutland and Stamford"
+},
+"4806": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Claire Coutinho",
+"party": "Conservative",
+"seat": "East Surrey"
+},
+"4807": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mark Eastwood",
+"party": "Conservative",
+"seat": "Dewsbury"
+},
+"4808": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Ruth Edwards",
+"party": "Conservative",
+"seat": "Rushcliffe"
+},
+"4809": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Beth Winter",
+"party": "Labour",
+"seat": "Cynon Valley"
+},
+"481": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir George Howarth",
+"party": "Labour",
+"seat": "Knowsley"
+},
+"4811": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Navendu Mishra",
+"party": "Labour",
+"seat": "Stockport"
+},
+"4812": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Dean Russell",
+"party": "Conservative",
+"seat": "Watford"
+},
+"4813": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Mr Richard Holden",
+"party": "Conservative",
+"seat": "Basildon and Billericay"
+},
+"4814": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Jonathan Gullis",
+"party": "Conservative",
+"seat": "Stoke-on-Trent North"
+},
+"4815": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mark Logan",
+"party": "Independent",
+"seat": "Bolton North East"
+},
+"4816": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Miss Sarah Dines",
+"party": "Conservative",
+"seat": "Derbyshire Dales"
+},
+"4817": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Jo Gideon",
+"party": "Conservative",
+"seat": "Stoke-on-Trent Central"
+},
+"4818": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Saqib Bhatti",
+"party": "Conservative",
+"seat": "Meriden and Solihull East"
+},
+"4819": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Theo Clarke",
+"party": "Conservative",
+"seat": "Stafford"
+},
+"4820": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ms Abena Oppong-Asare",
+"party": "Labour",
+"seat": "Erith and Thamesmead"
+},
+"4821": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Felicity Buchan",
+"party": "Conservative",
+"seat": "Kensington"
+},
+"4822": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Feryal Clark",
+"party": "Labour",
+"seat": "Enfield North"
+},
+"4823": {
+"abbr": "SF",
+"colour": "02665f",
+"end": "",
+"house": 1,
+"name": "John Finucane",
+"party": "Sinn F\u00e9in",
+"seat": "Belfast North"
+},
+"4824": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Kim Johnson",
+"party": "Labour",
+"seat": "Liverpool Riverside"
+},
+"4825": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Jacob Young",
+"party": "Conservative",
+"seat": "Redcar"
+},
+"4826": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Laura Farris",
+"party": "Conservative",
+"seat": "Newbury"
+},
+"4827": {
+"abbr": "SDLP",
+"colour": "4ea268",
+"end": "",
+"house": 1,
+"name": "Claire Hanna",
+"party": "Social Democratic & Labour Party",
+"seat": "Belfast South and Mid Down"
+},
+"4828": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Paula Barker",
+"party": "Labour",
+"seat": "Liverpool Wavertree"
+},
+"4829": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sam Tarry",
+"party": "Labour",
+"seat": "Ilford South"
+},
+"483": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Maria Eagle",
+"party": "Labour",
+"seat": "Liverpool Garston"
+},
+"4830": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Paul Howell",
+"party": "Conservative",
+"seat": "Sedgefield"
+},
+"4831": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ian Byrne",
+"party": "Labour",
+"seat": "Liverpool West Derby"
+},
+"4832": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Nick Fletcher",
+"party": "Conservative",
+"seat": "Don Valley"
+},
+"4833": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Antony Higginbotham",
+"party": "Conservative",
+"seat": "Burnley"
+},
+"4834": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Katherine Fletcher",
+"party": "Conservative",
+"seat": "South Ribble"
+},
+"4835": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Chris Clarkson",
+"party": "Conservative",
+"seat": "Heywood and Middleton"
+},
+"4836": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Ben Everitt",
+"party": "Conservative",
+"seat": "Milton Keynes North"
+},
+"4837": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Aaron Bell",
+"party": "Conservative",
+"seat": "Newcastle-under-Lyme"
+},
+"4838": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sara Britcliffe",
+"party": "Conservative",
+"seat": "Hyndburn"
+},
+"4839": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Jane Hunt",
+"party": "Conservative",
+"seat": "Loughborough"
+},
+"4840": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Angela Richardson",
+"party": "Conservative",
+"seat": "Guildford"
+},
+"4842": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sally-Ann Hart",
+"party": "Conservative",
+"seat": "Hastings and Rye"
+},
+"4844": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Matt Vickers",
+"party": "Conservative",
+"seat": "Stockton West"
+},
+"4846": {
+"abbr": "SDLP",
+"colour": "4ea268",
+"end": "",
+"house": 1,
+"name": "Colum Eastwood",
+"party": "Social Democratic & Labour Party",
+"seat": "Foyle"
+},
+"4847": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Siobhan Baillie",
+"party": "Conservative",
+"seat": "Stroud"
+},
+"4848": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2024-05-30",
+"house": 1,
+"name": "Claudia Webbe",
+"party": "Independent",
+"seat": "Leicester East"
+},
+"4849": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Alex Davies-Jones",
+"party": "Labour",
+"seat": "Pontypridd"
+},
+"4850": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Gareth Davies",
+"party": "Conservative",
+"seat": "Grantham and Bourne"
+},
+"4851": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Lia Nici",
+"party": "Conservative",
+"seat": "Great Grimsby"
+},
+"4852": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Robert Largan",
+"party": "Conservative",
+"seat": "High Peak"
+},
+"4853": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Dr Neil Hudson",
+"party": "Conservative",
+"seat": "Epping Forest"
+},
+"4854": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "James Daly",
+"party": "Conservative",
+"seat": "Bury North"
+},
+"4855": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sarah Atherton",
+"party": "Conservative",
+"seat": "Wrexham"
+},
+"4856": {
+"abbr": "APNI",
+"colour": "cdaf2d",
+"end": "2024-05-30",
+"house": 1,
+"name": "Stephen Farry",
+"party": "Alliance",
+"seat": "North Down"
+},
+"4857": {
+"abbr": "DUP",
+"colour": "d46a4c",
+"end": "",
+"house": 1,
+"name": "Carla Lockhart",
+"party": "Democratic Unionist Party",
+"seat": "Upper Bann"
+},
+"4858": {
+"abbr": "RUK",
+"colour": "12b6cf",
+"end": "",
+"house": 1,
+"name": "Danny Kruger",
+"party": "Reform UK",
+"seat": "East Wiltshire"
+},
+"4859": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Virginia Crosbie",
+"party": "Conservative",
+"seat": "Ynys M\u00f4n"
+},
+"4860": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Dr Kieran Mullan",
+"party": "Conservative",
+"seat": "Bexhill and Battle"
+},
+"4861": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Robbie Moore",
+"party": "Conservative",
+"seat": "Keighley and Ilkley"
+},
+"4862": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Simon Jupp",
+"party": "Conservative",
+"seat": "East Devon"
+},
+"4863": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Selaine Saxby",
+"party": "Conservative",
+"seat": "North Devon"
+},
+"4864": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Olivia Blake",
+"party": "Labour",
+"seat": "Sheffield Hallam"
+},
+"4865": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Miriam Cates",
+"party": "Conservative",
+"seat": "Penistone and Stocksbridge"
+},
+"4866": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Alexander Stafford",
+"party": "Conservative",
+"seat": "Rother Valley"
+},
+"4867": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Holly Mumby-Croft",
+"party": "Conservative",
+"seat": "Scunthorpe"
+},
+"4868": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Nicola Richards",
+"party": "Conservative",
+"seat": "West Bromwich East"
+},
+"4869": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Nadia Whittome",
+"party": "Labour",
+"seat": "Nottingham East"
+},
+"4870": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Florence Eshalomi",
+"party": "Labour (Co-op)",
+"seat": "Vauxhall and Camberwell Green"
+},
+"4871": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Christian Wakeford",
+"party": "Labour",
+"seat": "Bury South"
+},
+"4872": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "David Simmonds",
+"party": "Conservative",
+"seat": "Ruislip, Northwood and Pinner"
+},
+"4873": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Rachel Hopkins",
+"party": "Labour",
+"seat": "Luton South and South Bedfordshire"
+},
+"4874": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Andrew Griffith",
+"party": "Conservative",
+"seat": "Arundel and South Downs"
+},
+"491": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dame Angela Eagle",
+"party": "Labour",
+"seat": "Wallasey"
+},
+"4917": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "2024-05-30",
+"house": 1,
+"name": "Ms Anum Qaisar",
+"party": "Scottish National Party",
+"seat": "Airdrie and Shotts"
+},
+"4918": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Sarah Green",
+"party": "Liberal Democrat",
+"seat": "Chesham and Amersham"
+},
+"4923": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Kim Leadbeater",
+"party": "Labour",
+"seat": "Spen Valley"
+},
+"4932": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Mr Louie French",
+"party": "Conservative",
+"seat": "Old Bexley and Sidcup"
+},
+"4934": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Helen Morgan",
+"party": "Liberal Democrat",
+"seat": "North Shropshire"
+},
+"4936": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Anna Firth",
+"party": "Conservative",
+"seat": "Southend West"
+},
+"4938": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Paulette Hamilton",
+"party": "Labour",
+"seat": "Birmingham Erdington"
+},
+"4942": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Richard Foord",
+"party": "Liberal Democrat",
+"seat": "Honiton and Sidmouth"
+},
+"4943": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Simon Lightwood",
+"party": "Labour (Co-op)",
+"seat": "Wakefield and Rothwell"
+},
+"4979": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Andrew Western",
+"party": "Labour",
+"seat": "Stretford and Urmston"
+},
+"4981": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ashley Dalton",
+"party": "Labour",
+"seat": "West Lancashire"
+},
+"4993": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Keir Mather",
+"party": "Labour",
+"seat": "Selby"
+},
+"4994": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Steve Tuckwell",
+"party": "Conservative",
+"seat": "Uxbridge and South Ruislip"
+},
+"4995": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Sarah Dyke",
+"party": "Liberal Democrat",
+"seat": "Glastonbury and Somerton"
+},
+"4998": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Michael Shanks",
+"party": "Labour",
+"seat": "Rutherglen"
+},
+"5000": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Alistair Strathern",
+"party": "Labour",
+"seat": "Hitchin"
+},
+"5001": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sarah Edwards",
+"party": "Labour",
+"seat": "Tamworth"
+},
+"5010": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Damien Egan",
+"party": "Labour",
+"seat": "Bristol North East"
+},
+"5011": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Gen Kitchen",
+"party": "Labour",
+"seat": "Wellingborough and Rushden"
+},
+"5025": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Chris Webb",
+"party": "Labour",
+"seat": "Blackpool South"
+},
+"5028": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Lewis Atkinson",
+"party": "Labour",
+"seat": "Sunderland Central"
+},
+"5029": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Emma Foody",
+"party": "Labour (Co-op)",
+"seat": "Cramlington and Killingworth"
+},
+"5030": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dr Simon Opher",
+"party": "Labour",
+"seat": "Stroud"
+},
+"5031": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mark Ferguson",
+"party": "Labour",
+"seat": "Gateshead Central and Whickham"
+},
+"5032": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Tom Gordon",
+"party": "Liberal Democrat",
+"seat": "Harrogate and Knaresborough"
+},
+"5033": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Josh MacAlister",
+"party": "Labour",
+"seat": "Whitehaven and Workington"
+},
+"5034": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Josh Newbury",
+"party": "Labour",
+"seat": "Cannock Chase"
+},
+"5035": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Will Stone",
+"party": "Labour",
+"seat": "Swindon North"
+},
+"5036": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jodie Gosling",
+"party": "Labour",
+"seat": "Nuneaton"
+},
+"5037": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Lola McEvoy",
+"party": "Labour",
+"seat": "Darlington"
+},
+"5038": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Anneliese Midgley",
+"party": "Labour",
+"seat": "Knowsley"
+},
+"5039": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Kanishka Narayan",
+"party": "Labour",
+"seat": "Vale of Glamorgan"
+},
+"5040": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Liz Jarvis",
+"party": "Liberal Democrat",
+"seat": "Eastleigh"
+},
+"5041": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Shaun Davies",
+"party": "Labour",
+"seat": "Telford"
+},
+"5042": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Pam Cox",
+"party": "Labour",
+"seat": "Colchester"
+},
+"5043": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Lillian Jones",
+"party": "Labour",
+"seat": "Kilmarnock and Loudoun"
+},
+"5044": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Adam Thompson",
+"party": "Labour",
+"seat": "Erewash"
+},
+"5045": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mr Jonathan Brash",
+"party": "Labour",
+"seat": "Hartlepool"
+},
+"5046": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Andrew Ranger",
+"party": "Labour",
+"seat": "Wrexham"
+},
+"5047": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "James Naish",
+"party": "Labour",
+"seat": "Rushcliffe"
+},
+"5048": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Antonia Bance",
+"party": "Labour",
+"seat": "Tipton and Wednesbury"
+},
+"5049": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Michelle Scrogham",
+"party": "Labour",
+"seat": "Barrow and Furness"
+},
+"5050": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Lewis Cocking",
+"party": "Conservative",
+"seat": "Broxbourne"
+},
+"5051": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Kevin Bonavia",
+"party": "Labour",
+"seat": "Stevenage"
+},
+"5052": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Patrick Hurley",
+"party": "Labour",
+"seat": "Southport"
+},
+"5053": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Natalie Fleet",
+"party": "Labour",
+"seat": "Bolsover"
+},
+"5054": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mr Calvin Bailey",
+"party": "Labour",
+"seat": "Leyton and Wanstead"
+},
+"5055": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Max Wilkinson",
+"party": "Liberal Democrat",
+"seat": "Cheltenham"
+},
+"5056": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jen Craft",
+"party": "Labour",
+"seat": "Thurrock"
+},
+"5057": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Douglas McAllister",
+"party": "Labour",
+"seat": "West Dunbartonshire"
+},
+"5058": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Juliet Campbell",
+"party": "Labour",
+"seat": "Broxtowe"
+},
+"5059": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Gurinder Singh Josan",
+"party": "Labour",
+"seat": "Smethwick"
+},
+"5060": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "2026-05-18",
+"house": 1,
+"name": "Josh Simons",
+"party": "Labour",
+"seat": "Makerfield"
+},
+"5061": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Andrew Lewin",
+"party": "Labour",
+"seat": "Welwyn Hatfield"
+},
+"5062": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Nick Timothy",
+"party": "Conservative",
+"seat": "West Suffolk"
+},
+"5063": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Johanna Baxter",
+"party": "Labour",
+"seat": "Paisley and Renfrewshire South"
+},
+"5064": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Steve Race",
+"party": "Labour",
+"seat": "Exeter"
+},
+"5065": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Rachel Taylor",
+"party": "Labour",
+"seat": "North Warwickshire and Bedworth"
+},
+"5066": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Steve Darling",
+"party": "Liberal Democrat",
+"seat": "Torbay"
+},
+"5067": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Tony Vaughan",
+"party": "Labour",
+"seat": "Folkestone and Hythe"
+},
+"5068": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Shivani Raja",
+"party": "Conservative",
+"seat": "Leicester East"
+},
+"5069": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Torsten Bell",
+"party": "Labour",
+"seat": "Swansea West"
+},
+"5070": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Lisa Smart",
+"party": "Liberal Democrat",
+"seat": "Hazel Grove"
+},
+"5071": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Paul Waugh",
+"party": "Labour (Co-op)",
+"seat": "Rochdale"
+},
+"5072": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Mr Andrew Snowden",
+"party": "Conservative",
+"seat": "Fylde"
+},
+"5073": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Marie Goldman",
+"party": "Liberal Democrat",
+"seat": "Chelmsford"
+},
+"5074": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mr Paul Foster",
+"party": "Labour",
+"seat": "South Ribble"
+},
+"5075": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Deirdre Costigan",
+"party": "Labour",
+"seat": "Ealing Southall"
+},
+"5076": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Blair McDougall",
+"party": "Labour",
+"seat": "East Renfrewshire"
+},
+"5077": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jacob Collier",
+"party": "Labour",
+"seat": "Burton and Uttoxeter"
+},
+"5078": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Pippa Heylings",
+"party": "Liberal Democrat",
+"seat": "South Cambridgeshire"
+},
+"5079": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Joani Reid",
+"party": "Labour",
+"seat": "East Kilbride and Strathaven"
+},
+"5080": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Alan Strickland",
+"party": "Labour",
+"seat": "Newton Aycliffe and Spennymoor"
+},
+"5081": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Joe Morris",
+"party": "Labour",
+"seat": "Hexham"
+},
+"5082": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jake Richards",
+"party": "Labour",
+"seat": "Rother Valley"
+},
+"5083": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Bobby Dean",
+"party": "Liberal Democrat",
+"seat": "Carshalton and Wallington"
+},
+"5084": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mrs Elsie Blundell",
+"party": "Labour",
+"seat": "Heywood and Middleton North"
+},
+"5085": {
+"abbr": "PC",
+"colour": "348837",
+"end": "",
+"house": 1,
+"name": "Llinos Medi",
+"party": "Plaid Cymru",
+"seat": "Ynys M\u00f4n"
+},
+"5086": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Josh Babarinde",
+"party": "Liberal Democrat",
+"seat": "Eastbourne"
+},
+"5087": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Tom Collins",
+"party": "Labour",
+"seat": "Worcester"
+},
+"5088": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sarah Coombes",
+"party": "Labour",
+"seat": "West Bromwich"
+},
+"5089": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Ben Obese-Jecty",
+"party": "Conservative",
+"seat": "Huntingdon"
+},
+"5090": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Tom Morrison",
+"party": "Liberal Democrat",
+"seat": "Cheadle"
+},
+"5091": {
+"abbr": "RUK",
+"colour": "12b6cf",
+"end": "",
+"house": 1,
+"name": "Nigel Farage",
+"party": "Reform UK",
+"seat": "Clacton"
+},
+"5092": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "David Baines",
+"party": "Labour",
+"seat": "St Helens North"
+},
+"5093": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Alison Taylor",
+"party": "Labour",
+"seat": "Paisley and Renfrewshire North"
+},
+"5094": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ms Julie Minns",
+"party": "Labour",
+"seat": "Carlisle"
+},
+"5095": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Kirith Entwistle",
+"party": "Labour",
+"seat": "Bolton North East"
+},
+"5096": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Ian Sollom",
+"party": "Liberal Democrat",
+"seat": "St Neots and Mid Cambridgeshire"
+},
+"5097": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "",
+"house": 1,
+"name": "Mr Bayo Alaba",
+"party": "Independent",
+"seat": "Southend East and Rochford"
+},
+"5098": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dr Marie Tidball",
+"party": "Labour",
+"seat": "Penistone and Stocksbridge"
+},
+"5099": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Miatta Fahnbulleh",
+"party": "Labour (Co-op)",
+"seat": "Peckham"
+},
+"5100": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Blake Stephenson",
+"party": "Conservative",
+"seat": "Mid Bedfordshire"
+},
+"5101": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Ashley Fox",
+"party": "Conservative",
+"seat": "Bridgwater"
+},
+"5102": {
+"abbr": "Green",
+"colour": "78b82a",
+"end": "",
+"house": 1,
+"name": "Carla Denyer",
+"party": "Green Party",
+"seat": "Bristol Central"
+},
+"5103": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Luke Taylor",
+"party": "Liberal Democrat",
+"seat": "Sutton and Cheam"
+},
+"5104": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Gill German",
+"party": "Labour",
+"seat": "Clwyd North"
+},
+"5105": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jo White",
+"party": "Labour",
+"seat": "Bassetlaw"
+},
+"5106": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "David Burton-Sampson",
+"party": "Labour",
+"seat": "Southend West and Leigh"
+},
+"5107": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Linsey Farnsworth",
+"party": "Labour",
+"seat": "Amber Valley"
+},
+"5108": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dr Sam Rushworth",
+"party": "Labour",
+"seat": "Bishop Auckland"
+},
+"5109": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Chris Bloore",
+"party": "Labour",
+"seat": "Redditch"
+},
+"5110": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Euan Stainbank",
+"party": "Labour",
+"seat": "Falkirk"
+},
+"5111": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Martin Wrigley",
+"party": "Liberal Democrat",
+"seat": "Newton Abbot"
+},
+"5112": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Luke Akehurst",
+"party": "Labour",
+"seat": "North Durham"
+},
+"5113": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Claire Hughes",
+"party": "Labour",
+"seat": "Bangor Aberconwy"
+},
+"5114": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Kirsty McNeill",
+"party": "Labour (Co-op)",
+"seat": "Midlothian"
+},
+"5115": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jon Pearce",
+"party": "Labour",
+"seat": "High Peak"
+},
+"5116": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Chris McDonald",
+"party": "Labour",
+"seat": "Stockton North"
+},
+"5117": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sarah Smith",
+"party": "Labour",
+"seat": "Hyndburn"
+},
+"5118": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Chris Curtis",
+"party": "Labour",
+"seat": "Milton Keynes North"
+},
+"5119": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Natasha Irons",
+"party": "Labour",
+"seat": "Croydon East"
+},
+"5120": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "",
+"house": 1,
+"name": "Shockat Adam",
+"party": "Independent",
+"seat": "Leicester South"
+},
+"5121": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Henry Tufnell",
+"party": "Labour",
+"seat": "Mid and South Pembrokeshire"
+},
+"5122": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Manuela Perteghella",
+"party": "Liberal Democrat",
+"seat": "Stratford-on-Avon"
+},
+"5123": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ms Polly Billington",
+"party": "Labour",
+"seat": "East Thanet"
+},
+"5124": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Markus Campbell-Savours",
+"party": "Labour",
+"seat": "Penrith and Solway"
+},
+"5126": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dave Robertson",
+"party": "Labour",
+"seat": "Lichfield"
+},
+"5127": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "John Slinger",
+"party": "Labour",
+"seat": "Rugby"
+},
+"5128": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Phil Brickell",
+"party": "Labour",
+"seat": "Bolton West"
+},
+"5129": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Martin McCluskey",
+"party": "Labour",
+"seat": "Inverclyde and Renfrewshire West"
+},
+"5130": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Matt Turmaine",
+"party": "Labour",
+"seat": "Watford"
+},
+"5131": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jack Abbott",
+"party": "Labour (Co-op)",
+"seat": "Ipswich"
+},
+"5132": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Liam Conlon",
+"party": "Labour",
+"seat": "Beckenham and Penge"
+},
+"5133": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Alice Macdonald",
+"party": "Labour (Co-op)",
+"seat": "Norwich North"
+},
+"5134": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Andy MacNae",
+"party": "Labour",
+"seat": "Rossendale and Darwen"
+},
+"5135": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Oliver Ryan",
+"party": "Labour (Co-op)",
+"seat": "Burnley"
+},
+"5136": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Imogen Walker",
+"party": "Labour",
+"seat": "Hamilton and Clyde Valley"
+},
+"5137": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Maureen Burke",
+"party": "Labour",
+"seat": "Glasgow North East"
+},
+"5138": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Ian Roome",
+"party": "Liberal Democrat",
+"seat": "North Devon"
+},
+"5139": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Emily Darlington",
+"party": "Labour",
+"seat": "Milton Keynes Central"
+},
+"5140": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Claire Young",
+"party": "Liberal Democrat",
+"seat": "Thornbury and Yate"
+},
+"5141": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Alex Mayer",
+"party": "Labour",
+"seat": "Dunstable and Leighton Buzzard"
+},
+"5142": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Abtisam Mohamed",
+"party": "Labour",
+"seat": "Sheffield Central"
+},
+"5143": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Catherine Atkinson",
+"party": "Labour",
+"seat": "Derby North"
+},
+"5144": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Richard Quigley",
+"party": "Labour",
+"seat": "Isle of Wight West"
+},
+"5145": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Irene Campbell",
+"party": "Labour",
+"seat": "North Ayrshire and Arran"
+},
+"5146": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Michael Payne",
+"party": "Labour",
+"seat": "Gedling"
+},
+"5147": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Luke Myer",
+"party": "Labour",
+"seat": "Middlesbrough South and East Cleveland"
+},
+"5148": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mr Hamish Falconer",
+"party": "Labour",
+"seat": "Lincoln"
+},
+"5149": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Amanda Hack",
+"party": "Labour",
+"seat": "North West Leicestershire"
+},
+"5150": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Samantha Niblett",
+"party": "Labour",
+"seat": "South Derbyshire"
+},
+"5151": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "David Williams",
+"party": "Labour",
+"seat": "Stoke-on-Trent North"
+},
+"5152": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sureena Brackenridge",
+"party": "Labour",
+"seat": "Wolverhampton North East"
+},
+"5153": {
+"abbr": "SF",
+"colour": "02665f",
+"end": "",
+"house": 1,
+"name": "Mr Cathal Mallaghan",
+"party": "Sinn F\u00e9in",
+"seat": "Mid Ulster"
+},
+"5154": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sarah Hall",
+"party": "Labour (Co-op)",
+"seat": "Warrington South"
+},
+"5155": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Chris Kane",
+"party": "Labour",
+"seat": "Stirling and Strathallan"
+},
+"5156": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jess Asato",
+"party": "Labour",
+"seat": "Lowestoft"
+},
+"5157": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Susan Murray",
+"party": "Liberal Democrat",
+"seat": "Mid Dunbartonshire"
+},
+"5158": {
+"abbr": "RB",
+"colour": "",
+"end": "",
+"house": 1,
+"name": "Rupert Lowe",
+"party": "Restore Britain",
+"seat": "Great Yarmouth"
+},
+"5159": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mr Connor Rand",
+"party": "Labour",
+"seat": "Altrincham and Sale West"
+},
+"5160": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jenny Riddell-Carpenter",
+"party": "Labour",
+"seat": "Suffolk Coastal"
+},
+"5161": {
+"abbr": "RUK",
+"colour": "12b6cf",
+"end": "",
+"house": 1,
+"name": "Richard Tice",
+"party": "Reform UK",
+"seat": "Boston and Skegness"
+},
+"5162": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Matthew Patrick",
+"party": "Labour",
+"seat": "Wirral West"
+},
+"5163": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dr Peter Prinsley",
+"party": "Labour",
+"seat": "Bury St Edmunds and Stowmarket"
+},
+"5164": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Steff Aquarone",
+"party": "Liberal Democrat",
+"seat": "North Norfolk"
+},
+"5165": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Peter Swallow",
+"party": "Labour",
+"seat": "Bracknell"
+},
+"5166": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mark Sewards",
+"party": "Labour",
+"seat": "Leeds South West and Morley"
+},
+"5167": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Gregor Poynton",
+"party": "Labour",
+"seat": "Livingston"
+},
+"5168": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Adam Jogee",
+"party": "Labour",
+"seat": "Newcastle-under-Lyme"
+},
+"5169": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Charlie Dewhirst",
+"party": "Conservative",
+"seat": "Bridlington and The Wolds"
+},
+"5170": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "John Grady",
+"party": "Labour",
+"seat": "Glasgow East"
+},
+"5171": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Julia Buckley",
+"party": "Labour",
+"seat": "Shrewsbury"
+},
+"5172": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dan Aldridge",
+"party": "Labour",
+"seat": "Weston-super-Mare"
+},
+"5173": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Alex Baker",
+"party": "Labour",
+"seat": "Aldershot"
+},
+"5174": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Fred Thomas",
+"party": "Labour",
+"seat": "Plymouth Moor View"
+},
+"5175": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mr Alex Barros-Curtis",
+"party": "Labour",
+"seat": "Cardiff West"
+},
+"5176": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Baggy Shanker",
+"party": "Labour (Co-op)",
+"seat": "Derby South"
+},
+"5177": {
+"abbr": "PC",
+"colour": "348837",
+"end": "",
+"house": 1,
+"name": "Ann Davies",
+"party": "Plaid Cymru",
+"seat": "Caerfyrddin"
+},
+"5178": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sally Jameson",
+"party": "Labour (Co-op)",
+"seat": "Doncaster Central"
+},
+"5179": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Kirsteen Sullivan",
+"party": "Labour (Co-op)",
+"seat": "Bathgate and Linlithgow"
+},
+"5180": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Nesil Caliskan",
+"party": "Labour",
+"seat": "Barking"
+},
+"5181": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Becky Gittins",
+"party": "Labour",
+"seat": "Clwyd East"
+},
+"5182": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Charlotte Cane",
+"party": "Liberal Democrat",
+"seat": "Ely and East Cambridgeshire"
+},
+"5183": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Frank McNally",
+"party": "Labour",
+"seat": "Coatbridge and Bellshill"
+},
+"5184": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Daniel Francis",
+"party": "Labour",
+"seat": "Bexleyheath and Crayford"
+},
+"5185": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Alan Gemmell",
+"party": "Labour",
+"seat": "Central Ayrshire"
+},
+"5186": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Bradley Thomas",
+"party": "Conservative",
+"seat": "Bromsgrove"
+},
+"5187": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Josh Dean",
+"party": "Labour",
+"seat": "Hertford and Stortford"
+},
+"5188": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Tracy Gilbert",
+"party": "Labour",
+"seat": "Edinburgh North and Leith"
+},
+"5189": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Gordon McKee",
+"party": "Labour",
+"seat": "Glasgow South"
+},
+"5190": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Patricia Ferguson",
+"party": "Labour",
+"seat": "Glasgow West"
+},
+"5191": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Adam Dance",
+"party": "Liberal Democrat",
+"seat": "Yeovil"
+},
+"5192": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Helena Dollimore",
+"party": "Labour (Co-op)",
+"seat": "Hastings and Rye"
+},
+"5193": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Callum Anderson",
+"party": "Labour",
+"seat": "Buckingham and Bletchley"
+},
+"5194": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Steve Yemm",
+"party": "Labour",
+"seat": "Mansfield"
+},
+"5195": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Andrew Cooper",
+"party": "Labour",
+"seat": "Mid Cheshire"
+},
+"5196": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Brian Leishman",
+"party": "Labour",
+"seat": "Alloa and Grangemouth"
+},
+"5197": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Dr Neil Shastri-Hurst",
+"party": "Conservative",
+"seat": "Solihull West and Shirley"
+},
+"5198": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Chris Coghlan",
+"party": "Liberal Democrat",
+"seat": "Dorking and Horley"
+},
+"5199": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mr Luke Charters",
+"party": "Labour",
+"seat": "York Outer"
+},
+"5200": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Kenneth Stevenson",
+"party": "Labour",
+"seat": "Airdrie and Shotts"
+},
+"5201": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Victoria Collins",
+"party": "Liberal Democrat",
+"seat": "Harpenden and Berkhamsted"
+},
+"5202": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jessica Toale",
+"party": "Labour",
+"seat": "Bournemouth West"
+},
+"5203": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Alison Griffiths",
+"party": "Conservative",
+"seat": "Bognor Regis and Littlehampton"
+},
+"5204": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sarah Sackman",
+"party": "Labour",
+"seat": "Finchley and Golders Green"
+},
+"5205": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ben Goldsborough",
+"party": "Labour",
+"seat": "South Norfolk"
+},
+"5206": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Elaine Stewart",
+"party": "Labour",
+"seat": "Ayr, Carrick and Cumnock"
+},
+"5207": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Clive Jones",
+"party": "Liberal Democrat",
+"seat": "Wokingham"
+},
+"5208": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "",
+"house": 1,
+"name": "Perran Moon",
+"party": "Independent",
+"seat": "Camborne and Redruth"
+},
+"5209": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Peter Fortune",
+"party": "Conservative",
+"seat": "Bromley and Biggin Hill"
+},
+"5210": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Tom Hayes",
+"party": "Labour",
+"seat": "Bournemouth East"
+},
+"5211": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "James Asser",
+"party": "Labour",
+"seat": "West Ham and Beckton"
+},
+"5212": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dr Scott Arthur",
+"party": "Labour",
+"seat": "Edinburgh South West"
+},
+"5213": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dr Zubir Ahmed",
+"party": "Labour",
+"seat": "Glasgow South West"
+},
+"5214": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Brian Mathew",
+"party": "Liberal Democrat",
+"seat": "Melksham and Devizes"
+},
+"5215": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Naushabah Khan",
+"party": "Labour",
+"seat": "Gillingham and Rainham"
+},
+"5216": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Caroline Voaden",
+"party": "Liberal Democrat",
+"seat": "South Devon"
+},
+"5217": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Lloyd Hatton",
+"party": "Labour",
+"seat": "South Dorset"
+},
+"5218": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "David Smith",
+"party": "Labour",
+"seat": "North Northumberland"
+},
+"5219": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Mike Martin",
+"party": "Liberal Democrat",
+"seat": "Tunbridge Wells"
+},
+"5220": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Tristan Osborne",
+"party": "Labour",
+"seat": "Chatham and Aylesford"
+},
+"5221": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Steve Witherden",
+"party": "Labour",
+"seat": "Montgomeryshire and Glynd\u0175r"
+},
+"5222": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Tom Rutland",
+"party": "Labour",
+"seat": "East Worthing and Shoreham"
+},
+"5223": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jim Dickson",
+"party": "Labour",
+"seat": "Dartford"
+},
+"5224": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Kate Dearden",
+"party": "Labour (Co-op)",
+"seat": "Halifax"
+},
+"5225": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Lizzi Collinge",
+"party": "Labour",
+"seat": "Morecambe and Lunesdale"
+},
+"5226": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Michelle Welsh",
+"party": "Labour",
+"seat": "Sherwood Forest"
+},
+"5227": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jas Athwal",
+"party": "Labour",
+"seat": "Ilford South"
+},
+"5228": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Maya Ellis",
+"party": "Labour",
+"seat": "Ribble Valley"
+},
+"5229": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Joe Powell",
+"party": "Labour",
+"seat": "Kensington and Bayswater"
+},
+"523": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2024-05-30",
+"house": 1,
+"name": "Mr Nicholas Brown",
+"party": "Independent",
+"seat": "Newcastle upon Tyne East"
+},
+"5230": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Warinder Juss",
+"party": "Labour",
+"seat": "Wolverhampton West"
+},
+"5231": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "",
+"house": 1,
+"name": "Mr Adnan Hussain",
+"party": "Independent",
+"seat": "Blackburn"
+},
+"5232": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Lorraine Beavers",
+"party": "Labour",
+"seat": "Blackpool North and Fleetwood"
+},
+"5233": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Lee Pitcher",
+"party": "Labour",
+"seat": "Doncaster East and the Isle of Axholme"
+},
+"5234": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Laurence Turner",
+"party": "Labour",
+"seat": "Birmingham Northfield"
+},
+"5235": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Al Carns",
+"party": "Labour",
+"seat": "Birmingham Selly Oak"
+},
+"5236": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jade Botterill",
+"party": "Labour",
+"seat": "Ossett and Denby Dale"
+},
+"5237": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Chris Vince",
+"party": "Labour (Co-op)",
+"seat": "Harlow"
+},
+"5238": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Alex Ballinger",
+"party": "Labour",
+"seat": "Halesowen"
+},
+"5239": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Sarah Gibson",
+"party": "Liberal Democrat",
+"seat": "Chippenham"
+},
+"5240": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Melanie Ward",
+"party": "Labour",
+"seat": "Cowdenbeath and Kirkcaldy"
+},
+"5241": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Aphra Brandreth",
+"party": "Conservative",
+"seat": "Chester South and Eddisbury"
+},
+"5242": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Michael Wheeler",
+"party": "Labour",
+"seat": "Worsley and Eccles"
+},
+"5243": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Andrew Pakes",
+"party": "Labour (Co-op)",
+"seat": "Peterborough"
+},
+"5244": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Chris Hinchliff",
+"party": "Labour",
+"seat": "North East Hertfordshire"
+},
+"5245": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Chris Murray",
+"party": "Labour",
+"seat": "Edinburgh East and Musselburgh"
+},
+"5246": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Torcuil Crichton",
+"party": "Labour",
+"seat": "Na h-Eileanan an Iar"
+},
+"5247": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sojan Joseph",
+"party": "Labour",
+"seat": "Ashford"
+},
+"5248": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Luke Murphy",
+"party": "Labour",
+"seat": "Basingstoke"
+},
+"5249": {
+"abbr": "Green",
+"colour": "78b82a",
+"end": "",
+"house": 1,
+"name": "Dr Ellie Chowns",
+"party": "Green Party",
+"seat": "North Herefordshire"
+},
+"5250": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Gideon Amos",
+"party": "Liberal Democrat",
+"seat": "Taunton and Wellington"
+},
+"5251": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Martin Rhodes",
+"party": "Labour",
+"seat": "Glasgow North"
+},
+"5252": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Rachel Gilmour",
+"party": "Liberal Democrat",
+"seat": "Tiverton and Minehead"
+},
+"5253": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Richard Baker",
+"party": "Labour",
+"seat": "Glenrothes and Mid Fife"
+},
+"5254": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Alison Hume",
+"party": "Labour",
+"seat": "Scarborough and Whitby"
+},
+"5255": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Joe Robertson",
+"party": "Conservative",
+"seat": "Isle of Wight East"
+},
+"5256": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jonathan Davies",
+"party": "Labour",
+"seat": "Mid Derbyshire"
+},
+"5257": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Rachel Blake",
+"party": "Labour (Co-op)",
+"seat": "Cities of London and Westminster"
+},
+"5258": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Louise Sandher-Jones",
+"party": "Labour",
+"seat": "North East Derbyshire"
+},
+"5259": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dr Jeevun Sandher",
+"party": "Labour",
+"seat": "Loughborough"
+},
+"5260": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Katie White",
+"party": "Labour",
+"seat": "Leeds North West"
+},
+"5261": {
+"abbr": "SF",
+"colour": "02665f",
+"end": "",
+"house": 1,
+"name": "Pat Cullen",
+"party": "Sinn F\u00e9in",
+"seat": "Fermanagh and South Tyrone"
+},
+"5263": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Alex Brewer",
+"party": "Liberal Democrat",
+"seat": "North East Hampshire"
+},
+"5264": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jonathan Hinder",
+"party": "Labour",
+"seat": "Pendle and Clitheroe"
+},
+"5265": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "James MacCleary",
+"party": "Liberal Democrat",
+"seat": "Lewes"
+},
+"5266": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mike Tapp",
+"party": "Labour",
+"seat": "Dover and Deal"
+},
+"5267": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Yuan Yang",
+"party": "Labour",
+"seat": "Earley and Woodley"
+},
+"5268": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "",
+"house": 1,
+"name": "Iqbal Mohamed",
+"party": "Independent",
+"seat": "Dewsbury and Batley"
+},
+"5269": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dr Lauren Sullivan",
+"party": "Labour",
+"seat": "Gravesham"
+},
+"5270": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Darren Paffey",
+"party": "Labour",
+"seat": "Southampton Itchen"
+},
+"5271": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Satvir Kaur",
+"party": "Labour",
+"seat": "Southampton Test"
+},
+"5272": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Margaret Mullane",
+"party": "Labour",
+"seat": "Dagenham and Rainham"
+},
+"5273": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Connor Naismith",
+"party": "Labour",
+"seat": "Crewe and Nantwich"
+},
+"5274": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sonia Kumar",
+"party": "Labour",
+"seat": "Dudley"
+},
+"5275": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Graeme Downie",
+"party": "Labour",
+"seat": "Dunfermline and Dollar"
+},
+"5276": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Chris Ward",
+"party": "Labour",
+"seat": "Brighton Kemptown and Peacehaven"
+},
+"5277": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "",
+"house": 1,
+"name": "Graham Leadbitter",
+"party": "Scottish National Party",
+"seat": "Moray West, Nairn and Strathspey"
+},
+"5278": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Uma Kumaran",
+"party": "Labour",
+"seat": "Stratford and Bow"
+},
+"5279": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Jayne Kirkham",
+"party": "Labour (Co-op)",
+"seat": "Truro and Falmouth"
+},
+"5280": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "",
+"house": 1,
+"name": "Seamus Logan",
+"party": "Scottish National Party",
+"seat": "Aberdeenshire North and Moray East"
+},
+"5281": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Anna Dixon",
+"party": "Labour",
+"seat": "Shipley"
+},
+"5282": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dan Tomlinson",
+"party": "Labour",
+"seat": "Chipping Barnet"
+},
+"5283": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Alison Bennett",
+"party": "Liberal Democrat",
+"seat": "Mid Sussex"
+},
+"5284": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "David Chadwick",
+"party": "Liberal Democrat",
+"seat": "Brecon, Radnor and Cwm Tawe"
+},
+"5285": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Katie Lam",
+"party": "Conservative",
+"seat": "Weald of Kent"
+},
+"5286": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Anna Sabine",
+"party": "Liberal Democrat",
+"seat": "Frome and East Somerset"
+},
+"5287": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Tim Roca",
+"party": "Labour",
+"seat": "Macclesfield"
+},
+"5288": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Dr Al Pinkerton",
+"party": "Liberal Democrat",
+"seat": "Surrey Heath"
+},
+"5289": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Harpreet Uppal",
+"party": "Labour",
+"seat": "Huddersfield"
+},
+"5290": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Leigh Ingham",
+"party": "Labour",
+"seat": "Stafford"
+},
+"5291": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Catherine Fookes",
+"party": "Labour",
+"seat": "Monmouthshire"
+},
+"5292": {
+"abbr": "SF",
+"colour": "02665f",
+"end": "",
+"house": 1,
+"name": "D\u00e1ire Hughes",
+"party": "Sinn F\u00e9in",
+"seat": "Newry and Armagh"
+},
+"5293": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Cat Eccles",
+"party": "Labour",
+"seat": "Stourbridge"
+},
+"5294": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Amanda Martin",
+"party": "Labour",
+"seat": "Portsmouth North"
+},
+"5295": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Josh Fenton-Glynn",
+"party": "Labour",
+"seat": "Calder Valley"
+},
+"5296": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Freddie van Mierlo",
+"party": "Liberal Democrat",
+"seat": "Henley and Thame"
+},
+"5297": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Rebecca Paul",
+"party": "Conservative",
+"seat": "Reigate"
+},
+"5298": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Lauren Edwards",
+"party": "Labour",
+"seat": "Rochester and Strood"
+},
+"5299": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Monica Harding",
+"party": "Liberal Democrat",
+"seat": "Esher and Walton"
+},
+"5300": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Kevin McKenna",
+"party": "Labour",
+"seat": "Sittingbourne and Sheppey"
+},
+"5301": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Rebecca Smith",
+"party": "Conservative",
+"seat": "South West Devon"
+},
+"5302": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Noah Law",
+"party": "Labour",
+"seat": "St Austell and Newquay"
+},
+"5303": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Patrick Spencer",
+"party": "Conservative",
+"seat": "Central Suffolk and North Ipswich"
+},
+"5304": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Dr Danny Chambers",
+"party": "Liberal Democrat",
+"seat": "Winchester"
+},
+"5305": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Georgia Gould",
+"party": "Labour",
+"seat": "Queen's Park and Maida Vale"
+},
+"5306": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Claire Hazelgrove",
+"party": "Labour",
+"seat": "Filton and Bradley Stoke"
+},
+"5307": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dr Beccy Cooper",
+"party": "Labour",
+"seat": "Worthing West"
+},
+"5308": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sam Carling",
+"party": "Labour",
+"seat": "North West Cambridgeshire"
+},
+"5309": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Katrina Murray",
+"party": "Labour",
+"seat": "Cumbernauld and Kirkintilloch"
+},
+"5310": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Mr Lee Dillon",
+"party": "Liberal Democrat",
+"seat": "Newbury"
+},
+"5311": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Harriet Cross",
+"party": "Conservative",
+"seat": "Gordon and Buchan"
+},
+"5312": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sadik Al-Hassan",
+"party": "Labour",
+"seat": "North Somerset"
+},
+"5313": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Z\u00f6e Franklin",
+"party": "Liberal Democrat",
+"seat": "Guildford"
+},
+"5314": {
+"abbr": "Green",
+"colour": "78b82a",
+"end": "",
+"house": 1,
+"name": "Si\u00e2n Berry",
+"party": "Green Party",
+"seat": "Brighton Pavilion"
+},
+"5315": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Lee Barron",
+"party": "Labour",
+"seat": "Corby and East Northamptonshire"
+},
+"5316": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mike Reader",
+"party": "Labour",
+"seat": "Northampton South"
+},
+"5317": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Paul Davies",
+"party": "Labour",
+"seat": "Colne Valley"
+},
+"5318": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Olly Glover",
+"party": "Liberal Democrat",
+"seat": "Didcot and Wantage"
+},
+"5319": {
+"abbr": "UUP",
+"colour": "a1cdf0",
+"end": "",
+"house": 1,
+"name": "Robin Swann",
+"party": "Ulster Unionist Party",
+"seat": "South Antrim"
+},
+"5320": {
+"abbr": "Green",
+"colour": "78b82a",
+"end": "",
+"house": 1,
+"name": "Adrian Ramsay",
+"party": "Green Party",
+"seat": "Waveney Valley"
+},
+"5321": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Mr Paul Kohler",
+"party": "Liberal Democrat",
+"seat": "Wimbledon"
+},
+"5322": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Mr Will Forster",
+"party": "Liberal Democrat",
+"seat": "Woking"
+},
+"5323": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Matt Bishop",
+"party": "Labour",
+"seat": "Forest of Dean"
+},
+"5324": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sarah Russell",
+"party": "Labour",
+"seat": "Congleton"
+},
+"5325": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Charlie Maynard",
+"party": "Liberal Democrat",
+"seat": "Witney"
+},
+"5326": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Edward Morello",
+"party": "Liberal Democrat",
+"seat": "West Dorset"
+},
+"5327": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Vikki Slade",
+"party": "Liberal Democrat",
+"seat": "Mid Dorset and North Poole"
+},
+"5328": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sean Woodcock",
+"party": "Labour",
+"seat": "Banbury"
+},
+"5329": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "John Milne",
+"party": "Liberal Democrat",
+"seat": "Horsham"
+},
+"5330": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Mr Peter Bedford",
+"party": "Conservative",
+"seat": "Mid Leicestershire"
+},
+"5331": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Rosie Wrighting",
+"party": "Labour",
+"seat": "Kettering"
+},
+"5332": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Lincoln Jopp",
+"party": "Conservative",
+"seat": "Spelthorne"
+},
+"5333": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Lucy Rigby",
+"party": "Labour",
+"seat": "Northampton North"
+},
+"5334": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Dr Allison Gardner",
+"party": "Labour",
+"seat": "Stoke-on-Trent South"
+},
+"5335": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Jess Brown-Fuller",
+"party": "Liberal Democrat",
+"seat": "Chichester"
+},
+"5336": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Helen Maguire",
+"party": "Liberal Democrat",
+"seat": "Epsom and Ewell"
+},
+"5337": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Olivia Bailey",
+"party": "Labour",
+"seat": "Reading West and Mid Berkshire"
+},
+"5338": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Terry Jermy",
+"party": "Labour",
+"seat": "South West Norfolk"
+},
+"5339": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Danny Beales",
+"party": "Labour",
+"seat": "Uxbridge and South Ruislip"
+},
+"5340": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Jack Rankin",
+"party": "Conservative",
+"seat": "Windsor"
+},
+"5341": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Laura Kyrke-Smith",
+"party": "Labour",
+"seat": "Aylesbury"
+},
+"5342": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "John Whitby",
+"party": "Labour",
+"seat": "Derbyshire Dales"
+},
+"5343": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Mr Joshua Reynolds",
+"party": "Liberal Democrat",
+"seat": "Maidenhead"
+},
+"5344": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Ben Coleman",
+"party": "Labour",
+"seat": "Chelsea and Fulham"
+},
+"5345": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Peter Lamb",
+"party": "Labour",
+"seat": "Crawley"
+},
+"5346": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Calum Miller",
+"party": "Liberal Democrat",
+"seat": "Bicester and Woodstock"
+},
+"5347": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "David Reed",
+"party": "Conservative",
+"seat": "Exmouth and Exeter East"
+},
+"5348": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "David Taylor",
+"party": "Labour",
+"seat": "Hemel Hempstead"
+},
+"5349": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Alex McIntyre",
+"party": "Labour",
+"seat": "Gloucester"
+},
+"5350": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Ben Maguire",
+"party": "Liberal Democrat",
+"seat": "North Cornwall"
+},
+"5351": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Gregory Stafford",
+"party": "Conservative",
+"seat": "Farnham and Bordon"
+},
+"5352": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Dr Roz Savage",
+"party": "Liberal Democrat",
+"seat": "South Cotswolds"
+},
+"5353": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Anna Gelderd",
+"party": "Labour",
+"seat": "South East Cornwall"
+},
+"5354": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "",
+"house": 1,
+"name": "Cameron Thomas",
+"party": "Independent",
+"seat": "Tewkesbury"
+},
+"5355": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sarah Bool",
+"party": "Conservative",
+"seat": "South Northamptonshire"
+},
+"5356": {
+"abbr": "TUV",
+"colour": "0c3a6a",
+"end": "",
+"house": 1,
+"name": "Jim Allister",
+"party": "Traditional Unionist Voice",
+"seat": "North Antrim"
+},
+"5357": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "",
+"house": 1,
+"name": "Ayoub Khan",
+"party": "Independent",
+"seat": "Birmingham Perry Barr"
+},
+"5358": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "John Cooper",
+"party": "Conservative",
+"seat": "Dumfries and Galloway"
+},
+"5359": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Neil Duncan-Jordan",
+"party": "Labour",
+"seat": "Poole"
+},
+"5360": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "David Pinto-Duschinsky",
+"party": "Labour",
+"seat": "Hendon"
+},
+"5361": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "",
+"house": 1,
+"name": "James McMurdock",
+"party": "Independent",
+"seat": "South Basildon and East Thurrock"
+},
+"5362": {
+"abbr": "LD",
+"colour": "fc7d0b",
+"end": "",
+"house": 1,
+"name": "Mr Angus MacDonald",
+"party": "Liberal Democrat",
+"seat": "Inverness, Skye and West Ross-shire"
+},
+"54": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Julian Lewis",
+"party": "Conservative",
+"seat": "New Forest East"
+},
+"5403": {
+"abbr": "RUK",
+"colour": "12b6cf",
+"end": "",
+"house": 1,
+"name": "Sarah Pochin",
+"party": "Reform UK",
+"seat": "Runcorn and Helsby"
+},
+"5447": {
+"abbr": "Green",
+"colour": "78b82a",
+"end": "",
+"house": 1,
+"name": "Hannah Spencer",
+"party": "Green Party",
+"seat": "Gorton and Denton"
+},
+"5449": {
+"abbr": "SNP",
+"colour": "fff685",
+"end": "",
+"house": 1,
+"name": "Lara Bird",
+"party": "Scottish National Party",
+"seat": "Arbroath and Broughty Ferry"
+},
+"5450": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Douglas Lumsden",
+"party": "Conservative",
+"seat": "Aberdeen South"
+},
+"55": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Desmond Swayne",
+"party": "Conservative",
+"seat": "New Forest West"
+},
+"609": {
+"abbr": "WPB",
+"colour": "539acb",
+"end": "2024-05-30",
+"house": 1,
+"name": "George Galloway",
+"party": "Workers Party of Britain",
+"seat": "Rochdale"
+},
+"62": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 2,
+"name": "Lord Whitehead",
+"party": "Labour",
+"seat": "Life peer"
+},
+"632": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Mr Douglas Alexander",
+"party": "Labour (Co-op)",
+"seat": "Lothian East"
+},
+"650": {
+"abbr": "Ind",
+"colour": "909090",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Jeffrey M Donaldson",
+"party": "Independent",
+"seat": "Lagan Valley"
+},
+"69": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Sir Oliver Heald",
+"party": "Conservative",
+"seat": "North East Hertfordshire"
+},
+"76": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "2024-05-30",
+"house": 1,
+"name": "Damian Green",
+"party": "Conservative",
+"seat": "Ashford"
+},
+"8": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 2,
+"name": "Baroness May of Maidenhead",
+"party": "Conservative",
+"seat": "Life peer"
+},
+"87": {
+"abbr": "Con",
+"colour": "0063ba",
+"end": "",
+"house": 1,
+"name": "Sir Roger Gale",
+"party": "Conservative",
+"seat": "Herne Bay and Sandwich"
+}
+}
