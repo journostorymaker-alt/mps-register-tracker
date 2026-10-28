@@ -68,6 +68,52 @@ def mp_name(s):
     return re.sub(r"^(.*?), (.*)$", r"\2 \1", s)
 
 
+# What the money was for, read from the MP's own description. First match wins. A guide only.
+PURPOSES = [
+    ("Pro bono legal help", r"pro bono"),
+    ("Staff or researcher provided", r"services of|seconded|secondment|research(er)? (services|support)|policy advis|staff (member|support)|caseworker|intern\b|parliamentary assistant|researcher"),
+    ("Media work", r"article|column|broadcast|podcast|\btv\b|television|radio|presenter|presenting|panel+ist|programme appearance|media appearance|\bshows?\b|writing|book|royalt|newspaper|interview|gb news|cameo|social media|journalis"),
+    ("Training or course", r"leadership (course|programme|training)|training|\bcourse\b|fellowship visit|summer school|residency|study visit"),
+    ("Election or campaign funding", r"campaign|election|re-?elect|leadership bid|survey|leaflet|canvass|constituency (activit|work)|support (my|the) (work|activit)|towards? (my|the) (work|costs)|fighting fund|political activit"),
+    ("Speaking fee", r"speaking|speech|keynote|lecture|q ?& ?a|in conversation|chair(ing)? (a|the) (event|session)|hosting an event|visiting fellow"),
+    ("Council or public role", r"council(lor)?\b|councils\b|mayor|executive member|assembly member|police and crime|co-?leader|leader of (the )?(council|party|group)|council leader|cabinet member|allowance"),
+    ("Advisory or board role", r"advis|consult|board|director|chair|non-exec|\bned\b|trustee|strategic"),
+    ("Professional or business work", r"partner\b|partnership|legal services|barrister|counsel\b|solicitor|medical|doctor|\bgp\b|nurse|locum|clinical|lecturer|teaching|dental|pharmac|management fee|rent"),
+    ("Tickets and hospitality", r"ticket|hospitality|\bmatch\b|concert|festival|dinner|lunch|breakfast|reception|\bbox\b|enclosure|cup final|\bfinals\b|game|races?\b|gala|awards|wimbledon|glastonbury|opera|theatre|zoo|experience"),
+    ("Travel and accommodation", r"flight|hotel|accommodation|travel|transport|train|car hire|visa"),
+    ("Office, event or materials", r"office|venue|event|sponsorship|printing|photograph|christmas card|equipment|software|website|room hire|catering|refreshment"),
+    ("Gift", r"\bgift|shirt|auction|framed|hamper|bottle|wine|whisky|painting|book token|clothing|jewell|watch"),
+]
+GIFT_FIRST = ["Pro bono legal help", "Staff or researcher provided", "Gift", "Tickets and hospitality", "Training or course", "Travel and accommodation"]
+
+
+def purpose_of(kind, detail):
+    if kind == "Paid overseas trip":
+        return "Paid trip abroad"
+    t = str(detail or "").lower()
+    rules = PURPOSES
+    if kind.startswith("Gift"):
+        first = [p for p in PURPOSES if p[0] in GIFT_FIRST]
+        rules = sorted(first, key=lambda p: GIFT_FIRST.index(p[0])) + [p for p in PURPOSES if p[0] not in GIFT_FIRST]
+    for name, rx in rules:
+        if re.search(rx, t):
+            return name
+    if kind == "Donation or support":
+        return "Not stated (donation)"
+    if kind.startswith("Paid work"):
+        return "Not stated (paid work)"
+    return "Not stated"
+
+
+def load_notes():
+    import csv
+    path = os.path.join(ROOT, "data", "notes.csv")
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8-sig", newline="") as f:
+        return [r for r in csv.DictReader(f) if r.get("payer") and r.get("note")]
+
+
 def load_members():
     path = os.path.join(ROOT, "data", "members.json")
     return json.load(open(path)) if os.path.exists(path) else {}
@@ -116,18 +162,20 @@ def money_rows(cats):
             if isinstance(par, pd.DataFrame):
                 par = par.iloc[0]
             payer = par[V + "PayerName"] if par is not None else ""
+            addr = par[V + "PayerPublicAddress"] if par is not None and V + "PayerPublicAddress" in par.index else ""
             nature = par[V + "PayerNatureOfBusiness"] if par is not None else ""
             role = par[V + "JobTitle"] if par is not None else ""
             if r.get(V + "IsUltimatePayerDifferent") == "True" and r.get(V + "UltimatePayerName"):
                 nature = r.get(V + "UltimatePayerNatureOfBusiness") or nature
                 payer = f"{r[V + 'UltimatePayerName']} (via {payer})" if payer else r[V + "UltimatePayerName"]
+                addr = r.get(V + "UltimatePayerAddress", "") or addr
             out.append(dict(id=r["Id"], cat=c, mp=r["Member"], mnis=r["Mnis Id"], payer=payer, ptype=nature,
                             value=num(r[V + "Value"]), freq=(r.get(V + "RegularityOfPayment") or "").lower(),
                             start=day(r.get(V + "StartDate")), end=day(r.get(V + "EndDate")),
                             received=day(r.get(V + "ReceivedDate")), registered=day(r[V + "Registered"]),
                             last_seen=day(r.get(V + "Register Date")),
                             detail=" | ".join(x for x in (role, r[V + "PaymentDescription"]) if x),
-                            charity=r.get(V + "IsPaymentDonated") == "True", link=r["Link"]))
+                            charity=r.get(V + "IsPaymentDonated") == "True", link=r["Link"], addr=addr))
     for c in ("2", "3", "5"):
         for _, r in cats.get(c, pd.DataFrame()).iterrows():
             pt = r[V + "DonorStatus"] + (" / " + r[V + "DonorOtherDetails"] if r.get(V + "DonorOtherDetails") else "")
@@ -135,7 +183,7 @@ def money_rows(cats):
                             value=num(r[V + "Value"]), freq="", start=None, end=None,
                             received=day(r[V + "ReceivedDate"]), registered=day(r[V + "Registered"]),
                             detail=r[V + "PaymentDescription"], charity=False, link=r["Link"],
-                            co=r.get(V + "DonorCompanyIdentifier", ""), extra=r.get(V + "DonationSource", "")))
+                            co=r.get(V + "DonorCompanyIdentifier", ""), extra=r.get(V + "DonationSource", ""), addr=r.get(V + "DonorPublicAddress", "")))
     for _, r in cats.get("4", pd.DataFrame()).iterrows():
         dest = ", ".join(r[k] for k in r.index if k.startswith(V + "Country") and r[k])
         for i in range(10):
@@ -147,7 +195,7 @@ def money_rows(cats):
                             value=num(r.get(V + f"Value (.{i}.5)", "")), freq="", start=None, end=None,
                             trip_end=day(r.get(V + "EndDate")), received=day(r[V + "StartDate"]), registered=day(r[V + "Registered"]),
                             detail=" | ".join(x for x in (dest, r[V + "Purpose"], r.get(V + f"PaymentDescription (.{i}.4)", "")) if x),
-                            charity=False, link=r["Link"]))
+                            charity=False, link=r["Link"], addr=r.get(V + f"PublicAddress (.{i}.2)", "")))
     return out
 
 
@@ -268,6 +316,10 @@ def main():
     colours = {party_of(v): colour_of(v) for v in mem.values()}
     colours["Labour"] = "#d50000"
     df["kind"] = df.cat.map(KIND)
+    df["purpose"] = [purpose_of(k, d) for k, d in zip(df.kind, df.detail)]
+    # a payer we could not place, whose entries are plainly legal work, is a law firm or lawyer
+    legal = df[df.detail.astype(str).str.contains(r"legal|pro bono|solicitor|barrister|law firm", case=False, regex=True)].payer_group.unique()
+    df.loc[(df.sector == "Other / unsorted") & df.payer_group.isin(legal), "sector"] = "Law"
     since = df[df.since > 0]
     first_decl = df[(df.cat != "1.2") & df.received.isna() & df.registered.notna()]
     first_decl = first_decl[first_decl.registered.map(lambda d: ELECTION <= d <= FIRST_DECLARATIONS_END)]
@@ -356,7 +408,39 @@ def main():
                                registered=str(r.registered or ""), live=bool(r.live), charity=bool(r.charity), first=bool(r.first),
                                detail=r.detail, link=r.link, ptype=clean(r.ptype), co=clean(getattr(r, "co", "")),
                                extra=clean(getattr(r, "extra", "")), start=clean(r.start), end=clean(r.end) or clean(getattr(r, "trip_end", None)),
-                               raw_payer=re.sub(r"\s+", " ", str(r.payer))) for r in ent.itertuples()])
+                               raw_payer=re.sub(r"\s+", " ", str(r.payer)), purpose=r.purpose) for r in ent.itertuples()])
+
+    # payer profiles: what the register says, plus enrichment and our notes
+    enr_dir = os.path.join(ROOT, "data", "enrich")
+    ld = lambda n: json.load(open(os.path.join(enr_dir, n))) if os.path.exists(os.path.join(enr_dir, n)) else {}
+    ch, wd = ld("companies.json"), ld("wikidata.json")
+    ch_by_payer = {}
+    for num_, rec in ch.items():
+        if rec.get("found"):
+            for p in rec.get("payers", []):
+                ch_by_payer.setdefault(p, []).append(rec)
+    notes = load_notes()
+    info = {}
+    for pg, g in pool_ent.groupby("payer_group"):
+        indiv = g.ptype.astype(str).str.lower().str.contains("individual").any() or (g.sector == "Private individuals").all()
+        addrs = [a for a in g.addr.dropna().astype(str).map(lambda x: re.sub(r"\s+", " ", x).strip()) if a]
+        rec = dict(described=sorted({clean(x) for x in g.ptype if clean(x)})[:4],
+                   names=sorted({re.sub(r"\s+", " ", str(x)) for x in g.payer})[:6],
+                   address="" if indiv or not addrs else pd.Series(addrs).value_counts().index[0],
+                   co=sorted({clean(x) for x in g.co if clean(x)}) if "co" in g else [],
+                   purposes=[[k, round(float(v), 2)] for k, v in g.groupby("purpose").since.sum().sort_values(ascending=False).items()][:5],
+                   individual=bool(indiv))
+        if pg in wd and wd[pg].get("id"):
+            rec["wikidata"] = {k: wd[pg].get(k, "") for k in ("id", "label", "description", "website", "wikipedia")}
+        if pg in ch_by_payer:
+            rec["companies"] = [{k: v for k, v in c.items() if k not in ("payers", "_fetched")} for c in ch_by_payer[pg][:3]]
+        ns = [n for n in notes if n["payer"].strip() == pg]
+        if ns:
+            rec["notes"] = ns
+        info[pg] = rec
+    dump("payer_info.json", info)
+    pur = since.groupby(["purpose", "party"]).since.sum().reset_index()
+    dump("purposes.json", [dict(purpose=r.purpose, party=r.party, amount=round(float(r.since), 2)) for r in pur.itertuples()])
 
     # what changed in the latest fortnight
     ch = {"from": None, "to": latest["date"], "new": [], "other": [], "gone": []}

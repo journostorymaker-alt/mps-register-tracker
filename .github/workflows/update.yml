@@ -41,6 +41,14 @@ jobs:
       - name: Build the data files
         run: python scripts/build.py
 
+      - name: Find out more about funders (Wikidata, and Companies House if a key is set)
+        env:
+          CH_API_KEY: ${{ secrets.CH_API_KEY }}
+        run: python scripts/enrich.py
+
+      - name: Rebuild with funder details
+        run: python scripts/build.py
+
       - name: Save new data to the repo
         run: |
           git config user.name "register-bot"

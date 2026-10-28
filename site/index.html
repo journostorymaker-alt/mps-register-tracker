@@ -135,6 +135,15 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
 .splitbar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; margin: 6px 0 4px; }
 .more { font: inherit; font-size: 13px; background: none; border: 0; color: var(--green-dk); cursor: pointer; padding: 8px 6px; text-decoration: underline; }
 .ext { font-size: 11px; color: var(--muted); }
+.context { border: 1px solid var(--line); border-left: 5px solid #2F6FDE; border-radius: 8px; padding: 10px 12px; margin: 10px 0; font-size: 14px; background: color-mix(in srgb, #2F6FDE 6%, var(--panel)); }
+.context .lab { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #2F6FDE; margin-bottom: 4px; }
+.context .src { font-size: 12px; margin-top: 6px; }
+.pchip { display: inline-block; font-size: 12px; padding: 2px 9px; border-radius: 99px; background: color-mix(in srgb, var(--green) 22%, var(--panel)); border: 1px solid color-mix(in srgb, var(--green) 50%, var(--line)); color: var(--fg); margin: 2px 4px 2px 0; }
+.chbox { border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin: 8px 0; }
+.chbox .nm { font-weight: 700; }
+.chbox ul { margin: 4px 0 0; padding-left: 18px; font-size: 13px; }
+.status-active { color: var(--green-dk); font-weight: 700; }
+.status-other { color: #c0392b; font-weight: 700; }
 
 @media (max-width: 560px) {
   .mpcard .top { grid-template-columns: 1fr; }
@@ -196,7 +205,7 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
         <h2>Second jobs or donations?</h2>
         <p class="note">How each party's money breaks down. Each bar adds to 100%.</p>
         <div class="controls"><span class="seg" role="group" aria-label="Break down by">
-          <button data-fp="types" aria-pressed="true">By type</button><button data-fp="sectors" aria-pressed="false">By sector</button></span></div>
+          <button data-fp="types" aria-pressed="true">By type</button><button data-fp="sectors" aria-pressed="false">By sector</button><button data-fp="purposes" aria-pressed="false">By what for</button></span></div>
         <div class="legend" id="fp-legend"></div>
         <div class="chart" id="c-fp"></div>
       </div>
@@ -237,6 +246,7 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
       <div class="card"><h2>Since the election, by type</h2><p class="note">Estimated totals.</p><div class="chart" id="c-type"></div></div>
       <div class="card"><h2>Since the election, by rough sector</h2><p class="note">Sorted by keyword. A guide only.</p><div class="chart" id="c-sector"></div></div>
     </div>
+    <div class="card" style="margin-bottom:14px"><h2>What the money was for</h2><p class="note">Our reading of each MP's own description. A guide only. Click a bar to see those entries.</p><div class="chart" id="c-purpose"></div></div>
   </section>
 
   <section data-page="fortnight" hidden>
@@ -283,6 +293,7 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
       <div class="controls"><input type="search" id="q-all" placeholder="Search anything: an MP, a party, a company, a country, a word in the detail">
         <select id="f-all-type" aria-label="Type"><option value="">All types</option></select>
         <select id="f-all-party" aria-label="Party"><option value="">All parties</option></select>
+        <select id="f-all-purpose" aria-label="What for"><option value="">Paid for: anything</option></select>
         <button class="btn" data-csv="tb-all">Download CSV</button></div>
       <div class="tbox"><table id="tb-all"></table></div><p class="count" id="n-all"></p>
     </div>
@@ -303,6 +314,9 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
         <li>Where an agency pays the MP for someone else, the true payer is shown.</li>
         <li>Payer names are tidied so spelling variants count as one. Two merges are judgement calls: the Sainsbury name variants, and Fran Perrin with Francesca Perrin.</li>
         <li>Sectors are a rough keyword sort. Treat them as a guide.</li>
+        <li><b>"What for"</b> is our reading of the MP's own description of each entry, sorted by keyword. About 85% matched a manual check. Always read the MP's own words, shown on every entry.</li>
+        <li><b>About each payer:</b> the register's own description, address (organisations only) and company number. Where available, Companies House details (status, what the company does, directors and owners) and a possible Wikidata match. Wikidata matches are by exact name, so check them.</li>
+        <li><b>Context notes</b> are written by us, each with a source. They explain what lies behind an entry where the register does not, for example pro bono legal work.</li>
         <li>"To charity" means the MP says the money went to charity. It is still counted in totals.</li>
       </ul>
       <p id="m-built" class="count"></p>
@@ -324,7 +338,7 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
   const ord = (n) => n + (['th', 'st', 'nd', 'rd'][(n % 100 - 20) % 10] || ['th', 'st', 'nd', 'rd'][n % 100] || 'th');
   const fmtDay = (s) => { if (!s) return ''; const d = new Date(s); return isNaN(d) ? s : d3.utcFormat('%-d %b %Y')(d); };
   const get = (f) => fetch('data/' + f).then((r) => r.json());
-  const [S, M, P, MP, CH, PA, CX] = await Promise.all(['summary.json', 'monthly.json', 'payers.json', 'mps.json', 'changes.json', 'parties.json', 'crossparty.json'].map(get));
+  const [S, M, P, MP, CH, PA, CX, PU] = await Promise.all(['summary.json', 'monthly.json', 'payers.json', 'mps.json', 'changes.json', 'parties.json', 'crossparty.json', 'purposes.json'].map(get));
   let E = null; // entries load on demand
   const COLORS = ['#97C221', '#2F6FDE', '#E8743B', '#8E5BD6', '#19A3A3', '#D6457B', '#B0A11F', '#7A8796'];
   const PCOL = Object.assign({}, S.colours || {});
@@ -485,8 +499,9 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
   const addOpts = (id, items) => { const s = document.getElementById(id); items.forEach((x) => s.add(new Option(x, x))); };
   addOpts('f-type', types); addOpts('f-sector', sectorsByTotal); addOpts('f-party', partiesByTotal); addOpts('f-pay-sector', sectorsByTotal);
   addOpts('f-mp-party', PA.map((p) => p.party)); addOpts('f-all-party', PA.map((p) => p.party));
-  function fillTypes() { const s = document.getElementById('f-all-type'); if (s.options.length < 2) addOpts('f-all-type', [...new Set(E.map((r) => r.type))].sort()); }
-  ['f-type', 'f-sector', 'f-party', 'f-split', 'f-pay-sector', 'f-all-type', 'f-all-party', 'f-mp-party', 'f-mp-sitting'].forEach((id) => document.getElementById(id).addEventListener('change', draw));
+  function fillTypes() { const s = document.getElementById('f-all-type'); if (s.options.length < 2) addOpts('f-all-type', [...new Set(E.map((r) => r.type))].sort());
+    const p = document.getElementById('f-all-purpose'); if (p.options.length < 2) addOpts('f-all-purpose', [...new Set(E.map((r) => r.purpose))].sort()); }
+  ['f-type', 'f-sector', 'f-party', 'f-split', 'f-pay-sector', 'f-all-type', 'f-all-party', 'f-all-purpose', 'f-mp-party', 'f-mp-sitting'].forEach((id) => document.getElementById(id).addEventListener('change', draw));
   let partyMeasure = 'per_seat', fpMode = 'types';
   document.querySelectorAll('[data-pm]').forEach((b) => b.addEventListener('click', () => { partyMeasure = b.dataset.pm; document.querySelectorAll('[data-pm]').forEach((x) => x.setAttribute('aria-pressed', x === b)); draw(); }));
   document.querySelectorAll('[data-fp]').forEach((b) => b.addEventListener('click', () => { fpMode = b.dataset.fp; document.querySelectorAll('[data-fp]').forEach((x) => x.setAttribute('aria-pressed', x === b)); draw(); }));
@@ -665,7 +680,9 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
     const typeKeys = ['Paid work (regular)', 'Paid work (one-off)', 'Donation or support', 'Gift or hospitality (UK)', 'Paid overseas trip', 'Gift from abroad'];
     const typeCols = ['#131820', '#5b6573', '#97C221', '#E8743B', '#2F6FDE', '#8E5BD6'];
     let keys, colorFor;
+    const purTot = d3.rollups(PU, (v) => d3.sum(v, (r) => r.amount), (r) => r.purpose).sort((a, b) => b[1] - a[1]).map((d) => d[0]).filter((k) => !k.startsWith('Not stated'));
     if (fpMode === 'types') { keys = typeKeys; colorFor = (k, j) => typeCols[j]; }
+    else if (fpMode === 'purposes') { keys = purTot.slice(0, 8).concat(['Not stated', 'Everything else']); colorFor = (k, j) => k === 'Everything else' ? '#c4cbd4' : k === 'Not stated' ? '#7A8796' : COLORS[j % COLORS.length]; }
     else {
       const top = sectorsByTotal.filter((s) => s !== 'Other / unsorted').slice(0, 7);
       keys = top.concat(['Everything else']);
@@ -674,6 +691,7 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
     const fpRows = bigParties.filter((p) => p.total > 50000).map((p) => {
       let parts;
       if (fpMode === 'types') parts = p.types;
+      else if (fpMode === 'purposes') { parts = {}; PU.filter((r) => r.party === p.party).forEach((r) => { const kk = r.purpose.startsWith('Not stated') ? 'Not stated' : keys.includes(r.purpose) ? r.purpose : 'Everything else'; parts[kk] = (parts[kk] || 0) + r.amount; }); }
       else { parts = {}; Object.entries(p.sectors).forEach(([k, v]) => { const kk = keys.includes(k) ? k : 'Everything else'; parts[kk] = (parts[kk] || 0) + v; }); }
       return {name: p.party, parts};
     });
@@ -714,9 +732,10 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
 
 
   // ---------- drill-down panel ----------
-  let EI = null;
+  let EI = null, PI = null;
   async function ensureE() {
     if (!E) E = await get('entries.json');
+    if (!PI) PI = await get('payer_info.json').catch(() => ({}));
     if (!EI) {
       EI = {id: new Map(E.map((r) => [r.id, r])), payer: d3.group(E, (r) => r.payer), mp: d3.group(E, (r) => r.mnis)};
     }
@@ -773,6 +792,18 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
   }
   const dl = (pairs) => { const d = el('dl'); pairs.filter(([, v]) => v !== '' && v != null && v !== false).forEach(([k, v]) => { d.append(el('dt', null, k)); const dd = el('dd'); if (v instanceof Node) dd.append(v); else dd.textContent = v; d.append(dd); }); return d; };
 
+  function contextNotes(b, payer, mp) {
+    const info = (PI || {})[payer] || {};
+    (info.notes || []).filter((n) => !mp || !n.mp || n.mp === mp).forEach((n) => {
+      const c = el('div', 'context');
+      c.append(el('div', 'lab', 'Context' + (n.mp ? ` · ${n.mp}` : '')), el('div', null, n.note));
+      if (n.source_url) { const sp = el('div', 'src'); sp.append(document.createTextNode('Source: '), extLink(n.source_title || n.source_url, n.source_url)); c.append(sp); }
+      b.append(c);
+    });
+  }
+  const hansard = (q, mnis) => 'https://hansard.parliament.uk/search/Contributions?searchTerm=' + encodeURIComponent('"' + q + '"') + (mnis ? '&memberId=' + mnis : '') + '&partial=False';
+  const searchName = (n) => n.replace(/\s*\((?:via|known as)[^)]*\)?.*$/i, '').trim();
+  const SIC = 'https://resources.companieshouse.gov.uk/sic/';
   function viewEntry(id) {
     const r = EI.id.get(id);
     if (!r) { const n = CH.new.find((x) => x.id === id); if (!n) return false; }
@@ -788,6 +819,8 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
     if (e.freq && e.since != null) b.append(el('p', 'sub2', `About ${gbp(e.since)} since the election, on our month-by-month estimate.`));
     else if (e.first) b.append(el('p', 'sub2', 'Declared just after the election with no date received. Not counted in running totals.'));
     else b.append(el('p', 'sub2', ''));
+    if (e.purpose) { const pc = el('div'); const ch = el('span', 'pchip', e.purpose); ch.title = 'Our reading of what the MP declared'; pc.append(el('span', 'ext', 'What for: '), ch); b.append(pc); }
+    contextNotes(b, e.payer, e.mp);
     if (e.detail) { b.append(el('h3', null, 'What the MP declared')); b.append(el('div', 'quote', e.detail)); }
     b.append(el('h3', null, 'Details'));
     b.append(dl([
@@ -809,6 +842,11 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
     if (e.mnis) L.append(extLink("MP's official register page", `https://members.parliament.uk/member/${e.mnis}/registeredinterests`));
     if (e.link) L.append(extLink('Official record (data)', e.link));
     b.append(L);
+    b.append(el('h3', null, 'Did it lead anywhere?'));
+    const L2 = el('div', 'links');
+    if (e.mnis) L2.append(extLink(`Has ${e.mp} mentioned ${searchName(e.payer)} in Parliament?`, hansard(searchName(e.payer), e.mnis)));
+    L2.append(extLink('News on both', 'https://news.google.com/search?q=' + encodeURIComponent(`"${searchName(e.payer)}" "${e.mp.replace(/^(Sir|Dame|Dr|Mr|Mrs|Ms) /, '')}"`)));
+    b.append(L2);
   }
 
   function viewPayer(name) {
@@ -826,6 +864,43 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
     b.append(el('div', 'amount', gbp(total)));
     const mpsN = new Set(rows.map((r) => r.mnis)).size;
     b.append(el('p', 'sub2', `to ${mpsN} MP${mpsN === 1 ? '' : 's'} since the July 2024 election, across ${inTotal.length} entr${inTotal.length === 1 ? 'y' : 'ies'}.` + (rows.length > inTotal.length ? ` Plus ${gbp(d3.sum(rows.filter((r) => r.first), (r) => r.value || 0))} declared just after the election.` : '')));
+    contextNotes(b, name, null);
+    const info = (PI || {})[name] || {};
+    if (info.purposes && info.purposes.length) {
+      const pp = el('div'); pp.append(el('span', 'ext', 'Paid for: '));
+      info.purposes.forEach(([k, v]) => { const c = el('span', 'pchip', `${k} ${gbpC(v)}`); pp.append(c); });
+      b.append(pp);
+    }
+    b.append(el('h3', null, 'About this payer'));
+    const others = (info.names || []).filter((x) => x !== name);
+    b.append(dl([
+      ['Described in the register as', (info.described || ptypes).join('; ')],
+      ['Also listed as', others.join('; ')],
+      ['Address (from the register)', info.address || ''],
+      ['Company number', (info.co || []).length ? (() => { const sp = el('span'); info.co.forEach((c, i) => { if (i) sp.append(document.createTextNode(', ')); sp.append(extLink(c, 'https://find-and-update.company-information.service.gov.uk/company/' + encodeURIComponent(c))); }); return sp; })() : ''],
+    ]));
+    (info.companies || []).forEach((c) => {
+      const box = el('div', 'chbox');
+      const top = el('div'); top.append(el('span', 'nm', c.name + ' '), el('span', c.status === 'active' ? 'status-active' : 'status-other', (c.status || '').replace(/-/g, ' ')));
+      box.append(top, el('div', 'ext', 'From Companies House'));
+      box.append(dl([['Company number', extLink(c.number, 'https://find-and-update.company-information.service.gov.uk/company/' + c.number)], ['Type', (c.type || '').replace(/-/g, ' ')],
+        ['Set up', fmtDay(c.created)], ['Closed', fmtDay(c.ceased)],
+        ['What it does (SIC codes)', (c.sic || []).length ? (() => { const sp = el('span'); sp.append(document.createTextNode(c.sic.join(', ') + ' ')); sp.append(extLink('what these mean', SIC)); return sp; })() : ''],
+        ['Registered office', c.address]]));
+      if ((c.owners || []).length) { box.append(el('h3', null, 'Owners or people with significant control')); const ul = el('ul'); c.owners.forEach((o) => ul.append(el('li', null, `${o.name}${o.control && o.control.length ? ` (${o.control.slice(0, 2).join('; ')})` : ''}`))); box.append(ul); }
+      if ((c.officers || []).length) { box.append(el('h3', null, 'Current directors and officers')); const ul = el('ul'); c.officers.slice(0, 12).forEach((o) => ul.append(el('li', null, `${o.name}, ${(o.role || '').replace(/-/g, ' ')}${o.since ? ` since ${fmtDay(o.since)}` : ''}`))); box.append(ul); }
+      b.append(box);
+    });
+    if (info.wikidata && (info.wikidata.description || info.wikidata.website || info.wikidata.wikipedia)) {
+      const box = el('div', 'chbox');
+      box.append(el('div', 'nm', info.wikidata.label || name), el('div', 'ext', 'Possible match on Wikidata. Check it is the same organisation.'));
+      if (info.wikidata.description) box.append(el('div', null, info.wikidata.description));
+      const L0 = el('div', 'links');
+      if (info.wikidata.website) L0.append(extLink('Website', info.wikidata.website));
+      if (info.wikidata.wikipedia) L0.append(extLink('Wikipedia', info.wikidata.wikipedia));
+      L0.append(extLink('Wikidata', 'https://www.wikidata.org/wiki/' + info.wikidata.id));
+      box.append(L0); b.append(box);
+    }
     const byParty = d3.rollups(inTotal, (v) => d3.sum(v, (r) => r.since || 0), (r) => r.party).sort((a, c) => c[1] - a[1]);
     if (byParty.length) {
       b.append(el('h3', null, 'By party'));
@@ -842,11 +917,15 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
     entryList(box, rows, (x) => ({main: `${x.mp}: ${x.type}`, sub: `${fmtDay(x.date || x.registered)}. ${x.detail.slice(0, 120)}`}), 15);
     b.append(el('h3', null, 'Check this payer elsewhere'));
     const L = el('div', 'links');
+    const sn = searchName(name);
     const co = rows.find((r) => r.co);
     if (co) L.append(extLink('Companies House record', 'https://find-and-update.company-information.service.gov.uk/company/' + encodeURIComponent(co.co)));
-    else if (!ptypes.includes('Individual')) L.append(extLink('Search Companies House', 'https://find-and-update.company-information.service.gov.uk/search?q=' + encodeURIComponent(name)));
-    L.append(extLink('Electoral Commission donations', 'https://search.electoralcommission.org.uk/Search/Donations?query=' + encodeURIComponent(name)));
-    L.append(extLink('News coverage', 'https://news.google.com/search?q=' + encodeURIComponent('"' + name + '"')));
+    else if (!info.individual) L.append(extLink('Search Companies House', 'https://find-and-update.company-information.service.gov.uk/search?q=' + encodeURIComponent(sn)));
+    if (!info.individual) L.append(extLink('Find their website', 'https://duckduckgo.com/?q=' + encodeURIComponent(sn + ' official website')));
+    if (!info.individual) L.append(extLink('OpenCorporates (worldwide)', 'https://opencorporates.com/companies?q=' + encodeURIComponent(sn)));
+    L.append(extLink('Electoral Commission donations', 'https://search.electoralcommission.org.uk/Search/Donations?query=' + encodeURIComponent(sn)));
+    L.append(extLink('Mentioned in Parliament (Hansard)', hansard(sn)));
+    L.append(extLink('News coverage', 'https://news.google.com/search?q=' + encodeURIComponent('"' + sn + '"')));
     b.append(L);
   }
 
@@ -864,6 +943,8 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
     const rows = EI.mp.get(id) || [];
     if (rows.length) {
       const byPayer = d3.rollups(rows, (v) => ({t: d3.sum(v, (r) => r.first ? 0 : (r.since || 0)), n: v.length, s: v[0].sector}), (r) => r.payer).sort((a, c) => c[1].t - a[1].t);
+      const byP = d3.rollups(rows.filter((r) => !r.first), (v) => d3.sum(v, (r) => r.since || 0), (r) => r.purpose).sort((a, c) => c[1] - a[1]);
+      if (byP.length) { const pp = el('div'); pp.append(el('span', 'ext', 'Paid for: ')); byP.slice(0, 6).forEach(([k, v]) => pp.append(el('span', 'pchip', `${k} ${gbpC(v)}`))); b.append(pp); }
       b.append(el('h3', null, 'Who paid'));
       const mx = d3.max(byPayer, (d) => d[1].t) || 1;
       const box1 = el('div'); b.append(box1);
@@ -914,6 +995,8 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
       hbar('c-type', d3.rollups(M, (v) => d3.sum(v, (r) => r.amount), (r) => r.type).map(([k, v]) => ({k, v})).sort((a, b) => b.v - a.v), 'k', 'v');
       hbar('c-sector', d3.rollups(M, (v) => d3.sum(v, (r) => r.amount), (r) => r.sector).map(([k, v]) => ({k, v})).sort((a, b) => b.v - a.v), 'k', 'v',
         {onClick: (r) => { document.getElementById('f-pay-sector').value = r.k; show('payers'); }});
+      hbar('c-purpose', d3.rollups(PU, (v) => d3.sum(v, (r) => r.amount), (r) => r.purpose).map(([k, v]) => ({k, v})).sort((a, b) => b.v - a.v), 'k', 'v',
+        {onClick: async (r) => { await show('search'); fillTypes(); document.getElementById('f-all-purpose').value = r.k; draw(); }});
     }
     if (current === 'fortnight') {
       document.getElementById('fn-note').textContent = CH.from ? `New entries between the ${fmtDay(CH.from)} and ${fmtDay(CH.to)} registers.` : '';
@@ -939,8 +1022,8 @@ tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--p
         {sort: 'total', q: 'q-mp', count: 'n-mp', sum: 'total', key: (r) => r.id, onRow: (id) => go('mp', id)});
     }
     if (current === 'search' && E) {
-      const ft = document.getElementById('f-all-type').value, fp = document.getElementById('f-all-party').value;
-      table('tb-all', E.filter((r) => (!ft || r.type === ft) && (!fp || r.party === fp)), [{f: 'mp', label: 'MP', go: 'mp', goKey: (r) => r.mnis}, {f: 'party', label: 'Party', party: true}, {f: 'type', label: 'Type'}, {f: 'payer', label: 'Payer', go: 'payer'}, {f: 'sector', label: 'Sector'},
+      const ft = document.getElementById('f-all-type').value, fp = document.getElementById('f-all-party').value, fpu = document.getElementById('f-all-purpose').value;
+      table('tb-all', E.filter((r) => (!ft || r.type === ft) && (!fp || r.party === fp) && (!fpu || r.purpose === fpu)), [{f: 'mp', label: 'MP', go: 'mp', goKey: (r) => r.mnis}, {f: 'party', label: 'Party', party: true}, {f: 'type', label: 'Type'}, {f: 'purpose', label: 'What for'}, {f: 'payer', label: 'Payer', go: 'payer'}, {f: 'sector', label: 'Sector'},
         {f: 'value', label: 'Value as declared', num: true, fmt: (v, r) => gbp(v) + (r.freq ? ' ' + r.freq : '')}, {f: 'since', label: 'Since election (est.)', num: true, fmt: gbp},
         {f: 'date', label: 'Date', fmt: fmtDay}, {f: 'registered', label: 'Registered', fmt: fmtDay}, {f: 'live', label: 'On register now', fmt: yes},
         {f: 'charity', label: 'To charity', fmt: yes}, {f: 'first', label: 'Just after election (not in total)', fmt: yes}, {f: 'detail', label: 'Detail', wide: true}, {f: 'link', label: 'Source', link: true}],
