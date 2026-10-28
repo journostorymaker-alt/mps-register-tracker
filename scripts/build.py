@@ -97,6 +97,10 @@ ALIAS = {"lord sainsbury of turville": "lord david sainsbury", "lord david sains
          "nfu": "national farmers union", "national farmers union nfu": "national farmers union"}
 
 
+def clean(x):
+    return "" if x is None or (isinstance(x, float) and x != x) or str(x) in ("nan", "None", "NaT") else str(x)
+
+
 def short(s, n=240):
     s = re.sub(r"\s+", " ", str(s or "")).strip()
     return s if len(s) <= n else s[: n - 1] + "…"
@@ -130,7 +134,8 @@ def money_rows(cats):
             out.append(dict(id=r["Id"], cat=c, mp=r["Member"], mnis=r["Mnis Id"], payer=r[V + "DonorName"], ptype=pt,
                             value=num(r[V + "Value"]), freq="", start=None, end=None,
                             received=day(r[V + "ReceivedDate"]), registered=day(r[V + "Registered"]),
-                            detail=r[V + "PaymentDescription"], charity=False, link=r["Link"]))
+                            detail=r[V + "PaymentDescription"], charity=False, link=r["Link"],
+                            co=r.get(V + "DonorCompanyIdentifier", ""), extra=r.get(V + "DonationSource", "")))
     for _, r in cats.get("4", pd.DataFrame()).iterrows():
         dest = ", ".join(r[k] for k in r.index if k.startswith(V + "Country") and r[k])
         for i in range(10):
@@ -140,7 +145,7 @@ def money_rows(cats):
             out.append(dict(id=r["Id"] + (f"-{i}" if i else ""), cat="4", mp=r["Member"], mnis=r["Mnis Id"], payer=n,
                             ptype="Individual" if r.get(V + f"IsPrivateIndividual (.{i}.1)") == "True" else "",
                             value=num(r.get(V + f"Value (.{i}.5)", "")), freq="", start=None, end=None,
-                            received=day(r[V + "StartDate"]), registered=day(r[V + "Registered"]),
+                            trip_end=day(r.get(V + "EndDate")), received=day(r[V + "StartDate"]), registered=day(r[V + "Registered"]),
                             detail=" | ".join(x for x in (dest, r[V + "Purpose"], r.get(V + f"PaymentDescription (.{i}.4)", "")) if x),
                             charity=False, link=r["Link"]))
     return out
@@ -344,12 +349,14 @@ def main():
     dump("crossparty.json", cross[:150])
 
     pool_ent = pd.concat([since, first_decl]).drop_duplicates("id")
-    ent = pool_ent.assign(live=pool_ent.id.isin(live), detail=pool_ent.detail.map(short), first=pool_ent.id.isin(first_decl.id))
+    ent = pool_ent.assign(live=pool_ent.id.isin(live), detail=pool_ent.detail.map(lambda x: short(x, 700)), first=pool_ent.id.isin(first_decl.id))
     ent = ent.sort_values("since", ascending=False)
     dump("entries.json", [dict(id=r.id, mnis=r.mnis, mp=r.mp_name, party=r.party, type=r.kind, payer=r.payer_group, sector=r.sector,
                                value=r.value, since=r.since, freq=r.freq, date=str(r.received or r.start or ""),
                                registered=str(r.registered or ""), live=bool(r.live), charity=bool(r.charity), first=bool(r.first),
-                               detail=r.detail, link=r.link) for r in ent.itertuples()])
+                               detail=r.detail, link=r.link, ptype=clean(r.ptype), co=clean(getattr(r, "co", "")),
+                               extra=clean(getattr(r, "extra", "")), start=clean(r.start), end=clean(r.end) or clean(getattr(r, "trip_end", None)),
+                               raw_payer=re.sub(r"\s+", " ", str(r.payer))) for r in ent.itertuples()])
 
     # what changed in the latest fortnight
     ch = {"from": None, "to": latest["date"], "new": [], "other": [], "gone": []}

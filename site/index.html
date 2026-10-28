@@ -103,6 +103,39 @@ a { color: var(--green-dk); }
 .prose li { margin-bottom: 6px; }
 footer { color: var(--muted); font-size: 12px; padding: 24px 0 40px; }
 svg text { fill: var(--fg); }
+/* drill-down panel */
+.scrim { position: fixed; inset: 0; background: rgba(10,14,20,.45); z-index: 40; display: none; }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(580px, 100%); background: var(--panel); color: var(--fg); z-index: 41; box-shadow: -10px 0 40px rgba(0,0,0,.25);
+  transform: translateX(105%); transition: transform .22s ease-out; display: flex; flex-direction: column; }
+.drawer.open { transform: none; }
+.drawer .dh { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.drawer .dh .crumb { flex: 1; min-width: 0; color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.drawer .dh button { font: inherit; font-size: 13px; background: none; border: 1px solid var(--line); border-radius: 8px; padding: 5px 10px; color: var(--fg); cursor: pointer; }
+.drawer .db { overflow: auto; padding: 18px 18px 40px; border-top: 6px solid var(--dcol, var(--green)); }
+.drawer .kicker { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); font-weight: 700; margin: 0 0 4px; }
+.drawer h2 { font-family: "Arial Black", Arial, sans-serif; font-size: 24px; margin: 0 0 6px; line-height: 1.15; }
+.drawer .amount { font-family: "Arial Black", Arial, sans-serif; font-size: 34px; margin: 10px 0 2px; }
+.drawer .sub2 { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
+.drawer h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin: 20px 0 8px; }
+.drawer dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; margin: 0; font-size: 14px; }
+.drawer dt { color: var(--muted); }
+.drawer dd { margin: 0; }
+.drawer .quote { background: var(--row); border-left: 4px solid var(--dcol, var(--green)); padding: 10px 12px; border-radius: 6px; font-size: 14px; white-space: pre-wrap; }
+.drawer .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.drawer .links a, .drawer .links button { font: inherit; font-size: 13px; padding: 7px 11px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--fg); text-decoration: none; cursor: pointer; }
+.drawer .links a:hover, .drawer .links button:hover { border-color: var(--green); }
+.li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; padding: 8px 6px; border-bottom: 1px solid var(--line); cursor: pointer; border-radius: 6px; }
+.li:hover { background: var(--row); }
+.li .s { grid-column: 1 / -1; color: var(--muted); font-size: 12px; }
+.li .v { font-variant-numeric: tabular-nums; font-weight: 700; }
+.li .bar { grid-column: 1 / -1; height: 4px; border-radius: 2px; background: var(--dcol, var(--green)); opacity: .8; }
+.lk { color: var(--green-dk); cursor: pointer; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--green-dk) 40%, transparent); text-underline-offset: 2px; }
+.lk:hover { text-decoration-color: currentColor; }
+tr.clickable:hover td { background: color-mix(in srgb, var(--green) 10%, var(--panel)); }
+.splitbar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; margin: 6px 0 4px; }
+.more { font: inherit; font-size: 13px; background: none; border: 0; color: var(--green-dk); cursor: pointer; padding: 8px 6px; text-decoration: underline; }
+.ext { font-size: 11px; color: var(--muted); }
+
 @media (max-width: 560px) {
   .mpcard .top { grid-template-columns: 1fr; }
   .mpcard .big, .mpcard .rank { text-align: left; }
@@ -138,6 +171,7 @@ svg text { fill: var(--fg); }
     <div class="tile"><div class="lab">Latest register</div><div class="big" id="t-reg">…</div><div class="sub" id="t-reg-sub"></div></div>
   </div>
 
+  <p class="count" style="margin:0 0 6px">Click any MP, payer, party, bar or row to see the detail behind it.</p>
   <nav class="tabs" role="tablist">
     <button data-tab="parties">Parties</button>
     <button data-tab="totals">Running totals</button>
@@ -174,7 +208,7 @@ svg text { fill: var(--fg); }
     </div>
     <div class="card" style="margin-bottom:14px" id="party-cards-card">
       <h2>Who funds each party's MPs</h2>
-      <p class="note">Top payers and the MPs who took the most. Click an MP to open their card.</p>
+      <p class="note">Top payers and the MPs who took the most. Click any name to dig in.</p>
       <div class="pcards" id="pcards"></div>
     </div>
     <div class="card" id="cross-card">
@@ -213,7 +247,7 @@ svg text { fill: var(--fg); }
     </div>
     <div class="card">
       <h2>Every new money or gift entry</h2>
-      <p class="note">Entries on the latest register that were not on the one before.</p>
+      <p class="note">Entries on the latest register that were not on the one before. Click a row for the full entry.</p>
       <div class="controls"><input type="search" id="q-new" placeholder="Search MP, party, payer, sector or detail"><button class="btn" data-csv="tb-new">Download CSV</button></div>
       <div class="tbox"><table id="tb-new"></table></div><p class="count" id="n-new"></p>
     </div>
@@ -233,7 +267,7 @@ svg text { fill: var(--fg); }
   <section data-page="mps" hidden>
     <div class="card">
       <h2>Every MP since the election</h2>
-      <p class="note">Total of their entries since 4 July 2024, and who paid most. Click a row to open the MP's card.</p>
+      <p class="note">Total of their entries since 4 July 2024, and who paid most. Click a row for everything they declared.</p>
       <div class="controls"><input type="search" id="q-mp" placeholder="Search MP, constituency or payer">
         <select id="f-mp-party" aria-label="Party"><option value="">All parties</option></select>
         <select id="f-mp-sitting" aria-label="Sitting"><option value="1">Sitting MPs</option><option value="">Include former MPs</option></select>
@@ -245,7 +279,7 @@ svg text { fill: var(--fg); }
   <section data-page="search" hidden>
     <div class="card">
       <h2>Every entry since the election</h2>
-      <p class="note">"On register now" means it is still on the latest register. Older one-off items drop off after 12 months.</p>
+      <p class="note">"On register now" means it is still on the latest register. Older one-off items drop off after 12 months. Click a row for the full entry.</p>
       <div class="controls"><input type="search" id="q-all" placeholder="Search anything: an MP, a party, a company, a country, a word in the detail">
         <select id="f-all-type" aria-label="Type"><option value="">All types</option></select>
         <select id="f-all-party" aria-label="Party"><option value="">All parties</option></select>
@@ -277,6 +311,8 @@ svg text { fill: var(--fg); }
   <footer id="foot"></footer>
 </main>
 <div class="tip" id="tip"></div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Details"><div class="dh"><button id="d-back" hidden>&larr; Back</button><span class="crumb" id="d-crumb"></span><button id="d-close">Close</button></div><div class="db" id="d-body"></div></aside>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
@@ -398,7 +434,7 @@ svg text { fill: var(--fg); }
     const top = el('div', 'top');
     const left = el('div');
     left.append(el('h2', null, m.mp));
-    const line = el('div', 'seat'); const chip = el('span', 'chip', m.party); line.append(chip, document.createTextNode((m.seat ? m.seat : '') + (m.sitting ? '' : ' (former MP)')));
+    const line = el('div', 'seat'); const chip = chipFor(m.party); line.append(chip, document.createTextNode((m.seat ? m.seat : '') + (m.sitting ? '' : ' (former MP)')));
     left.append(line);
     const right = el('div');
     right.append(el('div', 'big', gbp(m.total)));
@@ -409,7 +445,7 @@ svg text { fill: var(--fg); }
       const body = el('div', 'body');
       const c1 = el('div'); c1.append(el('h3', null, 'Who paid most'));
       const mx = d3.max(m.top, (d) => d[1]) || 1;
-      m.top.forEach(([p, v]) => { const r = el('div', 'payrow'); r.append(el('span', null, p), el('span', null, gbp(v))); const b = el('div', 'bar'); b.style.width = Math.max(2, 100 * v / mx) + '%'; r.append(b); c1.append(r); });
+      m.top.forEach(([p, v]) => { const r = el('div', 'payrow'); r.append(lk(p, 'payer', p), el('span', null, gbp(v))); const b = el('div', 'bar'); b.style.width = Math.max(2, 100 * v / mx) + '%'; r.append(b); c1.append(r); });
       if (m.payers > m.top.length) c1.append(el('p', 'count', `and ${m.payers - m.top.length} more payer${m.payers - m.top.length === 1 ? '' : 's'}.`));
       const c2 = el('div'); c2.append(el('h3', null, 'What for'));
       const types = Object.entries(m.types).sort((a, b) => b[1] - a[1]);
@@ -421,7 +457,7 @@ svg text { fill: var(--fg); }
     }
     if (m.first_decl > 0) card.append(el('p', 'none', `Not counted above: ${gbp(m.first_decl)} declared in the weeks just after the election, with no date received. Some may pre-date polling day.`));
     const act = el('div', 'actions');
-    const see = el('button', 'btn', 'See every entry'); see.addEventListener('click', () => { document.getElementById('q-all').value = m.mp; show('search'); document.querySelector('nav.tabs').scrollIntoView({behavior: 'smooth'}); });
+    const see = el('button', 'btn', 'See every entry'); see.addEventListener('click', () => go('mp', m.id));
     const cls = el('button', 'close', 'Close'); cls.addEventListener('click', () => { card.style.display = 'none'; history.replaceState(null, '', '#' + current); });
     act.append(see, cls); card.append(act);
     history.replaceState(null, '', '#mp-' + m.id);
@@ -523,7 +559,8 @@ svg text { fill: var(--fg); }
       let s = cut(r[label]);
       while (s.length > 4 && tx.node().getComputedTextLength() > lw) { s = s.slice(0, -2); tx.text(s + '…'); }
       svg.append('rect').attr('x', lw + 8).attr('y', yy + 4).attr('height', rh - 8).attr('width', Math.max(1, x(r[val]))).attr('rx', 4).attr('fill', opts.color ? opts.color(r) : '#97C221')
-        .on('mousemove', (ev) => showTip(ev, r[label], [fmt(r[val]), ...(opts.extra ? [opts.extra(r)] : [])])).on('mouseleave', hideTip);
+        .style('cursor', opts.onClick ? 'pointer' : null).on('click', () => opts.onClick && opts.onClick(r))
+        .on('mousemove', (ev) => showTip(ev, r[label], [fmt(r[val]), ...(opts.extra ? [opts.extra(r)] : []), ...(opts.onClick ? ['Click for more'] : [])])).on('mouseleave', hideTip);
       svg.append('text').attr('x', lw + 14 + x(r[val])).attr('y', yy + rh / 2).attr('dy', '.35em').attr('font-size', 12).attr('fill', 'var(--muted)').text(fmt(r[val]));
     });
   }
@@ -585,7 +622,10 @@ svg text { fill: var(--fg); }
           const h = String(r[c.f] || '');
           if (h.startsWith('https://interests-api.parliament.uk/')) { const a = document.createElement('a'); a.href = h; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Entry'; td.appendChild(a); }
         } else if (c.party) {
-          const d = document.createElement('span'); d.className = 'dot'; d.style.background = pcol(r[c.f]); td.append(d, document.createTextNode(r[c.f] || ''));
+          const d = document.createElement('span'); d.className = 'dot'; d.style.background = pcol(r[c.f]); td.append(d, r[c.f] ? lk(r[c.f], 'party', r[c.f]) : '');
+        } else if (c.go) {
+          const key = c.goKey ? c.goKey(r) : r[c.f];
+          if (key) td.append(lk(c.fmt ? c.fmt(r[c.f], r) : (r[c.f] ?? ''), c.go, key)); else td.textContent = r[c.f] ?? '';
         } else if (c.node) td.appendChild(c.node(r));
         else td.textContent = c.fmt ? c.fmt(r[c.f], r) : (r[c.f] ?? '');
         tr.appendChild(td);
@@ -611,7 +651,7 @@ svg text { fill: var(--fg); }
     const key = partyMeasure;
     rows.sort((a, b) => b[key] - a[key]);
     const fmt = key === 'share' ? pct : gbpC;
-    hbar('c-party', rows, 'label', key, {fmt, color: (r) => r.colour,
+    hbar('c-party', rows, 'label', key, {fmt, color: (r) => r.colour, onClick: (r) => go('party', r.party),
       extra: (r) => `${gbpC(r.total)} in all. ${r.sitting_paid} of ${r.seats} sitting MPs paid. ${gbpC(r.per_seat)} per MP.`});
     const notes = {per_seat: 'Money taken by each party\'s sitting MPs, divided by its number of sitting MPs. The fairest comparison between big and small parties.',
       total: 'Everything taken by MPs of each party since the election, former MPs included.',
@@ -647,14 +687,14 @@ svg text { fill: var(--fg); }
     const pc = document.getElementById('pcards'); pc.replaceChildren();
     bigParties.slice(0, 9).forEach((p) => {
       const c = el('div', 'pcard'); c.style.setProperty('--pc', p.colour);
-      c.append(el('h3', null, p.party), el('div', 'pn', `${gbpC(p.total)} since the election. ${p.sitting_paid} of ${p.seats} sitting MPs paid.`));
+      const h3 = el('h3'); h3.append(lk(p.party, 'party', p.party)); c.append(h3, el('div', 'pn', `${gbpC(p.total)} since the election. ${p.sitting_paid} of ${p.seats} sitting MPs paid.`));
       c.append(el('h4', null, 'Top payers'));
-      const ol = el('ol'); p.top.slice(0, 5).forEach(([n, v, k]) => ol.append(el('li', null, `${n}: ${gbpC(v)}${k > 1 ? ` (${k} MPs)` : ''}`))); c.append(ol);
+      const ol = el('ol'); p.top.slice(0, 5).forEach(([n, v, k]) => { const li = el('li'); li.append(lk(n, 'payer', n), document.createTextNode(`: ${gbpC(v)}${k > 1 ? ` (${k} MPs)` : ''}`)); ol.append(li); }); c.append(ol);
       c.append(el('h4', null, 'MPs who took most'));
       const ol2 = el('ol');
       p.top_mps.forEach(([n, v]) => {
         const li = el('li'); const m = MP.find((x) => x.mp === n);
-        if (m) { const a = el('a', null, n); a.href = '#mp-' + m.id; a.addEventListener('click', (e) => { e.preventDefault(); openMP(m.id); }); li.append(a, document.createTextNode(`: ${gbpC(v)}`)); }
+        if (m) li.append(lk(n, 'mp', m.id), document.createTextNode(`: ${gbpC(v)}`));
         else li.textContent = `${n}: ${gbpC(v)}`;
         ol2.append(li);
       });
@@ -662,14 +702,205 @@ svg text { fill: var(--fg); }
     });
 
     table('tb-cross', CX, [
-      {f: 'payer', label: 'Payer'}, {f: 'total', label: 'Total', num: true, fmt: gbp}, {f: 'nparties', label: 'Parties', num: true}, {f: 'mps', label: 'MPs', num: true},
+      {f: 'payer', label: 'Payer', go: 'payer'}, {f: 'total', label: 'Total', num: true, fmt: gbp}, {f: 'nparties', label: 'Parties', num: true}, {f: 'mps', label: 'MPs', num: true},
       {f: 'split', label: 'Split', text: (r) => r.split.map((s) => s[0]).join(' '), csv: (r) => r.split.map((s) => `${s[0]}: ${Math.round(s[1])}`).join('; '), node: (r) => {
         const wrap = document.createElement('div'); wrap.style.cssText = 'display:flex;height:12px;border-radius:6px;overflow:hidden;min-width:160px;margin:3px 0';
         r.split.forEach(([p, v]) => { const s = document.createElement('div'); s.style.cssText = `width:${100 * v / r.total}%;background:${pcol(p)}`; s.title = `${p}: ${gbp(v)}`; wrap.appendChild(s); });
         const lbl = document.createElement('div'); lbl.style.cssText = 'font-size:11px;color:var(--muted)'; lbl.textContent = r.split.map(([p, v]) => `${p} ${gbpC(v)}`).join(' · ');
         const box = document.createElement('div'); box.append(wrap, lbl); return box;
       }},
-    ], {sort: 'total', q: 'q-cross', count: 'n-cross'});
+    ], {sort: 'total', q: 'q-cross', count: 'n-cross', key: (r) => r.payer, onRow: (k) => go('payer', k)});
+  }
+
+
+  // ---------- drill-down panel ----------
+  let EI = null;
+  async function ensureE() {
+    if (!E) E = await get('entries.json');
+    if (!EI) {
+      EI = {id: new Map(E.map((r) => [r.id, r])), payer: d3.group(E, (r) => r.payer), mp: d3.group(E, (r) => r.mnis)};
+    }
+  }
+  const PBY = new Map(P.map((p) => [p.payer, p]));
+  const PABY = new Map(PA.map((p) => [p.party, p]));
+  const drawer = document.getElementById('drawer'), scrim = document.getElementById('scrim'), dBody = document.getElementById('d-body');
+  const dBack = document.getElementById('d-back'), dCrumb = document.getElementById('d-crumb');
+  const stack = [];
+  function closeDrawer() {
+    drawer.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true'); scrim.style.display = 'none'; stack.length = 0;
+    if (/^#(entry|payer|party|mpd)-/.test(location.hash)) history.replaceState(null, '', '#' + current);
+  }
+  document.getElementById('d-close').addEventListener('click', closeDrawer);
+  scrim.addEventListener('click', closeDrawer);
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
+  dBack.addEventListener('click', () => { stack.pop(); const prev = stack.pop(); if (prev) go(prev.kind, prev.key); });
+  async function go(kind, key) {
+    await ensureE();
+    const view = {kind, key}; pendingLabel = '';
+    const fn = {entry: viewEntry, payer: viewPayer, mp: viewMP, party: viewParty}[kind];
+    dBody.replaceChildren(); dBody.scrollTop = 0;
+    const ok = fn(key);
+    if (ok === false) return;
+    view.label = pendingLabel;
+    stack.push(view);
+    dBack.hidden = stack.length < 2;
+    dCrumb.textContent = stack.map((v) => v.label || '').filter(Boolean).slice(-3).join(' › ');
+    drawer.classList.add('open'); drawer.setAttribute('aria-hidden', 'false'); scrim.style.display = 'block';
+    history.replaceState(null, '', '#' + (kind === 'mp' ? 'mpd' : kind) + '-' + encodeURIComponent(key));
+  }
+  window.rgGo = go;
+  let pendingLabel = '';
+  const labelTop = (t) => { pendingLabel = t; };
+  function lk(text, kind, key) { const a = el('span', 'lk', text); a.tabIndex = 0; a.addEventListener('click', (e) => { e.stopPropagation(); go(kind, key); }); a.addEventListener('keydown', (e) => { if (e.key === 'Enter') go(kind, key); }); return a; }
+  function chipFor(party) { const c = el('span', 'chip', party); c.style.background = pcol(party); c.style.cursor = 'pointer'; c.addEventListener('click', (e) => { e.stopPropagation(); go('party', party); }); return c; }
+  function extLink(text, href) { const a = el('a', null, text + ' ↗'); a.href = href; a.target = '_blank'; a.rel = 'noopener'; return a; }
+  function rowItem(main, val, sub, onClick, barPct) {
+    const r = el('div', 'li'); r.tabIndex = 0;
+    r.append(el('span', null, main), el('span', 'v', val));
+    if (sub) r.append(el('span', 's', sub));
+    if (barPct != null) { const b = el('div', 'bar'); b.style.width = Math.max(1.5, barPct) + '%'; r.append(b); }
+    r.addEventListener('click', onClick); r.addEventListener('keydown', (e) => { if (e.key === 'Enter') onClick(); });
+    return r;
+  }
+  function entryList(parent, rows, sub, limit = 25) {
+    const sorted = [...rows].sort((a, b) => (b.since || b.value || 0) - (a.since || a.value || 0));
+    const mx = d3.max(sorted, (r) => r.since || r.value || 0) || 1;
+    const add = (from, to) => sorted.slice(from, to).forEach((r) => parent.insertBefore(rowItem(sub(r).main, gbp(r.since || r.value), sub(r).sub, () => go('entry', r.id), 100 * (r.since || r.value || 0) / mx), moreBtn));
+    const moreBtn = el('button', 'more', ''); parent.append(moreBtn);
+    let shown = Math.min(limit, sorted.length); add(0, shown);
+    const upd = () => { moreBtn.textContent = `Show all ${sorted.length}`; moreBtn.style.display = shown < sorted.length ? '' : 'none'; };
+    moreBtn.addEventListener('click', () => { add(shown, sorted.length); shown = sorted.length; upd(); }); upd();
+  }
+  const dl = (pairs) => { const d = el('dl'); pairs.filter(([, v]) => v !== '' && v != null && v !== false).forEach(([k, v]) => { d.append(el('dt', null, k)); const dd = el('dd'); if (v instanceof Node) dd.append(v); else dd.textContent = v; d.append(dd); }); return d; };
+
+  function viewEntry(id) {
+    const r = EI.id.get(id);
+    if (!r) { const n = CH.new.find((x) => x.id === id); if (!n) return false; }
+    const e = r || CH.new.find((x) => x.id === id);
+    labelTop(`${e.payer} → ${e.mp}`);
+    drawer.style.setProperty('--dcol', pcol(e.party));
+    const b = dBody;
+    b.append(el('p', 'kicker', e.type));
+    const h = el('h2'); h.append(lk(e.payer, 'payer', e.payer), document.createTextNode(' → '), lk(e.mp, 'mp', e.mnis || (MP.find((m) => m.mp === e.mp) || {}).id));
+    b.append(h);
+    const line = el('div'); line.append(chipFor(e.party)); const mpo = MPBY.get(e.mnis); if (mpo && mpo.seat) line.append(document.createTextNode(mpo.seat)); b.append(line);
+    b.append(el('div', 'amount', gbp(e.value) + (e.freq ? ` ${e.freq}` : '')));
+    if (e.freq && e.since != null) b.append(el('p', 'sub2', `About ${gbp(e.since)} since the election, on our month-by-month estimate.`));
+    else if (e.first) b.append(el('p', 'sub2', 'Declared just after the election with no date received. Not counted in running totals.'));
+    else b.append(el('p', 'sub2', ''));
+    if (e.detail) { b.append(el('h3', null, 'What the MP declared')); b.append(el('div', 'quote', e.detail)); }
+    b.append(el('h3', null, 'Details'));
+    b.append(dl([
+      ['Type', e.type], ['Payer', e.raw_payer && e.raw_payer !== e.payer ? e.raw_payer : e.payer], ['Payer described as', e.ptype], ['Sector (our guess)', e.sector],
+      ['Company number', e.co ? extLink(e.co, 'https://find-and-update.company-information.service.gov.uk/company/' + encodeURIComponent(e.co)) : ''],
+      ['Route', e.extra],
+      ['Received or started', fmtDay(e.date)], ['Ends', fmtDay(e.end)], ['Registered', fmtDay(e.registered)],
+      ['On the register now', e.live === undefined ? '' : (e.live ? 'Yes' : 'No, expired or replaced')],
+      ['Money given to charity', e.charity ? 'Yes, the MP says so' : ''],
+    ]));
+    // same payer and MP
+    const same = (EI.payer.get(e.payer) || []).filter((x) => x.mnis === e.mnis && x.id !== e.id);
+    if (same.length) { b.append(el('h3', null, `Other entries from ${e.payer} to ${e.mp}`)); const box = el('div'); b.append(box); entryList(box, same, (x) => ({main: `${x.type}`, sub: `${fmtDay(x.date || x.registered)}. ${x.detail.slice(0, 120)}`}), 8); }
+    b.append(el('h3', null, 'Go further'));
+    const L = el('div', 'links');
+    const bp = el('button', null, `Everything from ${e.payer}`); bp.addEventListener('click', () => go('payer', e.payer));
+    const bm = el('button', null, `Everything ${e.mp} declared`); bm.addEventListener('click', () => go('mp', e.mnis));
+    L.append(bp, bm);
+    if (e.mnis) L.append(extLink("MP's official register page", `https://members.parliament.uk/member/${e.mnis}/registeredinterests`));
+    if (e.link) L.append(extLink('Official record (data)', e.link));
+    b.append(L);
+  }
+
+  function viewPayer(name) {
+    const rows = EI.payer.get(name) || [];
+    const agg = PBY.get(name);
+    if (!rows.length && !agg) return false;
+    labelTop(name);
+    drawer.style.setProperty('--dcol', '#97C221');
+    const b = dBody;
+    const inTotal = rows.filter((r) => !r.first);
+    const total = d3.sum(inTotal, (r) => r.since || 0);
+    const ptypes = [...new Set(rows.map((r) => r.ptype).filter(Boolean))];
+    b.append(el('p', 'kicker', `Payer${ptypes.length ? ' · ' + ptypes.join(', ') : ''} · ${agg ? agg.sector : rows[0].sector}`));
+    b.append(el('h2', null, name));
+    b.append(el('div', 'amount', gbp(total)));
+    const mpsN = new Set(rows.map((r) => r.mnis)).size;
+    b.append(el('p', 'sub2', `to ${mpsN} MP${mpsN === 1 ? '' : 's'} since the July 2024 election, across ${inTotal.length} entr${inTotal.length === 1 ? 'y' : 'ies'}.` + (rows.length > inTotal.length ? ` Plus ${gbp(d3.sum(rows.filter((r) => r.first), (r) => r.value || 0))} declared just after the election.` : '')));
+    const byParty = d3.rollups(inTotal, (v) => d3.sum(v, (r) => r.since || 0), (r) => r.party).sort((a, c) => c[1] - a[1]);
+    if (byParty.length) {
+      b.append(el('h3', null, 'By party'));
+      const bar = el('div', 'splitbar'); byParty.forEach(([p, v]) => { const s = el('div'); s.style.cssText = `width:${100 * v / (total || 1)}%;background:${pcol(p)};cursor:pointer`; s.title = `${p}: ${gbp(v)}`; s.addEventListener('click', () => go('party', p)); bar.append(s); });
+      b.append(bar);
+      const lg = el('div', 'legend'); byParty.forEach(([p, v]) => { const sp = el('span'); const d = el('span', 'dot'); d.style.background = pcol(p); sp.append(d, lk(p, 'party', p), document.createTextNode(' ' + gbpC(v))); lg.append(sp); }); b.append(lg);
+    }
+    const byMp = d3.rollups(rows, (v) => ({t: d3.sum(v, (r) => r.first ? 0 : (r.since || 0)), n: v.length, party: v[0].party, mnis: v[0].mnis}), (r) => r.mp).sort((a, c) => c[1].t - a[1].t);
+    b.append(el('h3', null, 'MPs paid'));
+    const mx = d3.max(byMp, (d) => d[1].t) || 1;
+    byMp.slice(0, 40).forEach(([m, o]) => b.append(rowItem(m, gbp(o.t), `${o.party}. ${o.n} entr${o.n === 1 ? 'y' : 'ies'}.`, () => go('mp', o.mnis), 100 * o.t / mx)));
+    b.append(el('h3', null, 'Every entry'));
+    const box = el('div'); b.append(box);
+    entryList(box, rows, (x) => ({main: `${x.mp}: ${x.type}`, sub: `${fmtDay(x.date || x.registered)}. ${x.detail.slice(0, 120)}`}), 15);
+    b.append(el('h3', null, 'Check this payer elsewhere'));
+    const L = el('div', 'links');
+    const co = rows.find((r) => r.co);
+    if (co) L.append(extLink('Companies House record', 'https://find-and-update.company-information.service.gov.uk/company/' + encodeURIComponent(co.co)));
+    else if (!ptypes.includes('Individual')) L.append(extLink('Search Companies House', 'https://find-and-update.company-information.service.gov.uk/search?q=' + encodeURIComponent(name)));
+    L.append(extLink('Electoral Commission donations', 'https://search.electoralcommission.org.uk/Search/Donations?query=' + encodeURIComponent(name)));
+    L.append(extLink('News coverage', 'https://news.google.com/search?q=' + encodeURIComponent('"' + name + '"')));
+    b.append(L);
+  }
+
+  function viewMP(id) {
+    const m = MPBY.get(id); if (!m) return false;
+    labelTop(m.mp);
+    drawer.style.setProperty('--dcol', pcol(m.party));
+    const b = dBody;
+    b.append(el('p', 'kicker', m.sitting ? 'MP' : 'Former MP'));
+    b.append(el('h2', null, m.mp));
+    const line = el('div'); line.append(chipFor(m.party), document.createTextNode(m.seat || '')); b.append(line);
+    b.append(el('div', 'amount', gbp(m.total)));
+    const rk = rankOf.get(m.id);
+    b.append(el('p', 'sub2', `since the July 2024 election${rk && m.total > 0 ? `. ${ord(rk)} of ${sittingRanked.length} sitting MPs` : ''}.` + (m.first_decl ? ` Plus ${gbp(m.first_decl)} declared just after the election.` : '')));
+    const rows = EI.mp.get(id) || [];
+    if (rows.length) {
+      const byPayer = d3.rollups(rows, (v) => ({t: d3.sum(v, (r) => r.first ? 0 : (r.since || 0)), n: v.length, s: v[0].sector}), (r) => r.payer).sort((a, c) => c[1].t - a[1].t);
+      b.append(el('h3', null, 'Who paid'));
+      const mx = d3.max(byPayer, (d) => d[1].t) || 1;
+      const box1 = el('div'); b.append(box1);
+      byPayer.slice(0, 30).forEach(([p, o]) => box1.append(rowItem(p, gbp(o.t), `${o.s}. ${o.n} entr${o.n === 1 ? 'y' : 'ies'}.`, () => go('payer', p), 100 * o.t / mx)));
+      b.append(el('h3', null, 'Every entry'));
+      const box = el('div'); b.append(box);
+      entryList(box, rows, (x) => ({main: `${x.payer}: ${x.type}`, sub: `${fmtDay(x.date || x.registered)}${x.first ? ' (just after election, not in total)' : ''}. ${x.detail.slice(0, 120)}`}), 20);
+    } else b.append(el('p', 'sub2', 'No payments, donations, gifts or paid trips declared since the July 2024 election.'));
+    b.append(el('h3', null, 'Go further'));
+    const L = el('div', 'links');
+    L.append(extLink('Official register page', `https://members.parliament.uk/member/${id}/registeredinterests`));
+    L.append(extLink('Voting record (TheyWorkForYou)', 'https://www.theyworkforyou.com/search/?q=' + encodeURIComponent(m.mp)));
+    b.append(L);
+  }
+
+  function viewParty(name) {
+    const p = PABY.get(name); if (!p) return false;
+    labelTop(name);
+    drawer.style.setProperty('--dcol', p.colour);
+    const b = dBody;
+    b.append(el('p', 'kicker', 'Party'));
+    b.append(el('h2', null, name));
+    b.append(el('div', 'amount', gbp(p.total)));
+    b.append(el('p', 'sub2', `to its MPs since the July 2024 election. ${p.sitting_paid} of ${p.seats} sitting MPs paid. ${gbpC(p.per_seat)} per sitting MP.`));
+    b.append(el('h3', null, 'Biggest payers'));
+    const mx = d3.max(p.top, (d) => d[1]) || 1;
+    p.top.forEach(([n, v, k]) => b.append(rowItem(n, gbp(v), `${(PBY.get(n) || {}).sector || ''}. ${k} MP${k === 1 ? '' : 's'}.`, () => go('payer', n), 100 * v / mx)));
+    const mps = MP.filter((m) => m.party === name && m.total > 0).sort((a, c) => c.total - a.total);
+    b.append(el('h3', null, `MPs (${mps.length} with entries)`));
+    const mx2 = (mps[0] || {}).total || 1;
+    const box = el('div'); b.append(box);
+    const more = el('button', 'more', `Show all ${mps.length}`);
+    const addM = (a, z) => mps.slice(a, z).forEach((m) => box.append(rowItem(m.mp, gbp(m.total), `${m.seat || ''}${m.sitting ? '' : ' (former MP)'}. Top payer: ${(m.top[0] || [''])[0]}`, () => go('mp', m.id), 100 * m.total / mx2)));
+    addM(0, 20); if (mps.length > 20) { b.append(more); more.addEventListener('click', () => { addM(20, mps.length); more.remove(); }); }
+    b.append(el('h3', null, 'Where the money comes from'));
+    const types = Object.entries(p.types).sort((a, c) => c[1] - a[1]);
+    b.append(dl(types.map(([k, v]) => [k, `${gbp(v)} (${pct(v / p.total)})`])));
   }
 
   // ---------- draw ----------
@@ -681,38 +912,39 @@ svg text { fill: var(--fg); }
       const groups = split === 'type' ? types : split === 'sector' ? sectorsByTotal.slice(0, 6) : split === 'party' ? partiesByTotal.slice(0, 6) : ['All'];
       lineChart('c-run', rows, groups, split, (g, i) => split === 'party' ? pcol(g) : COLORS[i % COLORS.length]);
       hbar('c-type', d3.rollups(M, (v) => d3.sum(v, (r) => r.amount), (r) => r.type).map(([k, v]) => ({k, v})).sort((a, b) => b.v - a.v), 'k', 'v');
-      hbar('c-sector', d3.rollups(M, (v) => d3.sum(v, (r) => r.amount), (r) => r.sector).map(([k, v]) => ({k, v})).sort((a, b) => b.v - a.v), 'k', 'v');
+      hbar('c-sector', d3.rollups(M, (v) => d3.sum(v, (r) => r.amount), (r) => r.sector).map(([k, v]) => ({k, v})).sort((a, b) => b.v - a.v), 'k', 'v',
+        {onClick: (r) => { document.getElementById('f-pay-sector').value = r.k; show('payers'); }});
     }
     if (current === 'fortnight') {
       document.getElementById('fn-note').textContent = CH.from ? `New entries between the ${fmtDay(CH.from)} and ${fmtDay(CH.to)} registers.` : '';
       const byp = d3.rollups(CH.new, (v) => ({v: d3.sum(v, (r) => r.value || 0), n: v.length, mps: [...new Set(v.map((r) => r.mp))]}), (r) => r.payer)
         .map(([k, o]) => ({k, ...o})).sort((a, b) => b.v - a.v).slice(0, 12);
-      hbar('c-newpay', byp, 'k', 'v', {extra: (r) => `${r.n} entr${r.n === 1 ? 'y' : 'ies'}: ${r.mps.slice(0, 5).join(', ')}${r.mps.length > 5 ? ' and others' : ''}`});
+      hbar('c-newpay', byp, 'k', 'v', {onClick: (r) => go('payer', r.k), extra: (r) => `${r.n} entr${r.n === 1 ? 'y' : 'ies'}: ${r.mps.slice(0, 5).join(', ')}${r.mps.length > 5 ? ' and others' : ''}`});
       table('tb-other', CH.other, [{f: 'mp', label: 'MP'}, {f: 'area', label: 'Area'}, {f: 'before', label: 'Before', wide: true}, {f: 'after', label: 'Now', wide: true}, {f: 'link', label: 'Source', link: true}], {});
-      table('tb-new', CH.new, [{f: 'mp', label: 'MP'}, {f: 'party', label: 'Party', party: true}, {f: 'type', label: 'Type'}, {f: 'payer', label: 'Payer'}, {f: 'sector', label: 'Sector'},
+      table('tb-new', CH.new, [{f: 'mp', label: 'MP', go: 'mp', goKey: (r) => (MP.find((m) => m.mp === r.mp) || {}).id}, {f: 'party', label: 'Party', party: true}, {f: 'type', label: 'Type'}, {f: 'payer', label: 'Payer', go: 'payer'}, {f: 'sector', label: 'Sector'},
         {f: 'value', label: 'Value', num: true, fmt: gbp}, {f: 'date', label: 'Date', fmt: fmtDay}, {f: 'detail', label: 'Detail', wide: true}, {f: 'link', label: 'Source', link: true}],
-        {sort: 'value', q: 'q-new', count: 'n-new', sum: 'value'});
+        {sort: 'value', q: 'q-new', count: 'n-new', sum: 'value', key: (r) => r.id, onRow: (id) => go('entry', id)});
     }
     if (current === 'payers') {
       const fs = document.getElementById('f-pay-sector').value;
-      table('tb-pay', fs ? P.filter((r) => r.sector === fs) : P, [{f: 'payer', label: 'Payer'}, {f: 'sector', label: 'Sector'}, {f: 'total', label: 'Total since election', num: true, fmt: gbp},
+      table('tb-pay', fs ? P.filter((r) => r.sector === fs) : P, [{f: 'payer', label: 'Payer', go: 'payer'}, {f: 'sector', label: 'Sector'}, {f: 'total', label: 'Total since election', num: true, fmt: gbp},
         {f: 'entries', label: 'Entries', num: true}, {f: 'mps', label: 'MPs', num: true}, {f: 'parties', label: 'Parties'}, {f: 'mp_list', label: 'Which MPs', wide: true}, {f: 'types', label: 'Types'}],
-        {sort: 'total', q: 'q-pay', count: 'n-pay', sum: 'total'});
+        {sort: 'total', q: 'q-pay', count: 'n-pay', sum: 'total', key: (r) => r.payer, onRow: (k) => go('payer', k)});
     }
     if (current === 'mps') {
       const fp = document.getElementById('f-mp-party').value, fsit = document.getElementById('f-mp-sitting').value;
       const rows = MP.filter((m) => (!fp || m.party === fp) && (!fsit || m.sitting)).map((m) => ({...m, rank: rankOf.get(m.id) || ''}));
-      table('tb-mp', rows, [{f: 'mp', label: 'MP'}, {f: 'party', label: 'Party', party: true}, {f: 'seat', label: 'Constituency'}, {f: 'total', label: 'Total since election', num: true, fmt: gbp},
+      table('tb-mp', rows, [{f: 'mp', label: 'MP', go: 'mp', goKey: (r) => r.id}, {f: 'party', label: 'Party', party: true}, {f: 'seat', label: 'Constituency'}, {f: 'total', label: 'Total since election', num: true, fmt: gbp},
         {f: 'entries', label: 'Entries', num: true}, {f: 'payers', label: 'Payers', num: true}, {f: 'top_payers', label: 'Main payers', wide: true}],
-        {sort: 'total', q: 'q-mp', count: 'n-mp', sum: 'total', key: (r) => r.id, onRow: (id) => openMP(id)});
+        {sort: 'total', q: 'q-mp', count: 'n-mp', sum: 'total', key: (r) => r.id, onRow: (id) => go('mp', id)});
     }
     if (current === 'search' && E) {
       const ft = document.getElementById('f-all-type').value, fp = document.getElementById('f-all-party').value;
-      table('tb-all', E.filter((r) => (!ft || r.type === ft) && (!fp || r.party === fp)), [{f: 'mp', label: 'MP'}, {f: 'party', label: 'Party', party: true}, {f: 'type', label: 'Type'}, {f: 'payer', label: 'Payer'}, {f: 'sector', label: 'Sector'},
+      table('tb-all', E.filter((r) => (!ft || r.type === ft) && (!fp || r.party === fp)), [{f: 'mp', label: 'MP', go: 'mp', goKey: (r) => r.mnis}, {f: 'party', label: 'Party', party: true}, {f: 'type', label: 'Type'}, {f: 'payer', label: 'Payer', go: 'payer'}, {f: 'sector', label: 'Sector'},
         {f: 'value', label: 'Value as declared', num: true, fmt: (v, r) => gbp(v) + (r.freq ? ' ' + r.freq : '')}, {f: 'since', label: 'Since election (est.)', num: true, fmt: gbp},
         {f: 'date', label: 'Date', fmt: fmtDay}, {f: 'registered', label: 'Registered', fmt: fmtDay}, {f: 'live', label: 'On register now', fmt: yes},
         {f: 'charity', label: 'To charity', fmt: yes}, {f: 'first', label: 'Just after election (not in total)', fmt: yes}, {f: 'detail', label: 'Detail', wide: true}, {f: 'link', label: 'Source', link: true}],
-        {sort: 'since', q: 'q-all', count: 'n-all', sum: 'since'});
+        {sort: 'since', q: 'q-all', count: 'n-all', sum: 'since', key: (r) => r.id, onRow: (id) => go('entry', id)});
     }
   }
   let rt, lastW = innerWidth; addEventListener('resize', () => { if (innerWidth === lastW) return; lastW = innerWidth; clearTimeout(rt); rt = setTimeout(draw, 150); });
@@ -720,6 +952,8 @@ svg text { fill: var(--fg); }
   const h = location.hash.slice(1);
   show(['parties', 'totals', 'fortnight', 'payers', 'mps', 'search', 'method'].includes(h) ? h : 'parties');
   if (h.startsWith('mp-')) openMP(h.slice(3), true);
+  const dm = h.match(/^(entry|payer|party|mpd)-(.+)$/);
+  if (dm) go(dm[1] === 'mpd' ? 'mp' : dm[1], decodeURIComponent(dm[2]));
 })();
 </script>
 </body>
