@@ -119,10 +119,16 @@ def _companies(entries, key, cache, by_payer):
             numbers.setdefault(n, set()).add(r["payer"])
     # payers that look like UK companies but gave no number: try an exact-name search
     looks_corp = re.compile(r"\b(ltd|limited|plc|llp)\b", re.I)
+    not_org = re.compile(r"individual|government|embassy|ministry|parliament|university|council\b|state of", re.I)
+    have_number = {r["payer"] for r in entries if clean_number(r.get("co"))}
     want = {}
     for r in entries:
-        if not clean_number(r.get("co")) and (looks_corp.search(r.get("raw_payer", "")) or looks_corp.search(r["payer"])):
-            want[r["payer"]] = r.get("raw_payer") or r["payer"]
+        if r["payer"] in have_number:
+            continue
+        corp = looks_corp.search(r.get("raw_payer", "")) or looks_corp.search(r["payer"])
+        org = r.get("sector") != "Private individuals" and not not_org.search((r.get("ptype") or "") + " " + r["payer"])
+        if corp or org:
+            want[r["payer"]] = re.sub(r"\s*\(.*$", "", r.get("raw_payer") or r["payer"]).strip() or r["payer"]
     print(f"Companies House: {len(numbers)} declared numbers, {len(want)} names to search")
     done = 0
     for payer, raw in want.items():
