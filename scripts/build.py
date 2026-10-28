@@ -93,7 +93,8 @@ def pkey(s):
 
 # Same payer under different spellings. Check these: they are judgement calls.
 ALIAS = {"lord sainsbury of turville": "lord david sainsbury", "lord david sainsbury of turville": "lord david sainsbury",
-         "lord sainsbury": "lord david sainsbury", "fran perrin": "francesca perrin"}
+         "lord sainsbury": "lord david sainsbury", "fran perrin": "francesca perrin",
+         "nfu": "national farmers union", "national farmers union nfu": "national farmers union"}
 
 
 def short(s, n=240):
@@ -252,7 +253,8 @@ def main():
         rows.append(r)
     df = pd.DataFrame(rows)
     names = df.groupby("pkey")["payer"].agg(lambda x: re.sub(r"\s*\(via .*$", "", x.value_counts().index[0]))
-    names.update(pd.Series({"lord david sainsbury": "Lord (David) Sainsbury of Turville", "francesca perrin": "Francesca (Fran) Perrin"}))
+    names.update(pd.Series({"lord david sainsbury": "Lord (David) Sainsbury of Turville", "francesca perrin": "Francesca (Fran) Perrin",
+                         "national farmers union": "National Farmers' Union (NFU)"}))
     df["payer_group"] = df.pkey.map(names)
     mem = load_members()
     df["mp_name"] = [mem.get(i, {}).get("name") or mp_name(m) for i, m in zip(df.mnis, df.mp)]
