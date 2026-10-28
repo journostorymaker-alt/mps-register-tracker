@@ -74,7 +74,7 @@ svg text { fill: var(--fg); }
 <main class="wrap">
   <div class="banner" id="banner" hidden></div>
   <div class="tiles">
-    <div class="tile"><div class="lab">Since the election</div><div class="big" id="t-total">…</div><div class="sub">estimated money and gifts to MPs since 4 July 2024</div></div>
+    <div class="tile"><div class="lab">Since the election</div><div class="big" id="t-total">…</div><div class="sub" id="t-total-sub">estimated money and gifts to MPs since 4 July 2024</div></div>
     <div class="tile"><div class="lab">Entries</div><div class="big" id="t-entries">…</div><div class="sub" id="t-entries-sub"></div></div>
     <div class="tile"><div class="lab">Latest fortnight</div><div class="big" id="t-new">…</div><div class="sub" id="t-new-sub"></div></div>
     <div class="tile"><div class="lab">Latest register</div><div class="big" id="t-reg">…</div><div class="sub" id="t-reg-sub"></div></div>
@@ -161,7 +161,8 @@ svg text { fill: var(--fg); }
         <li><b>Why some entries are years old:</b> the register lists what is live, not what is new. One-off gifts, donations, trips and payments drop off 12 months after they are registered. Ongoing roles stay on for as long as they last, so a job started in 2015 can still be listed.</li>
         <li><b>Running totals:</b> because old items drop off, the job also downloads every past entry, expired ones included. Each entry is counted once.</li>
         <li><b>One-off items</b> are counted on the date received. If there's no date, the date registered is used.</li>
-        <li><b>Regular payments</b> (monthly, quarterly or yearly) are spread across the months the agreement ran since the election, up to its end date or the latest register. This is an estimate. Some MPs register a value that covers part of a year, or update an agreement with a new entry. Check big regular payments against the source.</li>
+        <li><b>New MPs' first declarations are kept out of the running total.</b> After the election, new MPs had to declare money from the year before. Many of those entries, mostly donations through local parties, have no date received. So they may pre-date polling day. They are shown as a separate figure instead. They are still in the Search tab.</li>
+        <li><b>Regular payments</b> (monthly, quarterly or yearly) are spread across the months the agreement ran since the election, up to its end date or the latest register. If an agreement has gone from the register and has no end date, it is taken to stop at the last register it appeared in. That stops payments to MPs who have left from running on. This is an estimate. Some MPs register a value that covers part of a year, or update an agreement with a new entry. Check big regular payments against the source.</li>
         <li>Where an agency pays the MP for someone else, the true payer is shown.</li>
         <li>Payer names are tidied so spelling variants count as one. Two merges are judgement calls: the Sainsbury name variants, and Fran Perrin with Francesca Perrin.</li>
         <li>Sectors are a rough keyword sort, set in scripts/sectors.py. Treat them as a guide.</li>
@@ -193,6 +194,7 @@ svg text { fill: var(--fg); }
     b.textContent = 'Full history is not loaded yet. Until it is, running totals only include items still on the registers held, so months before late 2025 are undercounted.';
   }
   document.getElementById('t-total').textContent = gbpC(S.total_since);
+  if (S.first_decl_entries) document.getElementById('t-total-sub').textContent = `estimated since 4 July 2024. Not counted: ${gbpC(S.first_decl_total)} in ${n0(S.first_decl_entries)} undated items from new MPs' first declarations.`;
   document.getElementById('t-entries').textContent = n0(S.entries_since);
   document.getElementById('t-entries-sub').textContent = `${n0(S.mps_since)} MPs, ${n0(S.payers_since)} payers`;
   document.getElementById('t-new').textContent = gbpC(d3.sum(CH.new, (r) => r.value || 0));
@@ -263,7 +265,7 @@ svg text { fill: var(--fg); }
     const lab = svg.append('text').attr('font-size', 12);
     series.forEach((s) => { lab.text(s.name.slice(0, 28) + ' ' + gbpC(s.pts[s.pts.length - 1].v)); rw = Math.max(rw, lab.node().getComputedTextLength()); });
     lab.remove();
-    rw = series.length > 1 ? Math.min(rw + 10, W * 0.38) : 12;
+    rw = series.length > 1 ? Math.min(rw + 10, W * 0.38) : 32;
     const x = d3.scaleUtc(d3.extent(months, (m) => new Date(m + '-01')), [ml + lw + 8, W - rw]);
     svg.append('g').selectAll('line').data(ticks).join('line').attr('x1', x.range()[0]).attr('x2', x.range()[1]).attr('y1', y).attr('y2', y).attr('stroke', 'var(--line)');
     svg.append('g').selectAll('text').data(ticks).join('text').attr('x', ml + lw).attr('y', y).attr('dy', '.35em').attr('text-anchor', 'end').attr('font-size', 11).attr('fill', 'var(--muted)').text(gbpC);
@@ -395,7 +397,7 @@ svg text { fill: var(--fg); }
       table('tb-all', ft ? E.filter((r) => r.type === ft) : E, [{f: 'mp', label: 'MP'}, {f: 'type', label: 'Type'}, {f: 'payer', label: 'Payer'}, {f: 'sector', label: 'Sector'},
         {f: 'value', label: 'Value as declared', num: true, fmt: (v, r) => gbp(v) + (r.freq ? ' ' + r.freq : '')}, {f: 'since', label: 'Since election (est.)', num: true, fmt: gbp},
         {f: 'date', label: 'Date', fmt: fmtDay}, {f: 'registered', label: 'Registered', fmt: fmtDay}, {f: 'live', label: 'On register now', fmt: yes},
-        {f: 'charity', label: 'To charity', fmt: yes}, {f: 'detail', label: 'Detail', wide: true}, {f: 'link', label: 'Source', link: true}],
+        {f: 'charity', label: 'To charity', fmt: yes}, {f: 'first', label: 'First declaration (not in total)', fmt: yes}, {f: 'detail', label: 'Detail', wide: true}, {f: 'link', label: 'Source', link: true}],
         {sort: 'since', q: 'q-all', count: 'n-all', sum: 'since'});
     }
   }

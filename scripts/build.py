@@ -16,6 +16,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(ROOT, "data", "raw")
 OUT = os.path.join(ROOT, "site", "data")
 ELECTION = date(2024, 7, 4)
+FIRST_DECLARATIONS_END = date(2024, 9, 30)  # new MPs declared the past year's money in their first weeks
 V = "Version 1 "
 MONEY = ["1.1", "1.2", "2", "3", "4", "5"]
 KIND = {"1.1": "Paid work (one-off)", "1.2": "Paid work (regular)", "2": "Donation or support",
@@ -104,6 +105,7 @@ def money_rows(cats):
                             value=num(r[V + "Value"]), freq=(r.get(V + "RegularityOfPayment") or "").lower(),
                             start=day(r.get(V + "StartDate")), end=day(r.get(V + "EndDate")),
                             received=day(r.get(V + "ReceivedDate")), registered=day(r[V + "Registered"]),
+                            last_seen=day(r.get(V + "Register Date")),
                             detail=" | ".join(x for x in (role, r[V + "PaymentDescription"]) if x),
                             charity=r.get(V + "IsPaymentDonated") == "True", link=r["Link"]))
     for c in ("2", "3", "5"):
@@ -141,17 +143,24 @@ def months_between(a, b):
             y, m = y + 1, 1
 
 
-def spread(r, upto):
+def spread(r, upto, live):
     """Money in each calendar month since the election. One-offs land on one date.
-    Regular payments are spread across the months the agreement ran (an estimate)."""
+    Regular payments are spread across the months the agreement ran (an estimate).
+    An agreement no longer on the register, with no end date, is taken to stop at the
+    last register it appeared in, so payments to MPs who have left are not run on."""
     v = r["value"] or 0
     if not v:
         return {}
     if r["cat"] != "1.2":
+        if not r["received"] and r["registered"] and ELECTION <= r["registered"] <= FIRST_DECLARATIONS_END:
+            return {}  # undated item in new MPs' first declarations: may pre-date the election
         d = r["received"] or r["registered"]
         return {f"{d.year}-{d.month:02d}": v} if d and d >= ELECTION else {}
     start = max(r["start"] or r["registered"] or ELECTION, ELECTION)
-    end = min(r["end"] or upto, upto)
+    if live:
+        end = min(r["end"] or upto, upto)
+    else:
+        end = min(r["end"] or r.get("last_seen") or start, upto)
     if end < start:
         return {}
     per = v * PER_MONTH.get(r["freq"], 1 / 12)
@@ -222,7 +231,7 @@ def main():
         k = pkey(r["payer"])
         k = ALIAS.get(k, k)
         r["pkey"] = k
-        r["months"] = spread(r, upto)
+        r["months"] = spread(r, upto, r["id"] in live)
         r["since"] = round(sum(r["months"].values()), 2)
         r["sector"] = sector(k, r["payer"], r["ptype"], r["cat"])
         rows.append(r)
@@ -233,6 +242,8 @@ def main():
     df["mp_name"] = df.mp.map(mp_name)
     df["kind"] = df.cat.map(KIND)
     since = df[df.since > 0]
+    first_decl = df[(df.cat != "1.2") & df.received.isna() & df.registered.notna()]
+    first_decl = first_decl[first_decl.registered.map(lambda d: ELECTION <= d <= FIRST_DECLARATIONS_END)]
 
     os.makedirs(OUT, exist_ok=True)
 
@@ -265,11 +276,12 @@ def main():
     mps["total"] = mps.total.round(2)
     dump("mps.json", mps.to_dict("records"))
 
-    ent = since.assign(live=since.id.isin(live), detail=since.detail.map(short))
+    pool_ent = pd.concat([since, first_decl]).drop_duplicates("id")
+    ent = pool_ent.assign(live=pool_ent.id.isin(live), detail=pool_ent.detail.map(short), first=pool_ent.id.isin(first_decl.id))
     ent = ent.sort_values("since", ascending=False)
     dump("entries.json", [dict(id=r.id, mp=r.mp_name, type=r.kind, payer=r.payer_group, sector=r.sector,
                                value=r.value, since=r.since, freq=r.freq, date=str(r.received or r.start or ""),
-                               registered=str(r.registered or ""), live=bool(r.live), charity=bool(r.charity),
+                               registered=str(r.registered or ""), live=bool(r.live), charity=bool(r.charity), first=bool(r.first),
                                detail=r.detail, link=r.link) for r in ent.itertuples()])
 
     # what changed in the latest fortnight
@@ -297,6 +309,7 @@ def main():
         "total_since": round(float(since.since.sum()), 2), "entries_since": int(len(since)),
         "mps_since": int(since.mp.nunique()), "payers_since": int(since.payer_group.nunique()),
         "live_entries": len(live),
+        "first_decl_total": round(float(first_decl.value.sum()), 2), "first_decl_entries": int(len(first_decl)),
     })
     print(f"Built from {len(eds)} registers (history: {has_history}). {len(since)} entries since {ELECTION}, "
           f"£{since.since.sum():,.0f}. Latest changes: {len(ch['new'])} new money entries, {len(ch['other'])} other.")
