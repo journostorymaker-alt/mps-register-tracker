@@ -54,6 +54,54 @@ def folder_for(reg):
     return os.path.join(RAW, f"register-{reg['id']}-{day}")
 
 
+MEMBERS_API = "https://members-api.parliament.uk/api/Members/"
+MEMBERS_FILE = os.path.join(ROOT, "data", "members.json")
+
+
+def member_ids():
+    import csv, glob
+    ids = set()
+    for f in glob.glob(os.path.join(RAW, "*", "*.csv")):
+        with open(f, encoding="utf-8-sig", newline="") as fh:
+            for row in csv.DictReader(fh):
+                if row.get("Mnis Id"):
+                    ids.add(row["Mnis Id"])
+    return sorted(ids, key=int)
+
+
+def one_member(mid):
+    for i in range(3):
+        try:
+            req = urllib.request.Request(MEMBERS_API + mid, headers={"User-Agent": "mps-register-tracker (GitHub Actions)"})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                v = json.loads(r.read())["value"]
+            hm = v.get("latestHouseMembership") or {}
+            p = v.get("latestParty") or {}
+            return mid, {"name": v.get("nameDisplayAs"), "party": p.get("name") or "", "abbr": p.get("abbreviation") or "",
+                         "colour": p.get("backgroundColour") or "", "seat": hm.get("membershipFrom") or "",
+                         "house": hm.get("house"), "end": (hm.get("membershipEndDate") or "")[:10]}
+        except Exception as e:
+            err = e
+            time.sleep(3 * (i + 1))
+    print(f"  member {mid} failed: {err}", file=sys.stderr)
+    return mid, None
+
+
+def members():
+    """Party, constituency and status for every MP in the data, from the Members API.
+    Refreshed in full each run so defections and by-elections are picked up."""
+    from concurrent.futures import ThreadPoolExecutor
+    old = json.load(open(MEMBERS_FILE)) if os.path.exists(MEMBERS_FILE) else {}
+    ids = member_ids()
+    print(f"Fetching {len(ids)} members")
+    with ThreadPoolExecutor(8) as ex:
+        got = dict(ex.map(one_member, ids))
+    out = {k: (got.get(k) or old.get(k)) for k in ids if got.get(k) or old.get(k)}
+    with open(MEMBERS_FILE, "w") as f:
+        json.dump(out, f, indent=0, sort_keys=True)
+    print(f"  saved {len(out)} members ({sum(1 for v in got.values() if v is None)} failed, kept old copy where held)")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--backfill", type=int, default=1, help="how many recent registers to make sure we hold")
@@ -92,6 +140,11 @@ def main():
                 f.write(datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ") + "\n")
         except (SystemExit, Exception) as e:  # keep the last good history and carry on
             print(f"WARNING: full history not updated: {e}", file=sys.stderr)
+
+    try:
+        members()
+    except Exception as e:
+        print(f"WARNING: members not updated: {e}", file=sys.stderr)
 
     out = os.environ.get("GITHUB_OUTPUT")
     if out:
