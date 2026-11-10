@@ -8702,6 +8702,15 @@
 "party": "Conservative",
 "seat": "Aberdeen South"
 },
+"5484": {
+"abbr": "Lab",
+"colour": "d50000",
+"end": "",
+"house": 1,
+"name": "Sagal Abdi-Wali",
+"party": "Labour",
+"seat": "Holborn and St Pancras"
+},
 "55": {
 "abbr": "Con",
 "colour": "0063ba",

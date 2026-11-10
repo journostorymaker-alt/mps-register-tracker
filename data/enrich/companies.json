@@ -7913,6 +7913,72 @@
   "status": "active",
   "type": "private-limited-guarant-nsc"
  },
+ "01061343": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "2nd Floor Offices, Fairfax House, 38, The Grove, Ilkley, LS29 9EE, England",
+  "ceased": null,
+  "created": "1972-07-12",
+  "found": true,
+  "name": "WORD UP NORTH LIMITED",
+  "number": "01061343",
+  "officers": [
+   {
+    "name": "BAXANDALL, Catherine Elizabeth",
+    "role": "secretary",
+    "since": "2012-09-13"
+   },
+   {
+    "name": "BAXANDALL, Catherine Elizabeth",
+    "role": "director",
+    "since": "2012-09-13"
+   },
+   {
+    "name": "FINLAY, Francis James, Professor",
+    "role": "director",
+    "since": "2023-03-15"
+   },
+   {
+    "name": "GANERI, Anita",
+    "role": "director",
+    "since": "2025-09-24"
+   },
+   {
+    "name": "GIBSON, Robert Martin",
+    "role": "director",
+    "since": "2026-07-17"
+   },
+   {
+    "name": "RADICK, Gregory Michael, Professor",
+    "role": "director",
+    "since": "2019-03-13"
+   },
+   {
+    "name": "SARDAR, Tahira Jabeen",
+    "role": "director",
+    "since": "2025-06-18"
+   },
+   {
+    "name": "THORPE, Ellen Theresa",
+    "role": "director",
+    "since": "1996-07-02"
+   },
+   {
+    "name": "WRIGHT, Mary Margaret Katherine",
+    "role": "director",
+    "since": "2017-09-27"
+   }
+  ],
+  "owners": [],
+  "payers": [
+   "Word Up North"
+  ],
+  "sic": [
+   "90040"
+  ],
+  "status": "active",
+  "type": "private-limited-guarant-nsc"
+ },
  "01080312": {
   "_fetched": "2026-10-28",
   "address": "16 South End, Croydon, CR0 1DN, England",
@@ -8205,6 +8271,7 @@
   "owners": [],
   "payers": [
    "BPI (British Recorded Music Industry) Ltd",
+   "BPI Public Affairs",
    "British Phonographic Industry Limited (BPI)",
    "British Recorded Music Industry"
   ],
@@ -8436,6 +8503,56 @@
   ],
   "sic": [
    "74990"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
+ "01164090": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "Oxford Airport, Kidlington, Oxford, OX5 1QZ",
+  "ceased": null,
+  "created": "1974-03-22",
+  "found": true,
+  "name": "AIRBUS HELICOPTERS UK LIMITED",
+  "number": "01164090",
+  "officers": [
+   {
+    "name": "ROZO, Yann",
+    "role": "secretary",
+    "since": "2023-07-24"
+   },
+   {
+    "name": "ATACK, Richard",
+    "role": "director",
+    "since": "2025-03-17"
+   },
+   {
+    "name": "CASQUET, Alejandro Candil",
+    "role": "director",
+    "since": "2025-09-01"
+   },
+   {
+    "name": "HEIN, Thomas Walter",
+    "role": "director",
+    "since": "2022-05-30"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "significant influence or control"
+    ],
+    "kind": "corporate entity",
+    "name": "Airbus Se",
+    "since": "2023-01-01"
+   }
+  ],
+  "payers": [
+   "Airbus Helicopters UK Limited"
+  ],
+  "sic": [
+   "33160"
   ],
   "status": "active",
   "type": "ltd"
@@ -9651,6 +9768,59 @@
    "96090"
   ],
   "status": "dissolved",
+  "type": "ltd"
+ },
+ "01426561": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "Itf House, 49 - 60 Borough Road, London, SE1 1DR",
+  "ceased": null,
+  "created": "1979-06-07",
+  "found": true,
+  "name": "INTERNATIONAL TRANSPORT WORKERS FEDERATION (NOMINEES) LIMITED",
+  "number": "01426561",
+  "officers": [
+   {
+    "name": "COTTON, Stephen",
+    "role": "secretary",
+    "since": "2013-06-01"
+   },
+   {
+    "name": "COTTON, Stephen Mark",
+    "role": "director",
+    "since": "2013-06-01"
+   },
+   {
+    "name": "CRUMLIN, Padraig",
+    "role": "director",
+    "since": "2019-09-02"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent"
+    ],
+    "kind": "individual",
+    "name": "Mr Padraig Crumlin",
+    "since": "2019-09-02"
+   },
+   {
+    "control": [
+     "ownership of shares 50 to 75 percent"
+    ],
+    "kind": "individual",
+    "name": "Mr Stephen Mark Cotton",
+    "since": "2016-07-01"
+   }
+  ],
+  "payers": [
+   "International Transport Workers' Federation"
+  ],
+  "sic": [
+   "64209"
+  ],
+  "status": "active",
   "type": "ltd"
  },
  "01429062": {
@@ -32576,6 +32746,46 @@
   "status": "active",
   "type": "ltd"
  },
+ "07103621": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "1 Billing Road, Northampton, NN1 5AL, United Kingdom",
+  "ceased": null,
+  "created": "2009-12-14",
+  "found": true,
+  "name": "THE MALLOWS COMPANY (BOZEAT) LIMITED",
+  "number": "07103621",
+  "officers": [
+   {
+    "name": "MALLOWS, Rachel Elizabeth",
+    "role": "director",
+    "since": "2009-12-14"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "individual",
+    "name": "Mrs Rachel Elizabeth Mallows",
+    "since": "2016-04-07"
+   }
+  ],
+  "payers": [
+   "Rachel Mallows"
+  ],
+  "sic": [
+   "63990",
+   "70229",
+   "82110",
+   "85600"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
  "07110641": {
   "_chain": true,
   "_fetched": "2026-10-28",
@@ -35657,6 +35867,71 @@
   "status": "active",
   "type": "ltd"
  },
+ "07956480": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "First Floor, Northburgh House, 10 Northburgh Street, London, EC1V 0AT, England",
+  "ceased": null,
+  "created": "2012-02-20",
+  "found": true,
+  "name": "KMJ ENTERTAINMENT LIMITED",
+  "number": "07956480",
+  "officers": [
+   {
+    "name": "DRURY, David",
+    "role": "secretary",
+    "since": "2023-03-22"
+   },
+   {
+    "name": "GALBRAITH, Stuart Walter",
+    "role": "director",
+    "since": "2012-02-20"
+   },
+   {
+    "name": "KORNETT, Detlef",
+    "role": "director",
+    "since": "2014-05-08"
+   },
+   {
+    "name": "REINECKE, David",
+    "role": "director",
+    "since": "2025-05-28"
+   },
+   {
+    "name": "TILLEY, Steve",
+    "role": "director",
+    "since": "2013-05-21"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent",
+     "voting rights 50 to 75 percent"
+    ],
+    "kind": "corporate entity",
+    "name": "Deag Concerts Gmbh",
+    "since": "2016-04-06"
+   },
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent",
+     "voting rights 25 to 50 percent"
+    ],
+    "kind": "individual",
+    "name": "Mr Stuart Walter Galbraith",
+    "since": "2016-04-06"
+   }
+  ],
+  "payers": [
+   "KMJ Entertainment Group"
+  ],
+  "sic": [
+   "70100"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
  "07973838": {
   "_chain": true,
   "_fetched": "2026-10-29",
@@ -37544,7 +37819,7 @@
    }
   ],
   "payers": [
-   "Baby Care Domiciliary Care Ltd"
+   "Bay Care Domiciliary Care Ltd"
   ],
   "sic": [
    "86900"
@@ -37842,6 +38117,80 @@
   ],
   "status": "active",
   "type": "private-limited-guarant-nsc-limited-exemption"
+ },
+ "08829779": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "Coldra Woods, Newport, NP18 1HQ",
+  "ceased": null,
+  "created": "2014-01-02",
+  "found": true,
+  "name": "INTERNATIONAL CONVENTION CENTRE WALES LIMITED",
+  "number": "08829779",
+  "officers": [
+   {
+    "name": "COLCOMB, Mark",
+    "role": "secretary",
+    "since": "2014-01-02"
+   },
+   {
+    "name": "CASTLEDINE, Stuart Ian",
+    "role": "director",
+    "since": "2018-07-17"
+   },
+   {
+    "name": "DAWES, Winifred Kay",
+    "role": "director",
+    "since": "2016-11-15"
+   },
+   {
+    "name": "MORGAN, Mike",
+    "role": "director",
+    "since": "2019-05-08"
+   },
+   {
+    "name": "MUNDAY, Christopher Patrick",
+    "role": "director",
+    "since": "2017-01-27"
+   },
+   {
+    "name": "RHYDDERCH-ROBERTS, Mark",
+    "role": "director",
+    "since": "2017-03-21"
+   },
+   {
+    "name": "WILKINS, Alan Haydn",
+    "role": "director",
+    "since": "2025-09-01"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent",
+     "voting rights 25 to 50 percent"
+    ],
+    "kind": "corporate entity",
+    "name": "Welsh Ministers",
+    "since": "2017-01-27"
+   },
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent"
+    ],
+    "kind": "corporate entity",
+    "name": "The Celtic Manor Resort Limited",
+    "since": "2017-01-02"
+   }
+  ],
+  "payers": [
+   "International Convention Centre Wales Ltd"
+  ],
+  "sic": [
+   "68202"
+  ],
+  "status": "active",
+  "type": "ltd"
  },
  "08831542": {
   "_fetched": "2026-10-28",
@@ -39485,6 +39834,66 @@
    "62011"
   ],
   "status": "dissolved",
+  "type": "ltd"
+ },
+ "09400420": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "133 Chadacre Road, Epsom, KT17 2HQ",
+  "ceased": null,
+  "created": "2015-01-21",
+  "found": true,
+  "name": "THE GLOBAL HEALTH ALLIANCE LIMITED",
+  "number": "09400420",
+  "officers": [
+   {
+    "name": "HINTON, Clive Alfred",
+    "role": "director",
+    "since": "2023-08-30"
+   },
+   {
+    "name": "NARAIN, Rajay, Dr",
+    "role": "director",
+    "since": "2015-01-21"
+   },
+   {
+    "name": "NARAIN, Smita",
+    "role": "director",
+    "since": "2023-08-30"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent",
+     "voting rights 25 to 50 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "individual",
+    "name": "Dr Rajay Narain",
+    "since": "2023-08-30"
+   },
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent",
+     "voting rights 25 to 50 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "individual",
+    "name": "Mrs Smita Narain",
+    "since": "2023-08-30"
+   }
+  ],
+  "payers": [
+   "UK Global Health Alliance"
+  ],
+  "sic": [
+   "85590",
+   "85600",
+   "86220",
+   "86900"
+  ],
+  "status": "active",
   "type": "ltd"
  },
  "09439764": {
@@ -44894,6 +45303,69 @@
   "status": "active",
   "type": "ltd"
  },
+ "11557919": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "1st Floor, Northumberland House, 303-306 High Holborn, London, WC1V 7JZ, United Kingdom",
+  "ceased": null,
+  "created": "2018-09-07",
+  "found": true,
+  "name": "DAVID JAMES WEALTH LIMITED",
+  "number": "11557919",
+  "officers": [
+   {
+    "name": "KENNARD, Kevin Oscar",
+    "role": "director",
+    "since": "2021-11-17"
+   },
+   {
+    "name": "REISS, James Nicholas Wallis",
+    "role": "director",
+    "since": "2018-09-07"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent"
+    ],
+    "kind": "corporate entity",
+    "name": "David James Wealth Holdings Ltd",
+    "number": "14913134",
+    "owners": [
+     {
+      "control": [
+       "ownership of shares 25 to 50 percent",
+       "voting rights 25 to 50 percent"
+      ],
+      "kind": "individual",
+      "name": "Mr Kevin Oscar Kennard",
+      "since": "2023-07-07"
+     },
+     {
+      "control": [
+       "ownership of shares 50 to 75 percent",
+       "voting rights 50 to 75 percent",
+       "right to appoint and remove directors"
+      ],
+      "kind": "individual",
+      "name": "Mr James Nicholas Wallis Reiss",
+      "since": "2023-07-07"
+     }
+    ],
+    "since": "2023-07-07"
+   }
+  ],
+  "payers": [
+   "David James Wealth"
+  ],
+  "sic": [
+   "64999"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
  "11599143": {
   "_chain": true,
   "_fetched": "2026-10-29",
@@ -45261,7 +45733,8 @@
    }
   ],
   "payers": [
-   "These Executive Minds (TEXEM) Limited"
+   "These Executive Minds (TEXEM) Limited",
+   "These Executive Minds (TEXEM) Ltd"
   ],
   "sic": [
    "70229"
@@ -46382,6 +46855,7 @@
   ],
   "owners": [],
   "payers": [
+   "Brick Development Association",
    "Ceramics UK"
   ],
   "sic": [
@@ -46804,6 +47278,47 @@
   "sic": [
    "41201",
    "41202"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
+ "12456925": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "Lion House, Rowcroft, Stroud, GL5 3BY, England",
+  "ceased": null,
+  "created": "2020-02-11",
+  "found": true,
+  "name": "GREEN BRITAIN GROUP LIMITED",
+  "number": "12456925",
+  "officers": [
+   {
+    "name": "REHMANWALA, Asif",
+    "role": "director",
+    "since": "2023-01-24"
+   },
+   {
+    "name": "VINCE, Dale Andrew",
+    "role": "director",
+    "since": "2020-02-11"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent"
+    ],
+    "kind": "individual",
+    "name": "Mr Dale Andrew Vince",
+    "since": "2020-02-11"
+   }
+  ],
+  "payers": [
+   "Green Britain Group Ltd"
+  ],
+  "sic": [
+   "70100"
   ],
   "status": "active",
   "type": "ltd"
@@ -49916,6 +50431,40 @@
   "status": "dissolved",
   "type": "ltd"
  },
+ "13783495": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "42 Essex Street, London, WC2R 3JF, United Kingdom",
+  "ceased": null,
+  "created": "2021-12-06",
+  "found": true,
+  "name": "HANNS-SEIDEL-STIFTUNG UK LTD",
+  "number": "13783495",
+  "officers": [
+   {
+    "name": "KRUG, Wolf Uwe Wilhelm, Dr",
+    "role": "director",
+    "since": "2021-12-06"
+   },
+   {
+    "name": "RICHTER, Michael Martin, Dr",
+    "role": "director",
+    "since": "2024-12-09"
+   }
+  ],
+  "owners": [],
+  "payers": [
+   "Hanns Seidel Stiftung (UK)"
+  ],
+  "sic": [
+   "82302",
+   "84210",
+   "85590",
+   "94920"
+  ],
+  "status": "active",
+  "type": "private-limited-guarant-nsc"
+ },
  "13784980": {
   "_chain": true,
   "_fetched": "2026-11-03",
@@ -50042,6 +50591,43 @@
   ],
   "sic": [
    "70210"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
+ "13835771": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "Second Floor, 3 Liverpool Gardens, Worthing, BN11 1TF, England",
+  "ceased": null,
+  "created": "2022-01-08",
+  "found": true,
+  "name": "EXOGENEITY LIMITED",
+  "number": "13835771",
+  "officers": [
+   {
+    "name": "SANDERS, Michael Thomas, Professor",
+    "role": "director",
+    "since": "2022-01-08"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "individual",
+    "name": "Professor Michael Thomas Sanders",
+    "since": "2022-01-08"
+   }
+  ],
+  "payers": [
+   "Exongeneity Limited"
+  ],
+  "sic": [
+   "72200"
   ],
   "status": "active",
   "type": "ltd"
@@ -52139,6 +52725,55 @@
   "status": "active",
   "type": "ltd"
  },
+ "14982650": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "C/O Sedulo London Office 605, Albert House, 256-260 Old Street, London, EC1V 9DD, United Kingdom",
+  "ceased": null,
+  "created": "2023-07-05",
+  "found": true,
+  "name": "RESET TECH UK COMMUNITY INTEREST COMPANY",
+  "number": "14982650",
+  "officers": [
+   {
+    "name": "SCOTT, Dale Benjamin",
+    "role": "director",
+    "since": "2023-07-05"
+   },
+   {
+    "name": "WOOD, Poppy",
+    "role": "director",
+    "since": "2023-07-05"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "voting rights 25 to 50 percent"
+    ],
+    "kind": "individual",
+    "name": "Ms Poppy Wood",
+    "since": "2025-05-07"
+   },
+   {
+    "control": [
+     "voting rights 75 to 100 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "individual",
+    "name": "Mr Dale Benjamin Scott",
+    "since": "2023-07-05"
+   }
+  ],
+  "payers": [
+   "Reset Tech UK"
+  ],
+  "sic": [
+   "96090"
+  ],
+  "status": "active",
+  "type": "private-limited-guarant-nsc"
+ },
  "15063866": {
   "_chain": true,
   "_fetched": "2026-11-03",
@@ -53307,6 +53942,56 @@
   "status": "active",
   "type": "ltd"
  },
+ "15767214": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "1 Plato Place, 72-74 St Dionis Road, Fulham, SW6 4TU, United Kingdom",
+  "ceased": null,
+  "created": "2024-06-07",
+  "found": true,
+  "name": "KNOX DIGITAL LIMITED",
+  "number": "15767214",
+  "officers": [
+   {
+    "name": "MCMILLAN, Thomas Jock",
+    "role": "director",
+    "since": "2024-06-07"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "corporate entity",
+    "name": "Fogg International Ltd",
+    "number": "15384264",
+    "owners": [
+     {
+      "control": [
+       "ownership of shares 75 to 100 percent",
+       "voting rights 75 to 100 percent",
+       "right to appoint and remove directors"
+      ],
+      "kind": "individual",
+      "name": "Mr Thomas Jock Mcmillan",
+      "since": "2024-01-03"
+     }
+    ],
+    "since": "2024-06-07"
+   }
+  ],
+  "payers": [
+   "Knox Digital Limited"
+  ],
+  "sic": [
+   "70210"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
  "15777119": {
   "_fetched": "2026-10-28",
   "address": "14-15 Conduit Street, 1st & 2nd Floors, London, W1S 2XJ, United Kingdom",
@@ -53862,6 +54547,74 @@
   "status": "dissolved",
   "type": "ltd"
  },
+ "16183723": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "Victoria House, 178-180 Fleet Road, Fleet, GU51 4DA, England",
+  "ceased": null,
+  "created": "2025-01-14",
+  "found": true,
+  "name": "THE LEADSOM FOUNDATION",
+  "number": "16183723",
+  "officers": [
+   {
+    "name": "CHAPMAN, Maria Jane",
+    "role": "director",
+    "since": "2025-01-14"
+   },
+   {
+    "name": "CLEAR, Alanna Margaret Donayre",
+    "role": "director",
+    "since": "2025-06-02"
+   },
+   {
+    "name": "GADHIA, Jayne-Anne, Dame",
+    "role": "director",
+    "since": "2025-01-28"
+   },
+   {
+    "name": "HODGSON, Lucia",
+    "role": "director",
+    "since": "2025-01-14"
+   },
+   {
+    "name": "LEADSOM, Andrea Jacqueline, Dame",
+    "role": "director",
+    "since": "2025-01-14"
+   },
+   {
+    "name": "LEADSOM, Frederick Richard",
+    "role": "director",
+    "since": "2025-01-14"
+   },
+   {
+    "name": "WILMSHURST, Euan Guy",
+    "role": "director",
+    "since": "2026-07-07"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "significant influence or control"
+    ],
+    "kind": "individual",
+    "name": "Dame Andrea Jacqueline Leadsom",
+    "since": "2025-01-14"
+   }
+  ],
+  "payers": [
+   "The Leadsom Foundation Limited (working name: 1001 Critical Days Foundation)"
+  ],
+  "sic": [
+   "72200",
+   "85100",
+   "85600",
+   "86900"
+  ],
+  "status": "active",
+  "type": "private-limited-guarant-nsc-limited-exemption"
+ },
  "16185837": {
   "_chain": true,
   "_fetched": "2026-11-03",
@@ -54175,6 +54928,37 @@
   ],
   "sic": [
    "85520"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
+ "16496898": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "Unit 6 Mill Farm, Sonning Eye, Reading, RG4 6TR, England",
+  "ceased": null,
+  "created": "2025-06-04",
+  "found": true,
+  "name": "ARCTIC RESEARCH & DEVELOPMENT LTD",
+  "number": "16496898",
+  "officers": [
+   {
+    "name": "FENNESSY, Frederick Joseph",
+    "role": "director",
+    "since": "2025-06-04"
+   },
+   {
+    "name": "SAUNDERS, Benjamin John",
+    "role": "director",
+    "since": "2025-06-04"
+   }
+  ],
+  "owners": [],
+  "payers": [
+   "Arctic Research & Development Ltd"
+  ],
+  "sic": [
+   "72190"
   ],
   "status": "active",
   "type": "ltd"
@@ -54554,6 +55338,72 @@
   ],
   "status": "active",
   "type": "ltd"
+ },
+ "16868749": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "11 Charles Street, London, W1J 5DW, England",
+  "ceased": null,
+  "created": "2025-11-21",
+  "found": true,
+  "name": "PROSPERITY INSTITUTE",
+  "number": "16868749",
+  "officers": [
+   {
+    "name": "ALEXANDER, Christopher James Bernard",
+    "role": "director",
+    "since": "2026-07-17"
+   },
+   {
+    "name": "GREEN, Michael Lynn",
+    "role": "director",
+    "since": "2025-11-21"
+   },
+   {
+    "name": "PONT, Marcus Stephen Vaughan",
+    "role": "director",
+    "since": "2025-11-21"
+   },
+   {
+    "name": "VICKERS, Robert Charles",
+    "role": "director",
+    "since": "2026-04-21"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "voting rights 25 to 50 percent"
+    ],
+    "kind": "individual",
+    "name": "Mr Robert Charles Vickers",
+    "since": "2026-04-21"
+   },
+   {
+    "control": [
+     "voting rights 25 to 50 percent"
+    ],
+    "kind": "individual",
+    "name": "Marcus Stephen Vaughan Pont",
+    "since": "2025-11-21"
+   },
+   {
+    "control": [
+     "voting rights 25 to 50 percent"
+    ],
+    "kind": "individual",
+    "name": "Mr Michael Lynn Green",
+    "since": "2025-11-21"
+   }
+  ],
+  "payers": [
+   "Prosperity Institute"
+  ],
+  "sic": [
+   "96090"
+  ],
+  "status": "active",
+  "type": "private-limited-guarant-nsc-limited-exemption"
  },
  "16887201": {
   "_chain": true,
@@ -60068,6 +60918,51 @@
   "status": "active",
   "type": "private-limited-guarant-nsc"
  },
+ "SC125363": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "Archibald Hope House, Station Road, Musselburgh, EH21 7PQ, Scotland",
+  "ceased": null,
+  "created": "1990-05-31",
+  "found": true,
+  "name": "DOW INVESTMENTS PLC",
+  "number": "SC125363",
+  "officers": [
+   {
+    "name": "BAIN, Liam Michael",
+    "role": "director",
+    "since": "2022-10-01"
+   },
+   {
+    "name": "KILGOUR, Robert Dow",
+    "role": "director",
+    "since": "1990-05-31"
+   },
+   {
+    "name": "NEILSON, Anya Elizabeth",
+    "role": "director",
+    "since": "2010-04-28"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent"
+    ],
+    "kind": "individual",
+    "name": "Mr Robert Dow Kilgour",
+    "since": "2016-04-06"
+   }
+  ],
+  "payers": [
+   "Dow Investments PLC"
+  ],
+  "sic": [
+   "64209"
+  ],
+  "status": "active",
+  "type": "plc"
+ },
  "SC128255": {
   "_chain": true,
   "_fetched": "2026-10-29",
@@ -61245,6 +62140,99 @@
   "payers": [
    "Alex Begg & Co"
   ]
+ },
+ "SE000116": {
+  "_chain": true,
+  "_fetched": "2026-11-10",
+  "address": "100 Leadenhall Street, London, EC3A 3BP, United Kingdom",
+  "ceased": null,
+  "created": "2018-07-19",
+  "found": true,
+  "name": "CHUBB EUROPEAN GROUP SE",
+  "number": "SE000116",
+  "officers": [
+   {
+    "name": "BAILEY, Marshall Charles",
+    "role": "member-of-an-administrative-organ",
+    "since": "2018-07-19"
+   },
+   {
+    "name": "FURBY, David Michael Alan",
+    "role": "member-of-an-administrative-organ",
+    "since": "2018-11-29"
+   },
+   {
+    "name": "HAMMOND, Mark Kent",
+    "role": "member-of-an-administrative-organ",
+    "since": "2018-07-19"
+   },
+   {
+    "name": "KENDRICK, Andrew James",
+    "role": "member-of-an-administrative-organ",
+    "since": "2018-07-19"
+   },
+   {
+    "name": "O'SHIEL, Kevin Nicholas",
+    "role": "member-of-an-administrative-organ",
+    "since": "2018-07-19"
+   },
+   {
+    "name": "RILEY, Cathryn Elizabeth",
+    "role": "member-of-an-administrative-organ",
+    "since": "2018-07-19"
+   },
+   {
+    "name": "ROBINSON, David Peter",
+    "role": "member-of-an-administrative-organ",
+    "since": "2018-07-19"
+   },
+   {
+    "name": "SHAW, Alexander Matthew Wenham",
+    "role": "member-of-an-administrative-organ",
+    "since": "2018-07-19"
+   },
+   {
+    "name": "TURNER, Jonathan Adair, Lord",
+    "role": "member-of-an-administrative-organ",
+    "since": "2018-07-19"
+   },
+   {
+    "name": "WADE, Timothy Cardwell",
+    "role": "member-of-an-administrative-organ",
+    "since": "2018-07-19"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "corporate entity",
+    "name": "Ace European Holdings Limited",
+    "number": "05073085",
+    "owners": [
+     {
+      "control": [
+       "voting rights 75 to 100 percent"
+      ],
+      "kind": "corporate entity",
+      "name": "Chubb Limited",
+      "since": "2016-04-06"
+     }
+    ],
+    "since": "2018-07-19"
+   }
+  ],
+  "payers": [
+   "Chubb European Group SE"
+  ],
+  "sic": [
+   "65120"
+  ],
+  "status": "closed",
+  "type": "european-public-limited-liability-company-se"
  },
  "SL029690": {
   "_chain": true,
