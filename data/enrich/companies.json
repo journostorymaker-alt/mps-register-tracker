@@ -9815,7 +9815,8 @@
    }
   ],
   "payers": [
-   "International Transport Workers' Federation"
+   "International Transport Workers' Federation",
+   "International Transport Workers' Federation (ITF)"
   ],
   "sic": [
    "64209"
@@ -51770,6 +51771,7 @@
   ],
   "owners": [],
   "payers": [
+   "Alliance to End Malnutrition and Hunger Limited",
    "Alliance to End Malnutrition and Hunger Limited (knows as United Against Malnutrition & Hunger)"
   ],
   "sic": [
@@ -56103,7 +56105,8 @@
   "officers": [],
   "owners": [],
   "payers": [
-   "Co-operative Group"
+   "Co-operative Group",
+   "The Co-operative Group"
   ],
   "sic": [],
   "status": "active",
