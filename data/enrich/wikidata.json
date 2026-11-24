@@ -199,6 +199,10 @@
   "website": "https://www.avantiwestcoast.co.uk/",
   "wikipedia": "https://en.wikipedia.org/wiki/Avanti_West_Coast"
  },
+ "Avre Partnership Ltd": {
+  "_fetched": "2026-11-24",
+  "id": ""
+ },
  "Aziz Foundation": {
   "_fetched": "2026-10-28",
   "description": "philanthropic organisation",
@@ -382,6 +386,10 @@
   "label": "Birmingham City Council",
   "website": "https://www.birmingham.gov.uk",
   "wikipedia": "https://en.wikipedia.org/wiki/Birmingham_City_Council"
+ },
+ "Bisonti Partners (known as Investcorp Strategic Capital Partners until September 2026)": {
+  "_fetched": "2026-11-24",
+  "id": ""
  },
  "Blackrock Investment Management (UK) Ltd": {
   "_fetched": "2026-10-28",
@@ -1367,6 +1375,14 @@
   "_fetched": "2026-10-28",
   "id": ""
  },
+ "Harvard Kennedy School": {
+  "_fetched": "2026-11-24",
+  "description": "school of public administration of Harvard University",
+  "id": "Q49127",
+  "label": "John F. Kennedy School of Government",
+  "website": "https://www.hks.harvard.edu",
+  "wikipedia": "https://en.wikipedia.org/wiki/Harvard_Kennedy_School"
+ },
  "Hausfeld & Co LLP": {
   "_fetched": "2026-10-28",
   "id": ""
@@ -1659,6 +1675,10 @@
   "_fetched": "2026-10-28",
   "id": ""
  },
+ "KMJ Entertainment Group": {
+  "_fetched": "2026-11-24",
+  "id": ""
+ },
  "KPMG LLP": {
   "_fetched": "2026-10-28",
   "id": ""
@@ -1938,6 +1958,10 @@
   "label": "Microsoft",
   "website": "https://www.microsoft.com/",
   "wikipedia": "https://en.wikipedia.org/wiki/Microsoft"
+ },
+ "Middle East Energy Conference Limited": {
+  "_fetched": "2026-11-24",
+  "id": ""
  },
  "Millennium Steel Publishing": {
   "_fetched": "2026-10-28",
@@ -2387,6 +2411,14 @@
   "_fetched": "2026-10-28",
   "id": ""
  },
+ "Progressive International": {
+  "_fetched": "2026-11-24",
+  "description": "international movement of progressive political activists and groups",
+  "id": "Q60574856",
+  "label": "Progressive International",
+  "website": "https://progressive.international/",
+  "wikipedia": "https://en.wikipedia.org/wiki/Progressive_International"
+ },
  "Progressive Policy Institute": {
   "_fetched": "2026-10-28",
   "description": "centrist American think tank",
@@ -2811,6 +2843,10 @@
   "_fetched": "2026-10-28",
   "id": ""
  },
+ "Stamford Property Company Ltd": {
+  "_fetched": "2026-11-24",
+  "id": ""
+ },
  "Stanmore Contractors Ltd": {
   "_fetched": "2026-10-28",
   "id": ""
@@ -2943,6 +2979,18 @@
   "_fetched": "2026-10-28",
   "id": ""
  },
+ "Telford College": {
+  "_fetched": "2026-11-24",
+  "description": "further education college in Telford and Wrekin, UK",
+  "id": "Q7697206",
+  "label": "Telford College",
+  "website": "http://www.defineyourfuture.co.uk",
+  "wikipedia": "https://en.wikipedia.org/wiki/Telford_College"
+ },
+ "Thalexena Capital Ltd": {
+  "_fetched": "2026-11-24",
+  "id": ""
+ },
  "The Arsenal Football Club Limited": {
   "_fetched": "2026-10-28",
   "id": ""
@@ -3047,6 +3095,10 @@
   "website": "http://www.mccaininstitute.org",
   "wikipedia": "https://en.wikipedia.org/wiki/McCain_Institute"
  },
+ "The Mouradian Foundation": {
+  "_fetched": "2026-11-24",
+  "id": ""
+ },
  "The Mouradian Foundation Limited": {
   "_fetched": "2026-10-28",
   "id": ""
@@ -3122,6 +3174,10 @@
   "label": "ThinkLabour",
   "website": "https://www.labourtogether.uk/",
   "wikipedia": "https://en.wikipedia.org/wiki/ThinkLabour"
+ },
+ "Thurleigh Investments Limited": {
+  "_fetched": "2026-11-24",
+  "id": ""
  },
  "Times Media Limited": {
   "_fetched": "2026-10-28",

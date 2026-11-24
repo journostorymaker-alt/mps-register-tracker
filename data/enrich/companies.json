@@ -206,6 +206,93 @@
   "status": "active",
   "type": "plc"
  },
+ "00027318": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "St Andrews @ Knighthead Park, Cattell Road, Birmingham, B9 4RL, England",
+  "ceased": null,
+  "created": "1888-08-22",
+  "found": true,
+  "name": "BIRMINGHAM CITY FOOTBALL CLUB LIMITED",
+  "number": "00027318",
+  "officers": [
+   {
+    "name": "ALVAREZ, Matt",
+    "role": "director",
+    "since": "2023-07-13"
+   },
+   {
+    "name": "KNEISLY, Kyle",
+    "role": "director",
+    "since": "2023-07-13"
+   },
+   {
+    "name": "SHANNAHAN, Andrew",
+    "role": "director",
+    "since": "2023-07-13"
+   },
+   {
+    "name": "WAGNER, Thomas Allen",
+    "role": "director",
+    "since": "2023-07-13"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "corporate entity",
+    "name": "Birmingham City Limited",
+    "number": "03304408",
+    "owners": [
+     {
+      "control": [
+       "ownership of shares 75 to 100 percent",
+       "voting rights 75 to 100 percent",
+       "right to appoint and remove directors"
+      ],
+      "kind": "corporate entity",
+      "name": "Shelby Companies Limited",
+      "number": "14793836",
+      "owners": [
+       {
+        "control": [
+         "ownership of shares 25 to 50 percent",
+         "voting rights 25 to 50 percent"
+        ],
+        "kind": "corporate entity",
+        "name": "Knighthead Master Fund, L.P.",
+        "since": "2023-05-16"
+       },
+       {
+        "control": [
+         "ownership of shares 50 to 75 percent",
+         "voting rights 50 to 75 percent",
+         "right to appoint and remove directors"
+        ],
+        "kind": "corporate entity",
+        "name": "Knighthead Annuity & Life Assurance Company",
+        "since": "2023-04-12"
+       }
+      ],
+      "since": "2023-07-13"
+     }
+    ],
+    "since": "2016-04-06"
+   }
+  ],
+  "payers": [
+   "Birmingham City Football Club"
+  ],
+  "sic": [
+   "93120"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
  "00028301": {
   "_chain": true,
   "_fetched": "2026-10-29",
@@ -1315,6 +1402,95 @@
    "23510",
    "32990",
    "41100"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
+ "00072290": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "3 Castlegate, Grantham, NG31 6SF",
+  "ceased": null,
+  "created": "1901-12-27",
+  "found": true,
+  "name": "HINDMARCH PROPERTIES LIMITED",
+  "number": "00072290",
+  "officers": [
+   {
+    "name": "WILLIAMS, Kevin Glyn",
+    "role": "secretary",
+    "since": "2015-06-01"
+   },
+   {
+    "name": "HINDMARCH, Alexandra Jane",
+    "role": "director",
+    "since": "2020-07-07"
+   },
+   {
+    "name": "HINDMARCH, David John",
+    "role": "director",
+    "since": null
+   },
+   {
+    "name": "HINDMARCH, Mark Thomas",
+    "role": "director",
+    "since": "2009-01-20"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent as trust",
+     "voting rights 50 to 75 percent as trust"
+    ],
+    "kind": "corporate entity",
+    "name": "Roythornes Trustees Limited",
+    "number": "09098424",
+    "owners": [
+     {
+      "control": [
+       "ownership of shares 75 to 100 percent"
+      ],
+      "kind": "corporate entity",
+      "name": "Roythornes Holdings Limited",
+      "since": "2025-01-01"
+     },
+     {
+      "control": [
+       "ownership of shares 75 to 100 percent"
+      ],
+      "kind": "corporate entity",
+      "name": "Roythornes Limited",
+      "since": "2016-04-06"
+     }
+    ],
+    "since": "2024-10-21"
+   },
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent as trust",
+     "voting rights 50 to 75 percent as trust"
+    ],
+    "kind": "individual",
+    "name": "Mr Edward Anthony Strange",
+    "since": "2024-07-30"
+   },
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent as trust",
+     "voting rights 50 to 75 percent as trust"
+    ],
+    "kind": "individual",
+    "name": "Mr Mark Thomas Hindmarch",
+    "since": "2016-04-06"
+   }
+  ],
+  "payers": [
+   "Hindmarch Properties Ltd"
+  ],
+  "sic": [
+   "68100",
+   "68209"
   ],
   "status": "active",
   "type": "ltd"
@@ -2842,6 +3018,14 @@
   ],
   "status": "active",
   "type": "ltd"
+ },
+ "00169816": {
+  "_fetched": "2026-11-24",
+  "found": false,
+  "number": "00169816",
+  "payers": [
+   "Shakhtar Donetsk"
+  ]
  },
  "00175027": {
   "_chain": true,
@@ -6131,7 +6315,8 @@
    }
   ],
   "payers": [
-   "Weidenfeld & Nicolson Ltd"
+   "Weidenfeld & Nicolson Ltd",
+   "Weidenfeld & Nicolson UK"
   ],
   "sic": [
    "74990"
@@ -6429,6 +6614,112 @@
   "status": "active",
   "type": "ltd"
  },
+ "00804559": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "3 Castlegate, Grantham, NG31 6SF",
+  "ceased": null,
+  "created": "1964-05-08",
+  "found": true,
+  "name": "GRANTHAM INVESTMENTS LIMITED",
+  "number": "00804559",
+  "officers": [
+   {
+    "name": "WILLIAMS, Kevin Glyn",
+    "role": "secretary",
+    "since": "2015-06-01"
+   },
+   {
+    "name": "CASELEY, Hugh Munro Bater",
+    "role": "director",
+    "since": "2008-04-01"
+   },
+   {
+    "name": "FEARN, Geoffrey Ellwood",
+    "role": "director",
+    "since": "1999-04-06"
+   },
+   {
+    "name": "HINDMARCH, David John",
+    "role": "director",
+    "since": "1995-05-23"
+   },
+   {
+    "name": "HINDMARCH, Mark Thomas",
+    "role": "director",
+    "since": "2003-09-26"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent",
+     "voting rights 25 to 50 percent"
+    ],
+    "kind": "corporate entity",
+    "name": "Hindmarch Properties Limited",
+    "number": "00072290",
+    "owners": [
+     {
+      "control": [
+       "ownership of shares 25 to 50 percent as trust",
+       "voting rights 50 to 75 percent as trust"
+      ],
+      "kind": "corporate entity",
+      "name": "Roythornes Trustees Limited",
+      "number": "09098424",
+      "owners": [
+       {
+        "control": [
+         "ownership of shares 75 to 100 percent"
+        ],
+        "kind": "corporate entity",
+        "name": "Roythornes Holdings Limited",
+        "since": "2025-01-01"
+       },
+       {
+        "control": [
+         "ownership of shares 75 to 100 percent"
+        ],
+        "kind": "corporate entity",
+        "name": "Roythornes Limited",
+        "since": "2016-04-06"
+       }
+      ],
+      "since": "2024-10-21"
+     },
+     {
+      "control": [
+       "ownership of shares 25 to 50 percent as trust",
+       "voting rights 50 to 75 percent as trust"
+      ],
+      "kind": "individual",
+      "name": "Mr Edward Anthony Strange",
+      "since": "2024-07-30"
+     },
+     {
+      "control": [
+       "ownership of shares 75 to 100 percent as trust",
+       "voting rights 50 to 75 percent as trust"
+      ],
+      "kind": "individual",
+      "name": "Mr Mark Thomas Hindmarch",
+      "since": "2016-04-06"
+     }
+    ],
+    "since": "2016-04-06"
+   }
+  ],
+  "payers": [
+   "Grantham Investments Ltd"
+  ],
+  "sic": [
+   "68100",
+   "68209"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
  "00867944": {
   "_chain": true,
   "_fetched": "2026-11-03",
@@ -6720,6 +7011,136 @@
   ],
   "status": "active",
   "type": "ltd"
+ },
+ "00929027": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "250 Bishopsgate, London, EC2M 4AA, England",
+  "ceased": null,
+  "created": "1968-03-18",
+  "found": true,
+  "name": "NATIONAL WESTMINSTER BANK PUBLIC LIMITED COMPANY",
+  "number": "00929027",
+  "officers": [
+   {
+    "name": "MOORE, Gary",
+    "role": "secretary",
+    "since": "2025-02-14"
+   },
+   {
+    "name": "BARNES, Francesca",
+    "role": "director",
+    "since": "2018-05-01"
+   },
+   {
+    "name": "COOK, Karin Alexandra",
+    "role": "director",
+    "since": "2025-05-05"
+   },
+   {
+    "name": "CRITCHLEY, Joshua Charles Macdonald",
+    "role": "director",
+    "since": "2025-11-03"
+   },
+   {
+    "name": "DONNELLY, Roisin Jane Catherine",
+    "role": "director",
+    "since": "2022-10-01"
+   },
+   {
+    "name": "FLYNN, Patrick Gerard",
+    "role": "director",
+    "since": "2018-06-01"
+   },
+   {
+    "name": "GOPALAN, Geeta",
+    "role": "director",
+    "since": "2024-07-01"
+   },
+   {
+    "name": "HAYTHORNTHWAITE, Richard Neil",
+    "role": "director",
+    "since": "2024-01-08"
+   },
+   {
+    "name": "HITCHCOCK, Albert Roger",
+    "role": "director",
+    "since": "2026-02-23"
+   },
+   {
+    "name": "JOHANNSON, Erminia",
+    "role": "director",
+    "since": "2026-07-01"
+   },
+   {
+    "name": "LEVY, Cindy Belle",
+    "role": "director",
+    "since": "2026-10-01"
+   },
+   {
+    "name": "LEWIS, Stuart Wilson",
+    "role": "director",
+    "since": "2023-04-01"
+   },
+   {
+    "name": "MURRAY, Katie",
+    "role": "director",
+    "since": "2019-01-01"
+   },
+   {
+    "name": "RENNISON, Mark Martin",
+    "role": "director",
+    "since": "2023-09-01"
+   },
+   {
+    "name": "THWAITE, John-Paul",
+    "role": "director",
+    "since": "2023-07-25"
+   },
+   {
+    "name": "WHITEHEAD, Gillian Rosemary",
+    "role": "director",
+    "since": "2025-01-08"
+   },
+   {
+    "name": "WILSON, Lena Cooper",
+    "role": "director",
+    "since": "2018-01-01"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent"
+    ],
+    "kind": "corporate entity",
+    "name": "Natwest Holdings Limited",
+    "number": "10142224",
+    "owners": [
+     {
+      "control": [
+       "ownership of shares 75 to 100 percent",
+       "voting rights 75 to 100 percent"
+      ],
+      "kind": "corporate entity",
+      "name": "Natwest Group Plc",
+      "number": "SC045551",
+      "owners": [],
+      "since": "2020-07-22"
+     }
+    ],
+    "since": "2017-01-01"
+   }
+  ],
+  "payers": [
+   "National Westminster Bank PLC"
+  ],
+  "sic": [
+   "64191"
+  ],
+  "status": "active",
+  "type": "plc"
  },
  "00944773": {
   "_chain": true,
@@ -8557,6 +8978,112 @@
   "status": "active",
   "type": "ltd"
  },
+ "01174651": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "57 Tufton Street, London, SW1P 3QL",
+  "ceased": null,
+  "created": "1974-06-20",
+  "found": true,
+  "name": "CENTRE FOR POLICY STUDIES LIMITED",
+  "number": "01174651",
+  "officers": [
+   {
+    "name": "MEARS, Elliott",
+    "role": "secretary",
+    "since": "2023-10-13"
+   },
+   {
+    "name": "BAMFORD, Anthony Paul, Lord",
+    "role": "director",
+    "since": "2018-02-20"
+   },
+   {
+    "name": "BRADY MP, Graham Stuart",
+    "role": "director",
+    "since": "2016-09-20"
+   },
+   {
+    "name": "CROSSWELL, Charlotte Louise Benham",
+    "role": "director",
+    "since": "2021-06-16"
+   },
+   {
+    "name": "EDWARDS, Graham Henry",
+    "role": "director",
+    "since": "2020-07-09"
+   },
+   {
+    "name": "ELLIOT, Benjamin William",
+    "role": "director",
+    "since": "2017-11-13"
+   },
+   {
+    "name": "FERGUSON, Niall Campbell Douglas, Professor",
+    "role": "director",
+    "since": "2009-06-10"
+   },
+   {
+    "name": "FLINT, Douglas Jardine",
+    "role": "director",
+    "since": "2017-05-10"
+   },
+   {
+    "name": "HILL, Jonathan Hopkin, Lord",
+    "role": "director",
+    "since": "2017-05-10"
+   },
+   {
+    "name": "KNIGHT, Andrew Stephen Bower",
+    "role": "director",
+    "since": "2010-11-01"
+   },
+   {
+    "name": "MOLSON, Robert Ian",
+    "role": "director",
+    "since": "2022-11-03"
+   },
+   {
+    "name": "MOULTON, Jonathan Paul",
+    "role": "director",
+    "since": "2010-02-17"
+   },
+   {
+    "name": "NELSON, Fraser Andrew",
+    "role": "director",
+    "since": "2008-06-11"
+   },
+   {
+    "name": "ORF, Roger Gerard",
+    "role": "director",
+    "since": "2021-10-20"
+   },
+   {
+    "name": "SPENCER, Michael Alan, Lord Spencer Of Alresford",
+    "role": "director",
+    "since": "2019-12-18"
+   },
+   {
+    "name": "STRATHCLYDE, Thomas Dunlop Galloway De Roy De Blicquy Galbraith, Lord",
+    "role": "director",
+    "since": "2013-06-11"
+   },
+   {
+    "name": "WOLF, Rachel Janet",
+    "role": "director",
+    "since": "2022-04-06"
+   }
+  ],
+  "owners": [],
+  "payers": [
+   "Centre for Policy Studies"
+  ],
+  "sic": [
+   "58141"
+  ],
+  "status": "active",
+  "type": "private-limited-guarant-nsc"
+ },
  "01182734": {
   "_chain": true,
   "_fetched": "2026-10-29",
@@ -9297,6 +9824,57 @@
   ],
   "sic": [
    "58142"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
+ "01283914": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "174 Sunbridge Rd, Bradford, West Yorkshire, BD1 2RZ",
+  "ceased": null,
+  "created": "1976-10-29",
+  "found": true,
+  "name": "BUTTERFIELD SIGN SERVICE LIMITED",
+  "number": "01283914",
+  "officers": [
+   {
+    "name": "O'CONNOR, Scott",
+    "role": "secretary",
+    "since": "2026-03-26"
+   },
+   {
+    "name": "BUTTERFIELD, Andrew Jonathan",
+    "role": "director",
+    "since": "2021-02-01"
+   },
+   {
+    "name": "BUTTERFIELD, Edward Andrew",
+    "role": "director",
+    "since": null
+   },
+   {
+    "name": "SUNDERLAND, David",
+    "role": "director",
+    "since": "2010-10-07"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 50 to 75 percent"
+    ],
+    "kind": "individual",
+    "name": "Mr Edward Andrew Butterfield",
+    "since": "2016-04-06"
+   }
+  ],
+  "payers": [
+   "Butterfield Sign Service Ltd"
+  ],
+  "sic": [
+   "22290",
+   "43390"
   ],
   "status": "active",
   "type": "ltd"
@@ -11295,6 +11873,98 @@
   "status": "liquidation",
   "type": "ltd"
  },
+ "01798514": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "The Hart Shaw Building, Europa Link, Sheffield, S9 1XU, United Kingdom",
+  "ceased": null,
+  "created": "1984-03-08",
+  "found": true,
+  "name": "CLEREWELL LIMITED",
+  "number": "01798514",
+  "officers": [
+   {
+    "name": "HELLER, Andrew Robert",
+    "role": "secretary",
+    "since": "2000-03-31"
+   },
+   {
+    "name": "HELLER, Andrew Robert",
+    "role": "director",
+    "since": "1999-12-03"
+   },
+   {
+    "name": "HELLER, John Alexander",
+    "role": "director",
+    "since": "1999-12-03"
+   },
+   {
+    "name": "HELLER, Morven, Lady",
+    "role": "director",
+    "since": "2023-01-30"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "voting rights 50 to 75 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "corporate entity",
+    "name": "Jan1083 Limited",
+    "number": "15453390",
+    "owners": [
+     {
+      "control": [
+       "ownership of shares 25 to 50 percent",
+       "voting rights 25 to 50 percent"
+      ],
+      "kind": "individual",
+      "name": "Mr John Alexander Heller",
+      "since": "2024-01-30"
+     },
+     {
+      "control": [
+       "ownership of shares 25 to 50 percent",
+       "voting rights 25 to 50 percent"
+      ],
+      "kind": "individual",
+      "name": "Mrs Nicola Ann Blake",
+      "since": "2024-01-30"
+     },
+     {
+      "control": [
+       "ownership of shares 25 to 50 percent",
+       "voting rights 25 to 50 percent"
+      ],
+      "kind": "individual",
+      "name": "Mr Andrew Robert Heller",
+      "since": "2024-01-30"
+     }
+    ],
+    "since": "2024-03-21"
+   },
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 25 to 50 percent"
+    ],
+    "kind": "corporate entity",
+    "name": "Shop.Com Limited",
+    "number": "03846979",
+    "owners": [],
+    "since": "2016-04-06"
+   }
+  ],
+  "payers": [
+   "Clerewell Ltd"
+  ],
+  "sic": [
+   "68209"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
  "01812893": {
   "_fetched": "2026-10-28",
   "address": "The Nest, Church House 86 Tavistock Place, Kings Cross, London, WC1H 9RT, England",
@@ -13256,6 +13926,87 @@
   ],
   "status": "active",
   "type": "ltd"
+ },
+ "02098198": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "66 Offley Road, London, SW9 0LS",
+  "ceased": null,
+  "created": "1987-02-09",
+  "found": true,
+  "name": "GLOBAL JUSTICE NOW",
+  "number": "02098198",
+  "officers": [
+   {
+    "name": "BROOKS, Sally Heather, Dr",
+    "role": "secretary",
+    "since": "2024-07-20"
+   },
+   {
+    "name": "ANDERSON, Victor Frederick",
+    "role": "director",
+    "since": "2024-06-11"
+   },
+   {
+    "name": "ANIM, Nicholas",
+    "role": "director",
+    "since": "2024-06-11"
+   },
+   {
+    "name": "BROOKS, Sally Heather, Dr",
+    "role": "director",
+    "since": "2021-06-07"
+   },
+   {
+    "name": "CAMINATI ENGSTROM, Ludovico Ian",
+    "role": "director",
+    "since": "2024-06-11"
+   },
+   {
+    "name": "DODWELL, Aisha",
+    "role": "director",
+    "since": "2024-06-11"
+   },
+   {
+    "name": "ELNAIEM, Mohammed",
+    "role": "director",
+    "since": "2024-06-11"
+   },
+   {
+    "name": "GUIDORZI, Natalia",
+    "role": "director",
+    "since": "2021-06-05"
+   },
+   {
+    "name": "JACKSON, Steven Maurice",
+    "role": "director",
+    "since": "2024-06-11"
+   },
+   {
+    "name": "MASON, Margaret Mary",
+    "role": "director",
+    "since": "2021-06-05"
+   },
+   {
+    "name": "STEINER, Mary Barbara",
+    "role": "director",
+    "since": "2024-06-11"
+   },
+   {
+    "name": "THOMPSON, Christine",
+    "role": "director",
+    "since": "2024-06-11"
+   }
+  ],
+  "owners": [],
+  "payers": [
+   "Global Justice Now"
+  ],
+  "sic": [
+   "94990"
+  ],
+  "status": "active",
+  "type": "private-limited-guarant-nsc-limited-exemption"
  },
  "02106666": {
   "_chain": true,
@@ -17282,6 +18033,52 @@
   "status": "active",
   "type": "ltd"
  },
+ "02880390": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "3 Castlegate, Grantham, Lincolnshire, NG31 6SF",
+  "ceased": null,
+  "created": "1993-12-14",
+  "found": true,
+  "name": "SPRINGFIELD PARK PROPERTIES LIMITED",
+  "number": "02880390",
+  "officers": [
+   {
+    "name": "TOWNSEND, Peter Sandham",
+    "role": "secretary",
+    "since": "1994-01-06"
+   },
+   {
+    "name": "CASELEY, Hugh Munro Bater",
+    "role": "director",
+    "since": "2008-04-01"
+   },
+   {
+    "name": "FEARN, Geoffrey Ellwood",
+    "role": "director",
+    "since": "1994-01-06"
+   },
+   {
+    "name": "HINDMARCH, David John",
+    "role": "director",
+    "since": "1995-11-03"
+   },
+   {
+    "name": "TOWNSEND, Peter Sandham",
+    "role": "director",
+    "since": "1994-01-06"
+   }
+  ],
+  "owners": [],
+  "payers": [
+   "Springfield Park Properties Ltd"
+  ],
+  "sic": [
+   "68209"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
  "02904597": {
   "_chain": true,
   "_fetched": "2026-11-03",
@@ -17890,7 +18687,7 @@
    }
   ],
   "payers": [
-   "Stamford Property Company Limited"
+   "Stamford Property Company Ltd"
   ],
   "sic": [
    "41100",
@@ -21727,6 +22524,53 @@
   ],
   "status": "active",
   "type": "plc"
+ },
+ "03506616": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "The Estate Office, Warter Priory, Warter, YO42 1XA",
+  "ceased": null,
+  "created": "1998-02-09",
+  "found": true,
+  "name": "WARTER PRIORY MANAGEMENT LIMITED",
+  "number": "03506616",
+  "officers": [
+   {
+    "name": "OLDFIELD, Jane Marie",
+    "role": "secretary",
+    "since": "2017-02-08"
+   },
+   {
+    "name": "HEALEY, Malcolm Stanley",
+    "role": "director",
+    "since": "1998-08-18"
+   },
+   {
+    "name": "PULLAN, Mark Jonathan",
+    "role": "director",
+    "since": "2011-10-06"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "individual",
+    "name": "Mr Malcolm Stanley Healey",
+    "since": "2016-04-06"
+   }
+  ],
+  "payers": [
+   "Warter Priory Estate"
+  ],
+  "sic": [
+   "74909"
+  ],
+  "status": "active",
+  "type": "ltd"
  },
  "03514128": {
   "_fetched": "2026-10-28",
@@ -30451,6 +31295,87 @@
   "status": "active",
   "type": "ltd"
  },
+ "06410885": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "3 Castlegate, Grantham, Lincolnshire, NG31 6SF",
+  "ceased": null,
+  "created": "2007-10-29",
+  "found": true,
+  "name": "SLEAFORD PROPERTY DEVELOPMENTS LIMITED",
+  "number": "06410885",
+  "officers": [
+   {
+    "name": "TOWNSEND, Peter Sandham",
+    "role": "secretary",
+    "since": "2007-10-29"
+   },
+   {
+    "name": "CASELEY, Hugh Munro Bater",
+    "role": "director",
+    "since": "2008-04-01"
+   },
+   {
+    "name": "FEARN, Geoffrey Ellwood",
+    "role": "director",
+    "since": "2007-10-30"
+   },
+   {
+    "name": "HINDMARCH, David John",
+    "role": "director",
+    "since": "2007-10-30"
+   },
+   {
+    "name": "TOWNSEND, Peter Sandham",
+    "role": "director",
+    "since": "2007-10-30"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent",
+     "voting rights 25 to 50 percent"
+    ],
+    "kind": "corporate entity",
+    "name": "Springfield Park Properties Limited",
+    "number": "02880390",
+    "owners": [],
+    "since": "2016-04-06"
+   },
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent",
+     "voting rights 25 to 50 percent"
+    ],
+    "kind": "corporate entity",
+    "name": "Springfield Park Properties (Grantham) Limited",
+    "number": "02880393",
+    "owners": [
+     {
+      "control": [
+       "ownership of shares 75 to 100 percent",
+       "voting rights 75 to 100 percent",
+       "right to appoint and remove directors"
+      ],
+      "kind": "corporate entity",
+      "name": "Springfield Park Properties Limited",
+      "number": "02880390",
+      "since": "2016-04-06"
+     }
+    ],
+    "since": "2016-04-06"
+   }
+  ],
+  "payers": [
+   "Sleaford Property Developments Ltd"
+  ],
+  "sic": [
+   "41100"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
  "06452500": {
   "_chain": true,
   "_fetched": "2026-10-29",
@@ -32885,6 +33810,67 @@
   ],
   "status": "active",
   "type": "ltd"
+ },
+ "07121887": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "Blackfriars Settlement, 1 Rushworth Street, London, SE1 0RB",
+  "ceased": null,
+  "created": "2010-01-11",
+  "found": true,
+  "name": "HUMAN TRAFFICKING FOUNDATION",
+  "number": "07121887",
+  "officers": [
+   {
+    "name": "WHITEHEAD, Nicola Clare",
+    "role": "secretary",
+    "since": "2026-03-30"
+   },
+   {
+    "name": "BRADLEY, Karen Anne, Rt Hon",
+    "role": "director",
+    "since": "2020-11-01"
+   },
+   {
+    "name": "COAKER, Vernon Rodney, Lord",
+    "role": "director",
+    "since": "2017-07-17"
+   },
+   {
+    "name": "JACKSON, Paul Anthony",
+    "role": "director",
+    "since": "2011-07-28"
+   },
+   {
+    "name": "MOHINDRA, Gagan",
+    "role": "director",
+    "since": "2026-10-14"
+   },
+   {
+    "name": "MURRAY, Christopher",
+    "role": "director",
+    "since": "2026-10-14"
+   },
+   {
+    "name": "OLDFIELD BUTLER SLOSS, Ann Elizabeth, Baroness",
+    "role": "director",
+    "since": "2010-01-11"
+   },
+   {
+    "name": "RANDALL, Alexander John",
+    "role": "director",
+    "since": "2014-01-28"
+   }
+  ],
+  "owners": [],
+  "payers": [
+   "Human Trafficking Foundation"
+  ],
+  "sic": [
+   "82990"
+  ],
+  "status": "active",
+  "type": "private-limited-guarant-nsc-limited-exemption"
  },
  "07153492": {
   "_chain": true,
@@ -37907,7 +38893,7 @@
    }
   ],
   "payers": [
-   "East Coast Trains Ltd (Lumo)"
+   "East Coast Trains Limited"
   ],
   "sic": [
    "49100"
@@ -38672,6 +39658,56 @@
   "status": "active",
   "type": "ltd"
  },
+ "09010358": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "9 Great Chesterford Court, London Road, Great Chesterford, CB10 1PF",
+  "ceased": null,
+  "created": "2014-04-24",
+  "found": true,
+  "name": "AVRE PARTNERSHIP LIMITED",
+  "number": "09010358",
+  "officers": [
+   {
+    "name": "BLAGDEN, Simon Paul",
+    "role": "director",
+    "since": "2014-04-24"
+   },
+   {
+    "name": "BLAGDEN, Susan",
+    "role": "director",
+    "since": "2014-04-24"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent",
+     "voting rights 25 to 50 percent"
+    ],
+    "kind": "individual",
+    "name": "Mr Simon Paul Blagden",
+    "since": "2016-04-06"
+   },
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent",
+     "voting rights 25 to 50 percent"
+    ],
+    "kind": "individual",
+    "name": "Mrs Susan Blagden",
+    "since": "2016-04-06"
+   }
+  ],
+  "payers": [
+   "Avre Partnership Ltd"
+  ],
+  "sic": [
+   "70229"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
  "09019358": {
   "_chain": true,
   "_fetched": "2026-10-28",
@@ -39362,6 +40398,7 @@
    }
   ],
   "payers": [
+   "The Mouradian Foundation",
    "The Mouradian Foundation Limited"
   ],
   "sic": [
@@ -47713,6 +48750,93 @@
   "status": "active",
   "type": "ltd"
  },
+ "12574876": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "Park Gates Bury New Road, Prestwich, Manchester, M25 0JW, England",
+  "ceased": null,
+  "created": "2020-04-28",
+  "found": true,
+  "name": "HEALTH CONNECT GLOBAL LIMITED",
+  "number": "12574876",
+  "officers": [
+   {
+    "name": "MOODLEY, Devan, Dr",
+    "role": "secretary",
+    "since": "2020-04-28"
+   },
+   {
+    "name": "KYLE, Ruth Elizabeth",
+    "role": "director",
+    "since": "2025-01-01"
+   },
+   {
+    "name": "MOODLEY, Devan, Dr",
+    "role": "director",
+    "since": "2020-04-28"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent"
+    ],
+    "kind": "individual",
+    "name": "Dr Devan Moodley",
+    "since": "2020-04-28"
+   }
+  ],
+  "payers": [
+   "Health Connect Global Ltd"
+  ],
+  "sic": [
+   "86900"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
+ "12611737": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "C/O Sedulo Office 605, Albert House 256-260 Old Street, London, EC1V 9DD, England",
+  "ceased": null,
+  "created": "2020-05-19",
+  "found": true,
+  "name": "THE SOCIAL CHANGE NEST CIC",
+  "number": "12611737",
+  "officers": [
+   {
+    "name": "FOREMAN, Esther Tamara",
+    "role": "director",
+    "since": "2020-05-19"
+   },
+   {
+    "name": "LATINWO OLAJIDE, Lilian Taiwo Eyimofe",
+    "role": "director",
+    "since": "2026-04-02"
+   },
+   {
+    "name": "PATTNI, Sapna Patel",
+    "role": "director",
+    "since": "2021-04-06"
+   },
+   {
+    "name": "SINANTHA, Fancy",
+    "role": "director",
+    "since": "2026-04-02"
+   }
+  ],
+  "owners": [],
+  "payers": [
+   "Liberals and Democrats for Nature and Climate Change (LDNC)"
+  ],
+  "sic": [
+   "70229"
+  ],
+  "status": "active",
+  "type": "private-limited-guarant-nsc"
+ },
  "12649284": {
   "_chain": true,
   "_fetched": "2026-11-03",
@@ -48750,6 +49874,45 @@
   "status": "active",
   "type": "ltd"
  },
+ "13106746": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "453 Cranbrook Road, Ilford, IG2 6EW, England",
+  "ceased": null,
+  "created": "2020-12-31",
+  "found": true,
+  "name": "THALEXENA CAPITAL LTD",
+  "number": "13106746",
+  "officers": [
+   {
+    "name": "SAKKAS, Michael",
+    "role": "director",
+    "since": "2020-12-31"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "individual",
+    "name": "Mr Michael Sakkas",
+    "since": "2020-12-31"
+   }
+  ],
+  "payers": [
+   "Thalexena Capital Ltd"
+  ],
+  "sic": [
+   "64991",
+   "68100",
+   "68209"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
  "13107364": {
   "_chain": true,
   "_fetched": "2026-10-29",
@@ -49414,6 +50577,43 @@
   ],
   "sic": [
    "96090"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
+ "13368617": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "15 Sackville Street, London, W1S 3DJ, England",
+  "ceased": null,
+  "created": "2021-04-30",
+  "found": true,
+  "name": "THURLEIGH INVESTMENTS LIMITED",
+  "number": "13368617",
+  "officers": [
+   {
+    "name": "O'KEEFFE, Niall Arthur James",
+    "role": "director",
+    "since": "2021-04-30"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "individual",
+    "name": "Mr Niall Arthur James O'Keeffe",
+    "since": "2021-04-30"
+   }
+  ],
+  "payers": [
+   "Thurleigh Investments Limited"
+  ],
+  "sic": [
+   "64205"
   ],
   "status": "active",
   "type": "ltd"
@@ -50263,6 +51463,53 @@
   ],
   "sic": [
    "94920"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
+ "13753644": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "North West House, 119-127 Marylebone Road, London, NW1 5PU",
+  "ceased": null,
+  "created": "2021-11-19",
+  "found": true,
+  "name": "RHYTHM PHARMACEUTICALS UK LIMITED",
+  "number": "13753644",
+  "officers": [
+   {
+    "name": "FLAHERTY JR., James Matthew",
+    "role": "director",
+    "since": "2021-11-19"
+   },
+   {
+    "name": "MAZABRAUD, Yann Marcel Jacques",
+    "role": "director",
+    "since": "2025-01-29"
+   },
+   {
+    "name": "MUSSELL, Fleur Rosina",
+    "role": "director",
+    "since": "2025-01-29"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "corporate entity",
+    "name": "Rhythm Pharmaceuticals, Inc.",
+    "since": "2021-11-19"
+   }
+  ],
+  "payers": [
+   "Rhythm Pharmaceuticals"
+  ],
+  "sic": [
+   "46460"
   ],
   "status": "active",
   "type": "ltd"
@@ -52727,6 +53974,51 @@
   "status": "active",
   "type": "ltd"
  },
+ "14926136": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "62 Seymour Grove Old Traffford, Manchester, M16 0LN, United Kingdom",
+  "ceased": null,
+  "created": "2023-06-09",
+  "found": true,
+  "name": "LMEC & NORTH AFRICA UK LIMITED",
+  "number": "14926136",
+  "officers": [
+   {
+    "name": "HASSAN, Miran",
+    "role": "director",
+    "since": "2023-06-09"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 25 to 50 percent"
+    ],
+    "kind": "individual",
+    "name": "Sir William Charters Patey",
+    "since": "2024-10-20"
+   },
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "individual",
+    "name": "Mr Miran Hassan",
+    "since": "2023-06-09"
+   }
+  ],
+  "payers": [
+   "LMEC & North Africa UK Limited"
+  ],
+  "sic": [
+   "82990"
+  ],
+  "status": "active",
+  "type": "private-limited-guarant-nsc"
+ },
  "14982650": {
   "_chain": true,
   "_fetched": "2026-11-10",
@@ -53081,6 +54373,80 @@
   ],
   "status": "active",
   "type": "ltd"
+ },
+ "15177418": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "28 Lime Street, London, EC3M 7HR, United Kingdom",
+  "ceased": null,
+  "created": "2023-09-30",
+  "found": true,
+  "name": "MIDDLE EAST ENERGY CONFERENCE LIMITED",
+  "number": "15177418",
+  "officers": [
+   {
+    "name": "LEWIS, Mark Anthony Christopher",
+    "role": "director",
+    "since": "2023-09-30"
+   },
+   {
+    "name": "PURBRICK, Alan Lee",
+    "role": "director",
+    "since": "2023-09-30"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "voting rights 25 to 50 percent"
+    ],
+    "kind": "corporate entity",
+    "name": "C. Lewis (Uk) Holding Ltd",
+    "number": "11159326",
+    "owners": [
+     {
+      "control": [
+       "ownership of shares 25 to 50 percent",
+       "voting rights 25 to 50 percent",
+       "right to appoint and remove directors"
+      ],
+      "kind": "individual",
+      "name": "Mr Mark Anthony Christopher Lewis",
+      "since": "2018-01-19"
+     }
+    ],
+    "since": "2023-09-30"
+   },
+   {
+    "control": [
+     "voting rights 25 to 50 percent"
+    ],
+    "kind": "corporate entity",
+    "name": "Alp Racing Limited",
+    "number": "11726812",
+    "owners": [
+     {
+      "control": [
+       "ownership of shares 75 to 100 percent",
+       "voting rights 75 to 100 percent",
+       "right to appoint and remove directors"
+      ],
+      "kind": "individual",
+      "name": "Alan Lee Purbrick",
+      "since": "2018-12-14"
+     }
+    ],
+    "since": "2023-09-30"
+   }
+  ],
+  "payers": [
+   "Middle East Energy Conference Limited"
+  ],
+  "sic": [
+   "82302"
+  ],
+  "status": "active",
+  "type": "private-limited-guarant-nsc"
  },
  "15192427": {
   "_chain": true,
@@ -54220,6 +55586,7 @@
    }
   ],
   "payers": [
+   "TYI Group LTD",
    "The YIMBY Initiative Ltd"
   ],
   "sic": [
@@ -54276,6 +55643,66 @@
   "sic": [
    "68100",
    "68209"
+  ],
+  "status": "active",
+  "type": "ltd"
+ },
+ "15911330": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "Level 2, City Point, Ropemaker Street, London, EC2Y 9SS, England",
+  "ceased": null,
+  "created": "2024-08-22",
+  "found": true,
+  "name": "CHECKATRADE LIMITED",
+  "number": "15911330",
+  "officers": [
+   {
+    "name": "KENNEDY SHAMIR, Helen Louise",
+    "role": "secretary",
+    "since": "2025-06-24"
+   },
+   {
+    "name": "HARPIN, Richard David",
+    "role": "director",
+    "since": "2024-08-22"
+   },
+   {
+    "name": "PALANIAPPAN, Jambu",
+    "role": "director",
+    "since": "2024-08-22"
+   }
+  ],
+  "owners": [
+   {
+    "control": [
+     "ownership of shares 75 to 100 percent",
+     "voting rights 75 to 100 percent",
+     "right to appoint and remove directors"
+    ],
+    "kind": "corporate entity",
+    "name": "Vetted Limited",
+    "number": "04285394",
+    "owners": [
+     {
+      "control": [
+       "ownership of shares 75 to 100 percent"
+      ],
+      "kind": "corporate entity",
+      "name": "Sherrington Mews Limited",
+      "number": "09167024",
+      "owners": [],
+      "since": "2020-01-27"
+     }
+    ],
+    "since": "2024-08-22"
+   }
+  ],
+  "payers": [
+   "Checkatrade"
+  ],
+  "sic": [
+   "99999"
   ],
   "status": "active",
   "type": "ltd"
@@ -54505,6 +55932,37 @@
    "94990"
   ],
   "status": "dissolved",
+  "type": "ltd"
+ },
+ "16126678": {
+  "_chain": true,
+  "_fetched": "2026-11-24",
+  "address": "10 John Street, London, WC1N 2EB, United Kingdom",
+  "ceased": null,
+  "created": "2024-12-09",
+  "found": true,
+  "name": "SK DEFENCE UK LTD",
+  "number": "16126678",
+  "officers": [
+   {
+    "name": "ARMSTRONG, Michael",
+    "role": "director",
+    "since": "2026-10-13"
+   },
+   {
+    "name": "SCHNEIDER, Andre Christian, Dr",
+    "role": "director",
+    "since": "2024-12-09"
+   }
+  ],
+  "owners": [],
+  "payers": [
+   "SK Defence UK Ltd"
+  ],
+  "sic": [
+   "82990"
+  ],
+  "status": "active",
   "type": "ltd"
  },
  "16167450": {
